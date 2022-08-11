@@ -47,13 +47,13 @@ TAs:
 | Lab 02b    | [Average Num](1%20Python/labs/03b%20AverageNum.md)                                                                              | 08 Aug   |
 | Lab 05     | [Palindrome Checker](1%20Python/labs/05a%20Palindrome%20Checker.md)                                                                | 10 Aug   |
 | Lab 06b    | [Credit Card Validation](1%20Python/labs/06b%20Credit%20Card%20Validation.md)                                                      | 14 Aug   |
-| Lab 08     | [Pick 6](https://github.com/PdxCodeGuild/class_australian_shepherd/blob/main/1%20Python/labs/08%20Pick6.md)                        | 15 Aug   |
-| Lab 09     | [Blackjack Advice](https://github.com/PdxCodeGuild/class_australian_shepherd/blob/main/1%20Python/labs/09%20Blackjack%20Advice.md) | 21 Aug   |
-| Lab 11     | [Rot Cipher](https://github.com/PdxCodeGuild/class_australian_shepherd/blob/main/1%20Python/labs/11%20Rot%20Cipher.md)             | 22 Aug   |
-| Lab 14     | [ATM](https://github.com/PdxCodeGuild/class_australian_shepherd/blob/main/1%20Python/labs/14%20ATM.md)                             | 28 Aug   |
-| Lab 19     | [Trivia API](https://github.com/PdxCodeGuild/class_australian_shepherd/blob/main/1%20Python/labs/19%20Trivia%20API.md)             | 29 Aug   |
-| Lab 13     | [Count Words](https://github.com/PdxCodeGuild/class_australian_shepherd/blob/main/1%20Python/labs/13%20Count%20Words.md)           | 30 Aug   |
-| Final      | [Mini Capstone](https://github.com/PdxCodeGuild/class_australian_shepherd/blob/main/1%20Python/labs/MiniCapstone.md)               | 12 Sep   |
+| Lab 08     | [Pick 6](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/08%20Pick6.md)                        | 15 Aug   |
+| Lab 09     | [Blackjack Advice](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/09%20Blackjack%20Advice.md) | 21 Aug   |
+| Lab 11     | [Rot Cipher](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/11%20Rot%20Cipher.md)             | 22 Aug   |
+| Lab 14     | [ATM](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/14%20ATM.md)                             | 28 Aug   |
+| Lab 19     | [Trivia API](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/19%20Trivia%20API.md)             | 29 Aug   |
+| Lab 13     | [Count Words](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/13%20Count%20Words.md)           | 30 Aug   |
+| Final      | [Mini Capstone](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/MiniCapstone.md)               | 12 Sep   |
 
 </details>
 
@@ -62,11 +62,11 @@ TAs:
 
 | Lab Number | Title                                                                                                                                                          | Due Date |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| Lab 01     | [Bio](https://github.com/PdxCodeGuild/class_australian_shepherd/blob/main/2%20Flask%20%2B%20HTML%20%2B%20CSS/labs/01%20Bio.md)                                 | 19 Sep   |
-| Lab 02     | [Blog](https://github.com/PdxCodeGuild/class_australian_shepherd/blob/main/2%20Flask%20%2B%20HTML%20%2B%20CSS/labs/02%20Blog.md)                               | 21 Sep   |
-| Lab 03     | [Company](https://github.com/PdxCodeGuild/class_australian_shepherd/blob/main/2%20Flask%20%2B%20HTML%20%2B%20CSS/labs/03%20Company.md)                         | 25 Sep   |
-| Lab 04     | [Personal Portfolio](https://github.com/PdxCodeGuild/class_australian_shepherd/blob/main/2%20Flask%20%2B%20HTML%20%2B%20CSS/labs/04%20Personal%20Portfolio.md) | 29 Sep   |
-| Lab 06     | [Flask Redo](https://github.com/PdxCodeGuild/class_australian_shepherd/blob/main/2%20Flask%20%2B%20HTML%20%2B%20CSS/labs/06%20Flask%20Redo.md)                 | 31 Sep   |
+| Lab 01     | [Bio](https://github.com/PdxCodeGuild/class_olive/blob/main/2%20Flask%20%2B%20HTML%20%2B%20CSS/labs/01%20Bio.md)                                 | 19 Sep   |
+| Lab 02     | [Blog](https://github.com/PdxCodeGuild/class_olive/blob/main/2%20Flask%20%2B%20HTML%20%2B%20CSS/labs/02%20Blog.md)                               | 21 Sep   |
+| Lab 03     | [Company](https://github.com/PdxCodeGuild/class_olive/blob/main/2%20Flask%20%2B%20HTML%20%2B%20CSS/labs/03%20Company.md)                         | 25 Sep   |
+| Lab 04     | [Personal Portfolio](https://github.com/PdxCodeGuild/class_olive/blob/main/2%20Flask%20%2B%20HTML%20%2B%20CSS/labs/04%20Personal%20Portfolio.md) | 29 Sep   |
+| Lab 06     | [Flask Redo](https://github.com/PdxCodeGuild/class_olive/blob/main/2%20Flask%20%2B%20HTML%20%2B%20CSS/labs/06%20Flask%20Redo.md)                 | 31 Sep   |
 
 </details>
 
@@ -75,7 +75,7 @@ TAs:
 
 | Lab Number | Title                                                                                                                    | Due Date |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------ | -------- |
-| Lab 01     | [Django Redo](https://github.com/PdxCodeGuild/class_australian_shepherd/blob/main/3%20Django/labs/01%20Django%20Redo.md) | 27 JUL   |
+| Lab 01     | [Django Redo](https://github.com/PdxCodeGuild/class_olive/blob/main/3%20Django/labs/01%20Django%20Redo.md) | 27 JUL   |
 
 </details>
 
@@ -83,7 +83,7 @@ TAs:
 
 ## Submitting your work
 
-Make sure all labs are located within `class_australian_shepherd/code/<YOUR_NAME>`, where `<YOUR_NAME>` is your first name in all lowercase letters.
+Make sure all labs are located within `class_olive/code/<YOUR_NAME>`, where `<YOUR_NAME>` is your first name in all lowercase letters.
 
 To emulate a more professional Git workflow, we're going to start creating new branches for each lab starting in the HTML/CSS section.
 
@@ -111,7 +111,7 @@ To emulate a more professional Git workflow, we're going to start creating new b
 
   **e.g.** My branch for the **"Lab 01 - Bio"** in the **HTML/CSS** section would be named: `matt-htmlcss-lab01`. The name can vary a bit from this example, but please keep the chosen formatting consistent from one lab to another.
 
-- `git add <FILENAME>` to add a specific file or `git add .` to add everything in the current dicrectory
+- `git add <FILENAME>` to add a specific file or `git add .` to add everything in the current directory
 - `git commit -m "your commit message"` to commit your work
 
 - A remote branch will need to be created for each new local branch. Git will usually display the proper command to do this when a new branch is pushed for the first time.
