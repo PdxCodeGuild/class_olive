@@ -42,7 +42,7 @@ TAs:
 
 | Lab Number | Title                                                                                                                              | Due Date |
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| Lab 01     | Code Folder                                                                                                                        | 07 Aug   |
+| Lab 01     | Code Folder                                                                                                                        | 07 need fix   |
 | Lab 02a    | [Unit Converter](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/12%20Unit%20Converter.md)                   | 08 Aug   |
 | Lab 02b    | [Num To Phrase]()                                                                               | 08 Aug   |
 | Lab 09     | [Blackjack Advice](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/09%20Blackjack%20Advice.md) | 21 Aug   |
