@@ -17,6 +17,8 @@ distance_dictionary = {
 # Following multie line strings used to prompt the user for a unit of measurement, then a number.
 
 prompt_1 = f'''
+Let's convert a unit of measurement into another unit of measurement!
+
 Please input a unit of measurement.
 Choices include:
 * Meters
@@ -28,9 +30,19 @@ Choices include:
 >: '''
 
 prompt_2 = f'''
-Please enter a value to convert to meters.
+Please enter a value for that unit.
 >: '''
 
+prompt_3 = f'''
+What unit of measurement would you like to convert to?
+Choices include:
+* Meters
+* Feet
+* Miles
+* Kilometers
+* Yards
+* Inches
+>: '''
 
 #Ask the user for a unit of measurement and store it.
 #Place in a while loop for error corection. User must input a key in the 
@@ -56,10 +68,19 @@ while True:
         print('Your input was not a number. Please try again.')
         time.sleep(2)
 
+while True:
+    user_input_3 = input(prompt_3)
+    if user_input_3 in distance_dictionary:
+        break
+    else:
+        print("You did not type an appropriate response. Please try again.")
+        time.sleep(2)
+
 #Multiplies the user input by the value stored in the correct key.
 math_time = user_input_2 * distance_dictionary[user_input_1]
+math_time = math_time * distance_dictionary[user_input_3]
 
 #Print result.
-print(f'{user_input_2} {user_input_1.title()} is {math_time} Meters.')
+print(f'{user_input_2} {user_input_1.title()} is {math_time} {user_input_3.title()}.')
 
 
