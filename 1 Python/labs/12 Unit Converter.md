@@ -1,6 +1,5 @@
 
-# Unit Converter
-## Lab 2a
+# Unit Converter // Lab 2a
 
 This lab will involve writing a program that allows the user to convert a number between units.
 
