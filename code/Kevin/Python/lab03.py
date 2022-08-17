@@ -57,7 +57,7 @@ Convert_outliers = {
 #While loop for breaking out when printing and future possible utility
 while True:
     User_input = int(input('Please enter a number 0-999.\n>: '))     #Ask user for a number and convert to an "int". No error correction.
-    if User_input == 0:     #If user input is 0, just print 0.
+    if User_input == 0:     #If user input is 0, just print zero.
         print('zero')
         break
     elif User_input in list_of_outliers:        #If user input is in the list of outliers, just print the outliers
@@ -67,15 +67,15 @@ while True:
         hundreds_digit = User_input//100        #Get the hundreds digit by doing floor division with user input
         subtracted_input = (User_input - hundreds_digit*100)      #Get rid of the 100th place so we can check to see if it's an outlier.
         if subtracted_input in list_of_outliers:
-            print(f'{Convert_ones_place_dict[hundreds_digit]} hundred {Convert_outliers[subtracted_input]}')      #If the english words for the remander of "subtracted_input are an outlier, print "'x' hundred 'outlier'""
+            print(f'{Convert_ones_place_dict[hundreds_digit]} hundred {Convert_outliers[subtracted_input]}')      #If the english words for the remander of "subtracted_input" are an outlier, print "{ones_place_dict}' hundred '{outlier}"
             break
-        tens_digit = subtracted_input//10       #If "subtracted_input" is not an outlier, do floor division it for the 10th place.
+        tens_digit = subtracted_input//10       #If "subtracted_input" is not an outlier, do floor division on it for the 10th place.
         ones_digit = User_input%10              #Then, do module division on the user's input. The result will be the ones place.
-        print(f'{Convert_ones_place_dict[hundreds_digit]} hundred {Convert_tens_place_dict[tens_digit]} {Convert_ones_place_dict[ones_digit]}' )        #Print ones places dict ' hundred' tens place dict ' ' ones palce dict
+        print(f'{Convert_ones_place_dict[hundreds_digit]} hundred {Convert_tens_place_dict[tens_digit]} {Convert_ones_place_dict[ones_digit]}' )        #Print "{ones_places_dict}' hundred '{tens_place_dict}' '{ones_place_dict}"
         break
     tens_digit = User_input//10     #If user input is between 0 and 99, floor division the tens place and modulas the ones place
     ones_digit = User_input%10
-    print(f'{Convert_tens_place_dict[tens_digit]} {Convert_ones_place_dict[ones_digit]}')       #Print the ones place and the tens place.
+    print(f'{Convert_tens_place_dict[tens_digit]} {Convert_ones_place_dict[ones_digit]}')       #Print "{tens_place_dict' 'ones_place_dict}""
     break
 
        
