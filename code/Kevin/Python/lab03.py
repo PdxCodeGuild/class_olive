@@ -12,7 +12,7 @@ This lab converts numbers characters to their english representation.
 # print(tens_digit, ones_digit)
 
 Convert_ones_place_dict = {
-    0: 'zero',
+    0: '',
     1: 'one',
     2: 'two',
     3: 'three',
@@ -25,6 +25,7 @@ Convert_ones_place_dict = {
 }
 
 Convert_tens_place_dict = {
+    0: '',
     2: 'twenty',
     3: 'thirty',
     4: 'fourty',
@@ -60,16 +61,29 @@ Convert_outliers = {
 
 while True:
     User_input = int(input('Please enter a number 0-99.\n>: '))
-    if User_input in list_of_outliers:
+    if User_input == 0:
+        print('zero')
+        break
+    elif User_input in list_of_outliers:
         print(Convert_outliers[User_input])
+        break
+    elif User_input > 99:
+        hundreds_digit = User_input//100
+        tens_digit = (User_input - hundreds_digit*100)
+        if tens_digit in list_of_outliers:
+            print(f'{Convert_ones_place_dict[hundreds_digit]} hundred {Convert_outliers[tens_digit]}')
+            break
+        tens_digit = (User_input - hundreds_digit*100)//10
+        ones_digit = User_input%10
+        print(f'{Convert_ones_place_dict[hundreds_digit]} hundred {Convert_tens_place_dict[tens_digit]} {Convert_ones_place_dict[ones_digit]}' )
         break
     tens_digit = User_input//10
     ones_digit = User_input%10
+    print(f'{Convert_tens_place_dict[tens_digit]}{Convert_ones_place_dict[ones_digit]}')
+    break
 
-    if tens_digit != 0:
-        print(f'{Convert_tens_place_dict[tens_digit]}-{Convert_ones_place_dict[ones_digit]}')
-    else:
-        print(Convert_ones_place_dict[ones_digit])
+       
+
 
 
 
