@@ -78,7 +78,7 @@ while True:
 
 #Multiplies the user input by the value stored in the correct key.
 math_time = user_input_2 * distance_dictionary[user_input_1]
-math_time = math_time * distance_dictionary[user_input_3]
+math_time = round(math_time / distance_dictionary[user_input_3], 5)
 
 #Print result.
 print(f'{user_input_2} {user_input_1.title()} is {math_time} {user_input_3.title()}.')
