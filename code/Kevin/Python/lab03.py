@@ -22,7 +22,7 @@ Convert_tens_place_dict = {
     1: '',
     2: 'twenty',
     3: 'thirty',
-    4: 'fourty',
+    4: 'forty',
     5: 'fifty',
     6: 'sixty',
     7: 'seventy',
@@ -56,7 +56,7 @@ if User_input == 0:     #If user input is 0, print zero.
 elif outlier_digit in list_of_outliers:     #If variable outlier_digit is in the list of outliers, 
     tens_digit = outlier_digit              # make the tens digit that outlier digit.
     ones_digit = 0                          #Ones_digit becomes 0 so it will be an empty str.
-elif User_input > 99:
+if User_input > 99:
     and_str = ' hundred and '               #If the user input is > 99, change the empty and_str variable in the following print statement to ' hundred and '.
 print(f'{Convert_ones_place_dict[hundreds_digit]}{and_str}{Convert_tens_place_dict[tens_digit]} {Convert_ones_place_dict[ones_digit]}') 
        
