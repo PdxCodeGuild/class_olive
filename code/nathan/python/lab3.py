@@ -37,7 +37,7 @@ num_tens = {
 
 
 number = input("Please provide a number: ")
-number = str(number)
+
 if int(number) < 10:
     result_string = num_ones[number]
 elif int(number) > 10 and int(number) < 20:
