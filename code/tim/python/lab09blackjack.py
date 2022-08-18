@@ -21,8 +21,28 @@ card_one = input("What is your first card?: ").capitalize()
 card_two = input("What is your second card?: ").capitalize()
 card_three = input("What is your third card?: ").capitalize()
 
-total = cards[card_one] + cards[card_two] + cards[card_three]
-#print(f"Your total is {total}")
+if card_one == "A":
+    card_one = int(input("Is card one a 1 or 11?: "))
+    # total = int(card_one) + cards[card_two] + cards[card_three]
+else:
+    card_one = cards[card_one]
+
+if card_two == "A":
+    card_two = int(input("Is card two a 1 or 11?: "))
+    # total = cards[card_one] + int(card_two) + cards[card_three]
+else:
+    card_two = cards[card_two]
+
+if card_three == "A":
+    card_three = int(input("Is card three a 1 or 11?: "))
+    # total = cards[card_one] + cards[card_two] + int(card_three)
+else:
+    card_three = cards[card_three]
+# total = cards[card_one] + cards[card_two] + cards[card_three]
+
+total = card_one + card_two + card_three
+
+
 
 if total < 17:
     print(f"Your total is {total}, and you should Hit!")
