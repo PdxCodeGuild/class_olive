@@ -2,7 +2,7 @@
 This lab converts numbers characters to their english representation.
 '''
 
-#Dictionary for the ones place or hundreds
+#Dictionary for the ones place and hundreds.
 Convert_ones_place_dict = {
     0: '',
     1: 'one',
@@ -16,9 +16,10 @@ Convert_ones_place_dict = {
     9: 'nine'
 }
 
-#Dictionary for tens place
+#Dictionary for tens place and outliers
 Convert_tens_place_dict = {
     0: '',
+    1: '',
     2: 'twenty',
     3: 'thirty',
     4: 'fourty',
@@ -26,14 +27,7 @@ Convert_tens_place_dict = {
     6: 'sixty',
     7: 'seventy',
     8: 'eighty',
-    9: 'ninety'
-}
-
-#List of outliers for conditional statements
-list_of_outliers = [10,11,12,13,14,15,16,17,18,19,]
-
-#Dictionary for outliers
-Convert_outliers = {
+    9: 'ninety',
     10:'ten',
     11:'eleven',
     12:'twelve',
@@ -46,30 +40,25 @@ Convert_outliers = {
     19:'nineteen',
 }
 
-#While loop for breaking out when printing and future possible utility
-while True:
-    User_input = int(input('Please enter a number 0-999.\n>: '))     #Ask user for a number and convert to an "int". No error correction.
-    if User_input == 0:     #If user input is 0, just print zero.
-        print('zero')
-        break
-    elif User_input in list_of_outliers:        #If user input is in the list of outliers, just print the outliers
-        print(Convert_outliers[User_input])
-        break
-    elif User_input > 99:       #If user input is between 100 and 999, handle those numbers
-        hundreds_digit = User_input//100        #Get the hundreds digit by doing floor division with user input
-        subtracted_input = (User_input - hundreds_digit*100)      #Get rid of the 100th place so we can check to see if it's an outlier.
-        if subtracted_input in list_of_outliers:
-            print(f'{Convert_ones_place_dict[hundreds_digit]} hundred and {Convert_outliers[subtracted_input]}')      #If the english words for the remander of "subtracted_input" are an outlier, print "{ones_place_dict}' hundred '{outlier}"
-            break
-        tens_digit = subtracted_input//10       #If "subtracted_input" is not an outlier, do floor division on it for the 10th place.
-        ones_digit = User_input%10              #Then, do module division on the user's input. The result will be the ones place.
-        print(f'{Convert_ones_place_dict[hundreds_digit]} hundred and {Convert_tens_place_dict[tens_digit]} {Convert_ones_place_dict[ones_digit]}' )        #Print "{ones_places_dict}' hundred '{tens_place_dict}' '{ones_place_dict}"
-        break
-    tens_digit = User_input//10     #If user input is between 0 and 99, floor division the tens place and modulas the ones place
-    ones_digit = User_input%10
-    print(f'{Convert_tens_place_dict[tens_digit]} {Convert_ones_place_dict[ones_digit]}')       #Print "{tens_place_dict' 'ones_place_dict}""
-    break
+#List of outliers for conditional statements
+list_of_outliers = [10,11,12,13,14,15,16,17,18,19,]
 
+#Declare a variable with an empty string if ' hundred and ' is needed.
+and_str = ''
+
+User_input = int(input('Please enter a number 0-999.\n>: '))        #Ask user for a number and convert to an "int". No error correction.
+hundreds_digit = User_input//100          #Store 100th place
+tens_digit = (User_input%100)//10         #Store 10s place.
+ones_digit = User_input%10                #Store ones place
+outlier_digit = User_input%100            #Grab the tens and ones place into a single int to check if it's 10-19.
+if User_input == 0:     #If user input is 0, print zero.
+    print('zero')
+elif outlier_digit in list_of_outliers:     #If variable outlier_digit is in the list of outliers, 
+    tens_digit = outlier_digit              # make the tens digit that outlier digit.
+    ones_digit = 0                          #Ones_digit becomes 0 so it will be an empty str.
+elif User_input > 99:
+    and_str = ' hundred and '               #If the user input is > 99, change the empty and_str variable in the following print statement to ' hundred and '.
+print(f'{Convert_ones_place_dict[hundreds_digit]}{and_str}{Convert_tens_place_dict[tens_digit]} {Convert_ones_place_dict[ones_digit]}') 
        
 
 
