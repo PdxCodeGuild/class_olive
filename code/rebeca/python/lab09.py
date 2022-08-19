@@ -11,10 +11,10 @@ print(total)
 if total < 17:
     print('hit')
 
-if total >= 17 and total < 21:
+elif total >= 17 and total < 21:
     print('stay')
 
-if total == 21:
+elif total == 21:
     print('blackjack')
 
 else:
