@@ -11,6 +11,12 @@ playing_numbers = []
 #Declare a variable for our balance, starting at zero.
 balance = 0
 
+#Declare a variable for our earnings, starting at zero.
+earnings = 0
+
+#Declare a variable for our earnings, starting at zero.
+expenses = 0
+
 #Declare a variable that's a dictionary containing our winning information based on how many matches we get.
 winnings_dict = {
     0:0,
@@ -38,6 +44,8 @@ for iteration in range(100000):
     winnings_dict_lookup = 0        #Declare or reset a variable to look up winnings per iteration.
     index_iteration = 0             #Declare or reset a variable for looping through the winnings numbers.
     balance -= 2                    #Subtract 2 from our balance to represent the cost of entry.
+    expenses += 2
+    
 
     playing_numbers = pick_6_list_generator()       #Overwrite "player_numbers" list with a new set of numbers.
     # print(winning_numbers)
@@ -49,8 +57,9 @@ for iteration in range(100000):
             winnings_dict_lookup += 1                   # add 1 to "winning_dict_lookup".
         index_iteration += 1                            #Add 1 to "index_iteration" so that the next loop with compare sequential indexes of "winning_numbers"
     balance += winnings_dict[winnings_dict_lookup]      #Add to the balance the value that corresponds to the number of matching ints.
+    earnings += winnings_dict[winnings_dict_lookup]
     # print(winnings_dict_lookup)
 
         
-print(balance)      #Print the balance.
+print(f'Balance: ${balance} Earnings: ${earnings} Expenses: ${expenses} ROI: ${(earnings-expenses)/expenses}')     #Print the balance.
 
