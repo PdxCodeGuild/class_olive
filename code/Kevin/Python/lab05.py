@@ -20,7 +20,7 @@ def play_pick_6(user_int):
     #Declare a variable for our earnings, starting at zero.
     earnings = 0
 
-    #Declare a variable for our earnings, starting at zero.
+    #Declare a variable for our expenses, starting at zero.
     expenses = 0
 
     #Declare a variable to return lists.
@@ -46,7 +46,7 @@ def play_pick_6(user_int):
     #For loop for playing pick6 the amount of times the user inputs.
     for x in range(user_int):
         winnings_dict_lookup = 0        #Declare or reset a variable to store winnings per iteration.
-        index_iteration = 0             #Declare or reset a variable for looping through the winnings numbers.
+        index_iteration = 0             #Declare or reset a variable for looping through the winning numbers.
         expenses += 2
 
 
@@ -57,9 +57,9 @@ def play_pick_6(user_int):
 
         #For loop for comparing "playing_numbers" with "winning_numbers"
         for num in playing_numbers:                         #"num" will become each item in "playing_numbers" one at a time.
-            if num == winning_numbers[index_iteration]:     #And if "num" matches the value at the index of 0 with "winning_numbers",
-                winnings_dict_lookup += 1                   # add 1 to "winning_dict_lookup".
-            index_iteration += 1                            #Add 1 to "index_iteration" so that the next loop with compare sequential indexes of "winning_numbers"
+            if num == winning_numbers[index_iteration]:     #And if "num" matches the value at the index of 0 with "winning_numbers,"
+                winnings_dict_lookup += 1                   # add 1 to "winning_dict_lookup."
+            index_iteration += 1                            #Add 1 to "index_iteration" so that the next loop will compare sequential indexes of "winning_numbers."
         earnings += winnings_dict[winnings_dict_lookup]
     # print(winnings_dict_lookup)
 
@@ -78,10 +78,10 @@ def play_pick_6(user_int):
 #Declare a variable for our balance, starting at zero.
 balance = 0
 
-#Ask the user how many time they would like to play pick 6 and sent that int into the player_pick_6 function and store the return in "result".    
+#Ask the user how many times they would like to play pick 6 and send that int into the play_pick_6 function and store the return in "result."    
 result = play_pick_6(int(input('How many times would you like to play pick 6?: ')))
 print(f'''
-Balance: ${balance-result["expenses"]} Earnings: ${result["earnings"]} Expenses: ${result["expenses"]} ROI: ${(result["earnings"]-result["expenses"])/result["expenses"]}
+Balance: ${balance-result["expenses"]+result["earnings"]} Earnings: ${result["earnings"]} Expenses: ${result["expenses"]} ROI: ${(result["earnings"]-result["expenses"])/result["expenses"]}
 ''')     #Print the balance.
 
 # print(result)
