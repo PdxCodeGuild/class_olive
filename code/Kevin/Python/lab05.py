@@ -1,5 +1,5 @@
 '''
-This program will play pick 6 100,000 thousand times.
+This program will play pick 6 however many times the user inputs.
 '''
 
 import random
