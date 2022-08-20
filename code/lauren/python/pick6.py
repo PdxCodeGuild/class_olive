@@ -17,19 +17,11 @@ for x in range(100000):
     cost -= 2
     current_ticket = ticket()
     winning_ticket = ticket()
-    if current_ticket[0] == winning_ticket[0]:
-        matches += 1
-    elif current_ticket[1] == winning_ticket[1]:
-        matches += 1
-    elif current_ticket[2] == winning_ticket[2]:
-        matches += 1
-    elif current_ticket[3] == winning_ticket[3]:
-        matches += 1
-    elif current_ticket[4] == winning_ticket[4]:
-        matches += 1
-    elif current_ticket[5] == winning_ticket[5]:
-        matches += 1
 
+     
+    for x in range(6):
+        if current_ticket[x] == winning_ticket[x]:
+            matches += 1
 
     if matches == 1:
             winnings += 4
@@ -47,4 +39,5 @@ print(winnings + cost)
 print(matches)
 print(cost)
 print(winnings)
-print(winnings / cost)
+roi = (winnings + cost)/cost
+print(roi)
