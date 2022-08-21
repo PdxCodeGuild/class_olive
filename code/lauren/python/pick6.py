@@ -8,8 +8,6 @@ def ticket():
     return numbers
       
 cost = 0
-winning_ticket = ticket()
-print(winning_ticket)
 winnings = 0
 
 for x in range(100000):
@@ -19,15 +17,15 @@ for x in range(100000):
     winning_ticket = ticket()
     if current_ticket[0] == winning_ticket[0]:
         matches += 1
-    elif current_ticket[1] == winning_ticket[1]:
+    if current_ticket[1] == winning_ticket[1]:
         matches += 1
-    elif current_ticket[2] == winning_ticket[2]:
+    if current_ticket[2] == winning_ticket[2]:
         matches += 1
-    elif current_ticket[3] == winning_ticket[3]:
+    if current_ticket[3] == winning_ticket[3]:
         matches += 1
-    elif current_ticket[4] == winning_ticket[4]:
+    if current_ticket[4] == winning_ticket[4]:
         matches += 1
-    elif current_ticket[5] == winning_ticket[5]:
+    if current_ticket[5] == winning_ticket[5]:
         matches += 1
 
 
@@ -39,10 +37,12 @@ for x in range(100000):
             winnings += 100
     elif matches == 4:
             winnings += 50000
+            print("got four")
     elif matches == 5:
             winnings += 1000000
     elif matches == 6:
             winnings += 25000000
+            print("got to six")
 print(winnings + cost)
 print(matches)
 print(cost)

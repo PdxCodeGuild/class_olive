@@ -1,10 +1,8 @@
-#user_input = input("enr your credit card number : \n")
-user_input = "4556737586899855"
+user_input = input("enr your credit card number : \n")
 credit_card_num = [int(x) for x in user_input]
 print(credit_card_num)
 check_digit = credit_card_num.pop()
 print(credit_card_num)
-#double_cred = list(map(lambda x: x * 2, credit_card_num[1::2]))
 credit_card_num.reverse()
 print(credit_card_num)
 doubled_list = []
@@ -38,5 +36,4 @@ if checked_list == check_digit:
     print("valid")
 
 
-#print(double_cred)
 
