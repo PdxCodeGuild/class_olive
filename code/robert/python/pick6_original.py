@@ -19,7 +19,7 @@ def pick_6():
 
     while len(pick_6_w) < 7:
         pick_6_w.append(random.randrange(1,99))
-    
+
     while attempts != 0:
 
         pick_6_rand.clear()
@@ -48,11 +48,8 @@ def pick_6():
         attempts -= 1
 
     if cost < winnings:
-        print(f"Well, you spent ${cost} and won ${winnings}. In total, that's a loss of, wait... holy hell, you broke the odds and earned ${winnings-cost} with {win_count} total wins. The winning numbers were {pick_6_w}.")
+        print(f"Well, you spent ${cost} and won ${winnings}. In total, that's a loss of, wait... holy hell, you broke the odds and earned ${winnings-cost} with {win_count} total wins. The winning numbers were {pick_6_w}. Your ROI was {(winnings-cost)/cost}.")
     elif winnings < cost:
-        print(f"Well, you spent ${cost} and won ${winnings}. In total, that's a loss of ${abs(winnings-cost)} with {win_count} total wins. The winning numbers were {pick_6_w}.")
-    
+        print(f"Well, you spent ${cost} and won ${winnings}. In total, that's a loss of ${abs(winnings-cost)} with {win_count} total wins. The winning numbers were {pick_6_w}. Your ROI was {(winnings-cost)/cost}.")
+
 pick_6()
-                
-
-
