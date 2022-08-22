@@ -51,7 +51,7 @@ def credit_card_validation(cc_num):
 
 
 
-if credit_card_validation('1234567891234567') == True:
+if credit_card_validation(input("Input a credit card number.\n>: ")) == True:
     print('Valid!')
 else:
     print('Invalid')
