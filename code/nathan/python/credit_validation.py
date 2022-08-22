@@ -1,4 +1,4 @@
-def is_credit_number_valid(credit_number): #expecting a string as an argument
+def is_credit_number_valid(credit_number):
     credit_number = list(credit_number)
     check_digit = credit_number.pop(-1)
     credit_number.reverse()
