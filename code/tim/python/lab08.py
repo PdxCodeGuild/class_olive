@@ -45,8 +45,31 @@ def ticket():
     return numbers                                      # Why does this display None every loop????  If this is where it's coming from
 
 def compare_matches(winner, ticket):
-    if winner[0] != ticket[0]:
-        print(f"Winning ticket had {winner[0]} and you had {ticket[0]}.")    # Just making sure this works, will build out
+    matches = 0
+    if winner[0] == ticket[0]:
+        # print(f"Winning ticket had {winner[0]} and you had {ticket[0]}.")    # Just making sure this works, will build out
+        matches += 1
+    
+    elif winner[1] == ticket[1]:
+        matches += 1
+    
+    elif winner[2] == ticket[2]:
+        matches += 1
+    
+    elif winner[3] == ticket[3]:
+        matches += 1
+
+    elif winner[4] == ticket[5]:
+        matches += 1    
+    
+    elif winner[5] == ticket[5]:
+        matches += 1
+
+    if matches > 0:
+        print(f"You had {matches} matches.")
+    else:
+        print(f"You had no matches.")
+
 
 winning_ticket = ticket()
 print(f"The winning ticket is {winning_ticket}")
