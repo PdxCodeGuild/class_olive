@@ -44,7 +44,7 @@ TAs:
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------- | -------- |
 | Lab 01     | Code Folder                                                                                                                        | 07 need fix   |
 | Lab 02a    | [Unit Converter](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/12%20Unit%20Converter.md)                   | 08 Aug   |
-| Lab 02b    | [Num To Phrase]()                                                                               | 08 Aug   |
+| Lab 02b    | [Num To Phrase](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/03%20Number%20to%20Phrase.md)                                                                               | 08 Aug   |
 | Lab 09     | [Blackjack Advice](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/09%20Blackjack%20Advice.md) | 21 Aug   |
 | Lab 08     | [Pick 6](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/08%20Pick6.md)                        | 15 Aug   |
 | Lab 06b    | [Credit Card Validation](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/06b%20Credit%20Card%20Validation.md) | 14 Aug   |
