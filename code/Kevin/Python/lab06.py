@@ -22,7 +22,7 @@ def credit_card_validation(cc_num):
     print(cc_list_convert, "popped off list.","popped digit = ",check_digit)
 
     for x in range(15):
-        if x%2 != 0:
+        if x%2 == 0:
             cc_list_convert[x] *= 2
 
     print(cc_list_convert, 'double every other')
