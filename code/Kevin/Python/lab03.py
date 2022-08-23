@@ -2,7 +2,9 @@
 This lab converts numbers characters to their english representation.
 '''
 
-#Dictionary for the ones place or hundreds
+#Dictionary for the ones place and hundreds.
+
+
 Convert_ones_place_dict = {
     0: '',
     1: 'one',
@@ -16,12 +18,13 @@ Convert_ones_place_dict = {
     9: 'nine'
 }
 
-#Dictionary for tens place
+#Dictionary for tens place and outliers
 Convert_tens_place_dict = {
     0: '',
+    1: '',
     2: 'twenty',
     3: 'thirty',
-    4: 'fourty',
+    4: 'forty',
     5: 'fifty',
     6: 'sixty',
     7: 'seventy',
@@ -77,6 +80,7 @@ while True:
     ones_digit = User_input%10
     print(f'{Convert_tens_place_dict[tens_digit]} {Convert_ones_place_dict[ones_digit]}')       #Print "{tens_place_dict' 'ones_place_dict}""
     break
+
 
        
 
