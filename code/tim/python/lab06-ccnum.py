@@ -24,10 +24,13 @@ print(f"Reversed card number -       {cc_list}")    # [9, 5, 1, 8, 4, 2, 4, 3, 2
 for index in range(len(cc_list)):
     if index % 2 == 0:
         cc_list[index] = cc_list[index]*2
-    if cc_list[index] >= 9:
+        print(cc_list)
+    if cc_list[index] > 9:                                  #  >= was the problem
         cc_list[index] = cc_list[index] - 9
-
+print(cc_list)
 card_sum = str(sum(cc_list))
+print(card_sum)
+
 last_digit = int(card_sum[-1])
 print(f"The last digit is {last_digit}, and your check digit is {check_digit}")
 
