@@ -187,3 +187,20 @@ print(f"\nYou scored a {user_grade} receiving a {letter_grade} and your rival sc
 
 for x in range(100000):
     print(x)
+
+
+
+
+
+
+
+
+
+
+# Generate a list of 6 random numbers representing the winning ticket
+
+
+
+
+
+#Start your balance at 0
