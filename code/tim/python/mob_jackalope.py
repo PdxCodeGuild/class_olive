@@ -11,30 +11,49 @@ jackalopes = [0, 0]
 
 population = len(jackalopes)
 
-# print(jackalopes)
+print(jackalopes)
 
 year = 0
 while len(jackalopes) <= 1000:        
     year += 1
     bachelopes = 0
-
-    for index, value in enumerate(jackalopes):
-        # age all jackalopes one year
-        jackalopes[index] += 1
+    
+    # age jacks
+    for index in range(len(jackalopes)):
+        jackalopes[index] +=  1
         
+    # print('jacks age', jackalopes)
+
+    young_jackalopes = []
+    # find out it jacks are mating age
     for index, value in enumerate(jackalopes):
-        # If 2 jackalopes are between 4-8, add 2 to population
         if jackalopes[index] >= 4 and jackalopes[index] <= 8:
             bachelopes += 1
-                    
-    if bachelopes % 2 == 0 and bachelopes != 0:
-        jackalopes.append(0)
-        jackalopes.append(0)
-    print(bachelopes % 2)      # wonky
-    # print(jackalopes)
+
+        if jackalopes[index] < 10:
+            young_jackalopes.append(jackalopes[index])
+            # print(jackalopes)    
+ 
+    jackalopes = young_jackalopes
+
+    # If 2 jackalopes are between 4-8, add 2 to population
+    # if bachelopes % 2 == 0:
+    #     print(bachelopes % 2)
+    #     jackalopes.append(0)
+    #     jackalopes.append(0)
+    # # break
+    # print(len(jackalopes))
+
+    for x in range(bachelopes):
+        if x % 2 == 0:
+            jackalopes.append(0)
+            jackalopes.append(0)    
+
 
 print(year) # years it took to get 1000 jackalopes
 
 # TO DO
-# Handle deaths
-# Figure out modulus
+# Handle deaths 
+
+
+# Figure out modulus   
