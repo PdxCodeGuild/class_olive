@@ -34,7 +34,10 @@ for count , value in enumerate(credit_card_list):
     if value > 9:
         credit_card_list[count] = value - 9 
 print(credit_card_list)  
-# sum all values 
 
+# sum all values 
 credit_card_list = sum(credit_card_list)
 print(credit_card_list)
+
+print('valid!')
+
