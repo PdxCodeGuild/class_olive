@@ -17,7 +17,7 @@ jackalope_dict = {
 jackalopes = 0
 
 
-while jackalopes < 100:
+while jackalopes < 1000:
 
     #Make AND clear this variable to determine the of-age deer this year.
     of_age_jackalopes = 0
@@ -46,7 +46,7 @@ while jackalopes < 100:
         key_count += 1                      #Key count starts at 3 for recording the first of the new deer in the dictionary, 
                                             # then counts up for every new deer in the dict so that we have new unique keys every time.
         
-    print(jackalopes)
+    # print(jackalopes)
     #Loop through all the deer and count how many deer you have that aren't dead.
     for key in jackalope_dict:
         if jackalope_dict[key] < 10:
@@ -55,6 +55,6 @@ while jackalopes < 100:
 
 
     years += 1
-    print(years, jackalopes, jackalope_dict)
+    # print(years, jackalopes, jackalope_dict)
 
 print(f'It took {years} years to make {jackalopes} Jackalopes.')
