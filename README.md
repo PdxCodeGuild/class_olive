@@ -42,19 +42,19 @@ TAs:
 
 | Lab Number | Title                                                                                                                              | Due Date |
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| Lab 01     | Code Folder                                                                                                                        | 07 need fix   |
-| Lab 02a    | [Unit Converter](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/12%20Unit%20Converter.md)                   | 08 Aug   |
+| Lab 01     | Code Folder                                                                                                                        | 22 Aug   |
+| Lab 02a    | [Unit Converter](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/12%20Unit%20Converter.md)                   | 23 Aug   |
 | Lab 02b    | [Num To Phrase](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/03%20Number%20to%20Phrase.md)                                                                               | 08 Aug   |
-| Lab 09     | [Blackjack Advice](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/09%20Blackjack%20Advice.md) | 21 Aug   |
-| Lab 08     | [Pick 6](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/08%20Pick6.md)                        | 15 Aug   |
+| Lab 09     | [Blackjack Advice](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/09%20Blackjack%20Advice.md) | 24 Aug   |
+| Lab 08     | [Pick 6](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/08%20Pick6.md)                        | 25 Sep   |
 | Lab 06b    | [Credit Card Validation](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/06b%20Credit%20Card%20Validation.md) | 14 Aug   |
-| Lab 07     | [Rot 13](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/11%20Rot%20Cipher.md)                 | 22 Aug   |
-| Lab 14     | [ARI](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/14%20ARI.md)                             | 22 Aug   |
-| Lab 11     | [Contact List](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/17%20Contact%20List.md)         | 22 Aug   |
-| Lab 14     | [ATM](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/17%20Contact%20List.md)                             | 28 Aug   |
-| Lab 19     | [Dad Joke API](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/10%20Dad%20Joke%20API.md)       | 29 Aug   |
-| Lab 15     | [Quotes API](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/18%20Quotes%20API.md)             | 30 Aug   |
-| Final      | [Mini Capstone](https://github.com/PdxCodeGuild/class_australian_shepherd/blob/main/1%20Python/labs/MiniCapstone.md)               | 12 Sep   |
+| Lab 07     | [Rot 13](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/11%20Rot%20Cipher.md)                 | 27 Aug   |
+| Lab 14     | [ARI](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/14%20ARI.md)                             | 28 Aug   |
+| Lab 11     | [Contact List](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/17%20Contact%20List.md)         | 30 Aug   |
+| Lab 14     | [ATM](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/17%20Contact%20List.md)                             | 05 Sep   |
+| Lab 19     | [Dad Joke API](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/10%20Dad%20Joke%20API.md)       | 06 Sep   |
+| Lab 15     | [Quotes API](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/18%20Quotes%20API.md)             | 07 Sep   |
+| Final      | [Mini Capstone](https://github.com/PdxCodeGuild/class_australian_shepherd/blob/main/1%20Python/labs/MiniCapstone.md)               | 08 Sep   |
   
 </details>
 
