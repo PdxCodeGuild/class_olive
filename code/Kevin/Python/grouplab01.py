@@ -1,19 +1,6 @@
-
-
-def jackalope_dies(key_count, jack_dict):
-    new_dict = {}
-    for index, age in enumerate(jack_dict.values()):
-        if age < 10:
-
-            new_dict[key_count] = age
-            key_count += 1
-            
-    list_return = [new_dict, key_count]
-    return list_return
-
-
-
-
+'''
+Program of seeing how many years it takes to make 100 Jackalopes
+'''
 
         
 
@@ -21,43 +8,53 @@ def jackalope_dies(key_count, jack_dict):
 years = 0
 key_count = 3
 
+
 jackalope_dict = {
     1:0,
     2:0
 }
-while len(jackalope_dict) < 100:
 
-    make_jackalope_counter = 0
+jackalopes = 0
+
+
+while jackalopes < 100:
+
+    #Make AND clear this variable to determine the of-age deer this year.
+    of_age_jackalopes = 0
+
+    #Clear this variable! It will be added to at the end before it returns to the while loop.
+    jackalopes = 0
 
     # Age Jackalope
     for key in jackalope_dict:
-        jackalope_dict[key] += 1 
+        jackalope_dict[key] += 1
 
 
     
         
 
 
-    # If ages 4-8, make 2 jackalope
+    # If ages 4-8, add how many of-age jackalopes we got
     for key in jackalope_dict:
         if jackalope_dict[key] > 3 and jackalope_dict[key] < 9:
-            make_jackalope_counter += 1
+            of_age_jackalopes += 1
 
-    # Makem
-    for x in range(make_jackalope_counter):
-        jackalope_dict[key] = 0
+
+    # Make more deer based on the numbers of of-age deer. 2 deer are needed to make 2 deer. 
+    for x in range((of_age_jackalopes//2)*2):
+        jackalope_dict[key_count] = 0
+        key_count += 1                      #Key count starts at 3 for recording the first of the new deer in the dictionary, 
+                                            # then counts up for every new deer in the dict so that we have new unique keys every time.
         
-
-    
-
-    # returned_list = jackalope_dies(key_count, jackalope_dict)
-    # jackalope_dict = returned_list[0]
-    # key_count = returned_list[1]
-
+    print(jackalopes)
+    #Loop through all the deer and count how many deer you have that aren't dead.
+    for key in jackalope_dict:
+        if jackalope_dict[key] < 10:
+            jackalopes += 1
 
 
-   
+
     years += 1
-    print(jackalope_dict)
+    print(years, jackalopes, jackalope_dict)
 
-# print(jackalope_dict, years)
+print(f'It took {years} years to make {jackalopes} Jackalopes.')
