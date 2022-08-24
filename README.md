@@ -46,7 +46,7 @@ TAs:
 | Lab 02a    | [Unit Converter](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/12%20Unit%20Converter.md)                   | 23 Aug   |
 | Lab 02b    | [Num To Phrase](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/03%20Number%20to%20Phrase.md)                                                                               | 08 Aug   |
 | Lab 09     | [Blackjack Advice](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/09%20Blackjack%20Advice.md) | 24 Aug   |
-| Lab 08     | [Pick 6](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/08%20Pick6.md)                        | 25 Sep   |
+| Lab 08     | [Pick 6](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/08%20Pick6.md)                        | 25 Aug   |
 | Lab 06b    | [Credit Card Validation](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/06b%20Credit%20Card%20Validation.md) | 14 Aug   |
 | Lab 07     | [Rot 13](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/11%20Rot%20Cipher.md)                 | 27 Aug   |
 | Lab 14     | [ARI](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/14%20ARI.md)                             | 28 Aug   |
