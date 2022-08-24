@@ -50,14 +50,14 @@ output_str = ''
 for x in user_input_str:
     letter_value = 0        #Declare and reset a variable for storing the value associated with "x"s character... 
                             # at the appropriate key in "letter_dict."
-    if x in string.ascii_letters:        #If "x" is a space character, go straight to line .
-        if x in string.ascii_uppercase:
-            letter_value = letter_dict[x.lower()] + user_input_rot
+    if x in string.ascii_letters:        #If "x" is not a letter, go straight to line 66.
+        if x in string.ascii_uppercase:     #If x is upper case, lower it for searching through the dict, then uppercase it again before concatenation (line 58).
+            letter_value = letter_dict[x.lower()] + user_input_rot      
             while letter_value > 26:        #For as long as "letter_value" is over 26,
                 letter_value -= 26          # reduce it by 26.
             output_str += letter_list[letter_value].upper()
         else:
-            letter_value = letter_dict[x] + user_input_rot
+            letter_value = letter_dict[x] + user_input_rot      #If x is not lowercase, then just concatenation normally.
             while letter_value > 26:        #For as long as "letter_value" is over 26,
                 letter_value -= 26          # reduce it by 26.
             output_str += letter_list[letter_value]
