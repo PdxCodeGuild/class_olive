@@ -46,24 +46,24 @@ user_input_rot = int(input('Now, enter how much ROT.\n>: '))
 #Declare a variable for storing the output string.
 output_str = ''
 
-#Loop through the user input, making x each character.
-for x in user_input_str:
-    letter_value = 0        #Declare and reset a variable for storing the value associated with "x"s character... 
+#Loop through the user input, making "user_char" each character.
+for user_char in user_input_str:
+    letter_value = 0        #Declare and reset a variable for storing the value associated with "user_char"s character... 
                             # at the appropriate key in "letter_dict."
-    if x in string.ascii_letters:        #If "x" is a space character, go straight to line .
-        if x in string.ascii_uppercase:
-            letter_value = letter_dict[x.lower()] + user_input_rot
+    if user_char in string.ascii_letters:        #If "user_char" is not a letter, go straight to line 66.
+        if user_char in string.ascii_uppercase:     #If user_char is upper case, lower it for searching through the dict, then uppercase it again before concatenation (line 58).
+            letter_value = letter_dict[user_char.lower()] + user_input_rot      
             while letter_value > 26:        #For as long as "letter_value" is over 26,
                 letter_value -= 26          # reduce it by 26.
             output_str += letter_list[letter_value].upper()
         else:
-            letter_value = letter_dict[x] + user_input_rot
+            letter_value = letter_dict[user_char] + user_input_rot      #If user_char is not lowercase, then just concatenation normally.
             while letter_value > 26:        #For as long as "letter_value" is over 26,
                 letter_value -= 26          # reduce it by 26.
             output_str += letter_list[letter_value]
 
     else:
-       output_str += x
+       output_str += user_char
 
 print(output_str)
     
