@@ -7,8 +7,7 @@ import string
 with open('The_King_in_Yellow.txt', 'r') as file:
     book = file.read()
 
-# print(book)
-
+#Dictionary containing ARI scale.
 ari_scale = {
      1: {'ages':   '5-6', 'grade_level': 'Kindergarten'},
      2: {'ages':   '6-7', 'grade_level':    '1st Grade'},
@@ -26,16 +25,56 @@ ari_scale = {
     14: {'ages': '18-22', 'grade_level':      'College'}
 }
 
-# test_list = []
 
-# for i, x in enumerate(book):
-#     test_list += x
-#     if i > 200:
-#         break
+#Declare a dict and store all upper and lower case letters.
+char_list = []
+char_list += string.ascii_letters
+# print(char_list)
 
-# print(test_list)
+#Declare a dict for punctuation.
+punctuation_list = ['!', '.', '?']
+# print(punctuation_list)
+
+#Decare a dict for spaces.
+white_space = [' ']
+# print(white_space)
+
+#Decare a variable for remembering the last character inside our for loop.
+last_char = ''
+
+#Declare variables for our total numbers of characters, words, and sentences withing the book.
+char_int = 0
+word_int = 0
+sentence_int = 0
 
 
-
-
+# "char" becomes each and every characters in the book.
 for char in book:
+    if char in char_list:       #If "char" is a character, add 1 to "char_int."
+        char_int += 1
+    if char in punctuation_list:        #If "char" is in "punctuation", we decide that 1 sentence has occurred.
+        sentence_int += 1
+    if char in white_space and char != last_char:       #If "char" is a space, and the last "char" was not a space, 
+                                                        # we declare that a word has occurred.
+        word_int += 1
+    last_char = char
+
+# print(char_int, word_int, sentence_int)
+
+#Formula for ARI. 
+result = 4.71 * (char_int/word_int) + 0.5 * (word_int/sentence_int) - 21.43
+print(result)
+
+#Round up final result.
+result = int((result//1) + (result % 1 > 0))
+print(result)
+
+#Set result to 14 if above 14.
+if result > 14:
+    result = 14
+
+print(f'''
+The ARI for The King in Yellow is {result}.
+This corresponds to a(n) {ari_scale[result]['grade_level']} level of difficulty.
+This book is suitable for ages {ari_scale[result]['ages']}
+''')
