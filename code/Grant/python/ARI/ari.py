@@ -1,13 +1,20 @@
 
 
 
+# fix for mismatching unicode 
+# file = open(filename, encoding="utf8")
+# ----------------------------------------------------------------
 
-
-
-with open('book.txt', 'r') as file:
+with open('book.txt', encoding="utf8") as file:
     book = file.read()
 
-print(book)
+with open('book_2.txt', encoding="utf8") as file:
+    book_2 = file.read()
+
+with open('book_3.txt', encoding="utf8") as file:
+    book_3 = file.read()
+
+# ----------------------------------------------------------------
 
 ari_scale = {
      1: {'ages':   '5-6', 'grade_level': 'Kindergarten'},
@@ -25,5 +32,72 @@ ari_scale = {
     13: {'ages': '17-18', 'grade_level':   '12th Grade'},
     14: {'ages': '18-22', 'grade_level':      'College'}
 }
+
+# ----------------------------------------------------------------
+
+character_count = 0
+word_count = 0
+sentence_count = 0
+
+# ----------------------------------------------------------------
+
+# for character in book:
+#     character_count = character_count + 1
+#     if character == ' ':
+#         word_count = word_count + 1
+#     if character == '.':
+#         sentence_count = sentence_count + 1
+
+# ----------------------------------------------------------------
+
+
+# for character in book_2:
+#     character_count = character_count + 1
+#     if character == ' ':
+#         word_count = word_count + 1
+#     if character == '.':
+#         sentence_count = sentence_count + 1
+
+# ----------------------------------------------------------------
+
+
+for character in book_3:
+    character_count = character_count + 1
+    if character == ' ':
+        word_count = word_count + 1
+    if character == '.':
+        sentence_count = sentence_count + 1
+
+# ----------------------------------------------------------------
+
+
+print(f'character count = {character_count}\nword count = {word_count}\nsentence count = {sentence_count}\n')
+
+# ----------------------------------------------------------------
+
+
+def ari():
+    ari = 4.71*(character_count / word_count) + 0.5*(word_count/sentence_count) - 21.43
+    return ari
+    
+def get_decimal(ari):
+    return float( '0.' + str(ari).split('.')[1] )
+
+# print(ari())
+# print(get_decimal(ari()))
+
+ari = float(ari() - get_decimal(ari()))
+# print(ari)
+
+if ari in ari_scale:
+    ari = ari
+else:
+    ari = 14
+
+
+print(f"The ARI for This book is {ari} This corresponds to a {ari_scale[ari]['grade_level']} Grade level of difficulty that is suitable for an average person {ari_scale[ari]['ages']} years old.")
+
+
+# ----------------------------------------------------------------
 
 
