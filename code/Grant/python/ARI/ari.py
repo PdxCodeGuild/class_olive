@@ -51,22 +51,22 @@ sentence_count = 0
 # ----------------------------------------------------------------
 
 
-# for character in book_2:
-#     character_count = character_count + 1
-#     if character == ' ':
-#         word_count = word_count + 1
-#     if character == '.':
-#         sentence_count = sentence_count + 1
-
-# ----------------------------------------------------------------
-
-
-for character in book_3:
+for character in book_2:
     character_count = character_count + 1
     if character == ' ':
         word_count = word_count + 1
     if character == '.':
         sentence_count = sentence_count + 1
+
+# ----------------------------------------------------------------
+
+
+# for character in book_3:
+#     character_count = character_count + 1
+#     if character == ' ':
+#         word_count = word_count + 1
+#     if character == '.':
+#         sentence_count = sentence_count + 1
 
 # ----------------------------------------------------------------
 
@@ -86,7 +86,7 @@ def get_decimal(ari):
 # print(ari())
 # print(get_decimal(ari()))
 
-ari = float(ari() - get_decimal(ari()))
+ari = float(ari() - get_decimal(ari())) + 1
 # print(ari)
 
 if ari in ari_scale:
