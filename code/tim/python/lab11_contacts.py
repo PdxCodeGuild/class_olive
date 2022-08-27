@@ -30,8 +30,6 @@ for person in lines:
     # Adds the contact dictionary to the full list of contacts
     visitors.append(visitor)
 
-# print(contacts)
-
 ## Version 2 - Implement a CRUD REPL
 
 # Create a user
@@ -52,8 +50,7 @@ def create():
 # Write the change by adding it to the full contact list
 def write(visitor):
     visitors.append(visitor)
-    # print(visitors)
-
+    
 # Retrieve a user
 def read():
     name = input("Enter the name of the visitor you are searching for: ").lower()
@@ -108,6 +105,22 @@ def list_visitors():
         print(f"{counter} {visitor['name']}, {visitor['age']}, {visitor['job']}\n".title())
         counter += 1
 
+# Exit and save changes
+def exit():
+    # Data to export starts with headers saved earlier
+    output_data = f"{headers}\n"
+    
+    # Loops through each visitor and adds them to a string for export
+    for visitor in visitors:
+        output_data = output_data + f"{visitor['name']},{visitor['age']},{visitor['job']}\n"
+    
+    print(output_data)
+    
+    # Write to output csv
+    with open('lab11_output.csv', 'w') as file:
+        file.write(output_data)
+    print('Visitor list saved.  Goodbye.')    
+    quit()
 
 def itsaunixsystem():
     
@@ -117,6 +130,7 @@ def itsaunixsystem():
         2: Retrieve a visitor's information                     5: Remove a visitor / Feed the T-Rex
         3: Update a visitor's information                       6: List current visitors
         
+        7: Exit and save changes
         Choice: """)
         
         if choice == '1':
@@ -132,6 +146,7 @@ def itsaunixsystem():
                 print("Ah ah ah, you didn't say the magic word!")
         if choice == '6':
             list_visitors()
+        if choice == '7':
+            exit()
 
-
-itsaunixsystem()            
+itsaunixsystem()   
