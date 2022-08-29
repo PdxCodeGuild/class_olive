@@ -46,6 +46,8 @@ def make_character():
     contacts.append(return_dict.copy())
 
 def get_character():
+    for sheet in contacts:
+        print(f'{sheet["name"]}')
     character = input('Which character?\n>: ')
     for sheet in contacts:
         if character == sheet['name']:
@@ -66,6 +68,23 @@ def update_character():
             sheet[user_input_key] = user_input_choice
             break
 
+def destroy_character():
+    character = get_character()
+
+    for i, person in enumerate(contacts):
+        if person['name'] == character:
+            contacts.pop(i)
+
+def list_characters():
+    for sheet in contacts:
+        print(f'''
+        Name: {sheet['name']}
+        Class: {sheet['class']}
+        Alignment: {sheet['alignment']}
+        ''')
+
+        
+
     
 
 
@@ -73,9 +92,11 @@ def update_character():
 while True:
     user_input_main = input(f'''
     Enter the number of what you would like to do?
-    1. Create a character.
+    1. Create character.
     2. Retrieve character.
-    3. Update a character.
+    3. Update character.
+    4. DESTROY CHARACTER.
+    5. List all characters.
     >: ''')
 
     if user_input_main == '1':
@@ -86,5 +107,11 @@ while True:
     
     elif user_input_main == '3':
         update_character()
+    
+    elif user_input_main == '4':
+        destroy_character()
+
+    elif user_input_main == '5':
+        list_characters()
 
     print('DEBUG:', contacts)
