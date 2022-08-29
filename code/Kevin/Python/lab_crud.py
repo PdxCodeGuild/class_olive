@@ -37,7 +37,7 @@ for x in range(int(len(get_dict_values)/3)):
     loop_counter += 1
     contacts.append(get_contacts_dict.copy())
 
-print(contacts, 'contacts')
+# print(contacts, 'contacts')
 
 def make_character():
     return_dict = {}
@@ -64,7 +64,7 @@ def update_character():
     user_input_key = input(f'Choose one to update.\n{get_dict_keys}').lower()
     user_input_choice = input(f'Enter new data for {user_input_key}.\n>: ')
     for sheet in contacts:
-        if sheet[user_input_key] == character:
+        if sheet['name'] == character:
             sheet[user_input_key] = user_input_choice
             break
 
@@ -114,4 +114,20 @@ while True:
     elif user_input_main == '5':
         list_characters()
 
-    print('DEBUG:', contacts)
+    # print('DEBUG:', contacts)
+
+
+
+
+    csv_output_str = get_dict_keys[0] + ',' + get_dict_keys[1] + ',' + get_dict_keys[2] + '\n'
+
+    for sheet in contacts:
+        csv_output_str += sheet[get_dict_keys[0]] + ',' + sheet[get_dict_keys[1]] + ',' + sheet[get_dict_keys[2]] + '\n'
+
+
+    print(csv_output_str)
+
+
+
+    with open('contacts_crud.csv', 'w') as file:
+        file.write(csv_output_str)
