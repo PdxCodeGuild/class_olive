@@ -1,3 +1,6 @@
+import csv
+
+
 with open('contactsforinput.csv', 'r') as file:
     raw_csv = (file.read().split('\n'))
     print(raw_csv)
@@ -13,7 +16,7 @@ for items in range(1,len(raw_csv)):
     file_values_to_input = raw_csv[items].split(',')
     file_values_in_dictionary = dict(zip(header_to_keys,file_values_to_input))
     csv_workinprogress.append(file_values_in_dictionary)
-    print(csv_workinprogress)
+    #print(csv_workinprogress)
 
 def create():
     name = input("Name of new lead: ")
@@ -72,8 +75,16 @@ def list_of_all():
     counter = 1
 
     for contact in csv_workinprogress:
-        print(f"{counter} {contact['name']}, {contact['favorite fruit']} {contact['favorite color']}\n")
+        print(f"{counter} {contact['name']}, {contact['favorite fruit']}, {contact['favorite color']}\n")
         counter += 1
+
+def save_to():
+
+    data_to_save = f"Name,Favorite Fruit,Favorite Color\n"
+    for data in csv_workinprogress:
+        data_to_save += f"{data['name']},{data['favorite fruit']},{data['favorite color']}\n"
+
+    return data_to_save
 
 def main_menu():
 
@@ -99,10 +110,14 @@ def main_menu():
         elif user_options == '5':
             list_of_all()
         else:
-            finalcsv = str(csv_workinprogress)
+
+            finalcsv = save_to()
+            
             with open('finalcontacts.csv', 'w') as file:
                 file.write(finalcsv)
+            
             print('Thanks for Using Our CRUDL')
+            
             break
 
 main_menu()

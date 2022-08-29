@@ -1,1 +1,4 @@
-[{'name': 'robert', 'favorite fruit': 'pineapple', 'favorite color': 'blue'}, {'name': 'shirley', 'favorite fruit': 'mango', 'favorite color': 'purple'}, {'name': 'mark', 'favorite fruit': 'kiwi', 'favorite color': 'black'}]
+Name,Favorite Fruit,Favorite Color
+robert,coconuts,blue
+mark,kiwi,black
+Xiang,durian,blue
