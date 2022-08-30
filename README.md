@@ -51,7 +51,7 @@ TAs:
 | Lab 07     | [Rot 13](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/11%20Rot%20Cipher.md)                 | 27 Aug   |
 | Lab 14     | [ARI](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/14%20ARI.md)                             | 28 Aug   |
 | Lab 11     | [Contact List](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/17%20Contact%20List.md)         | 30 Aug   |
-| Lab 14     | [ATM](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/17%20Contact%20List.md)                             | 05 Sep   |
+| Lab 14     | [ATM](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/14%20ATM.md)                             | 05 Sep   |
 | Lab 19     | [Dad Joke API](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/10%20Dad%20Joke%20API.md)       | 06 Sep   |
 | Lab 15     | [Quotes API](https://github.com/PdxCodeGuild/class_olive/blob/main/1%20Python/labs/18%20Quotes%20API.md)             | 07 Sep   |
 | Final      | [Mini Capstone](https://github.com/PdxCodeGuild/class_australian_shepherd/blob/main/1%20Python/labs/MiniCapstone.md)               | 08 Sep   |
