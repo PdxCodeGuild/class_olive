@@ -1,48 +1,60 @@
 # Lab 12: ATM
 
-balance = 0   # Can't get it to work without this variable here, but this isn't right.  Figure out.
+transactions = []
 
 class ATM:
-    def __init__(self, balance):
-        self.balance = balance
-        # pass
+    def __init__(self):
+        self.balance = 0
+        self.interest_rate = 0.1
 
     def check_balance(self):
         # Returns account balance
         balance = self.balance 
         return balance
-        print(self.balance)
-        pass
-
+        
     def deposit(self, amount):
-        # deposits he given amount to the account
-        print(self.balance)
-        self.balance += amount
-        print(self.balance)
-        # pass
-
+        # Deposits the given amount to the account as long as it is a positive number, returning True.
+        if amount > 0:            
+            self.balance += amount
+            transactions.append(f"Deposited - ${amount}. New balance - ${self.balance}.")
+            return True
+        else:
+            return False
+        
     def check_withdrawal(self, amount):
-        # returns true if the withdrawn amount won't put the account in the negative
-        pass
+        # Returns True if the withdrawn amount won't put the account in the negative
+        if amount < self.balance:
+            return True
+        else:
+            return False
 
     def withdraw(self, amount):
-        # withdraws the amount from the account and returns the amount
-        pass
+        # Withdraws the amount from the account and returns the amount
+        self.balance -= amount
+        print(f"New balance - ${self.balance}.")
+        transactions.append(f"Withdrew - ${amount}. New balance - ${self.balance}.")
+
 
     def calc_interest(self):
-        # returns the amount of interest calculated on the account
-        pass
+        # Returns the amount of interest calculated on the account
+        interest = self.balance * self.interest_rate
+        print(interest)
+        return interest
 
+    def print_transactions(self):
+        for transaction in transactions:
+            print(transaction)
 
-atm = ATM(balance)  # create an instance of our class
-print('Welcome to the ATM')
+atm = ATM()  # Create an instance of our class
+print("Welcome to the ATM where all the finances are made up and the money doesn't matter!")
 
 menu_options = {
     '1': 'Balance',
     '2': 'Deposit',
     '3': 'Withdraw',
     '4': 'Interest',
-    '5': 'Exit'
+    '5': 'Transactions',
+    '6': 'Exit'
 }
 
 while True:
@@ -55,12 +67,12 @@ while True:
     command = menu_options.get(command)
 
     if command == 'Balance':
-        balance = atm.check_balance()  # call the check_balance() method
-        print(f'Your balance is ${balance}')
+        balance = atm.check_balance()  # Call the check_balance() method
+        print(f'Your balance is - ${balance}')
 
     elif command == 'Deposit':
         amount = float(input('How much would you like to deposit? '))
-        success = atm.deposit(amount)  # call the deposit(amount) method
+        success = atm.deposit(amount)  # Call the deposit(amount) method
         if not success:
             print("Deposit amount must be a positive number.")
         else:
@@ -74,13 +86,17 @@ while True:
             print('Insufficient funds')
         else:
             atm.withdraw(amount)
-            print(f'Withdrew ${amount}')
+            print(f'Withdrew - ${amount}')
 
     elif command == 'Interest':
-        amount = atm.calc_interest()  # call the calc_interest() method
+        amount = atm.calc_interest()  # Call the calc_interest() method
         atm.deposit(amount)
         print(f'Accumulated ${amount} in interest')
 
+    elif command == 'Transactions':
+        transactions = atm.print_transactions()
+        print(f'End of transaction log.')
+    
     elif command == 'Exit':
         print("Goodbye!")
         break
