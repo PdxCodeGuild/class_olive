@@ -1,26 +1,39 @@
+'''
+Program for ???
+'''
+
+#Im
+import time
+
+
 class ATM:
     def __init__(self):
-        pass
+        self.balance = 0
 
     def check_balance(self):
         # Returns account balance
-        pass
+        return self.balance
 
     def deposit(self, amount):
         # deposits he given amount to the account
-        pass
+        if amount >= 0.01:
+            self.balance += amount
+            return True
+        else:
+            return False
 
     def check_withdrawal(self, amount):
-        # returns true if the withdrawn amount won't put the account in the negative
-        pass
+        if amount > self.balance:
+            return False
+        else:
+            return True
 
     def withdraw(self, amount):
-        # withdraws the amount from the account and returns the amount
-        pass
+        self.balance -= amount
 
     def calc_interest(self):
-        # returns the amount of interest calculated on the account
-        pass
+        interest = round((self.balance * 1.0003) - self.balance, 6)
+        return interest
 
 
 atm = ATM()  # create an instance of our class
@@ -45,34 +58,34 @@ while True:
 
     if command == 'Balance':
         balance = atm.check_balance()  # call the check_balance() method
-        print(f'Your balance is ${balance}')
+        print(f'Your balance is ${balance}');time.sleep(1.5)
 
     elif command == 'Deposit':
         amount = float(input('How much would you like to deposit? '))
         success = atm.deposit(amount)  # call the deposit(amount) method
         if not success:
-            print("Deposit amount must be a positive number.")
+            print("Deposit amount must be at least 1 cent.");time.sleep(1.5)
         else:
-            print(f'Deposited ${amount}')
+            print(f'Deposited ${amount}');time.sleep(1.5)
 
     elif command == 'Withdraw':
         amount = float(input('How much would you like to withdraw?\n> $'))
         success = atm.check_withdrawal(amount)
 
         if not success:
-            print('Insufficient funds')
+            print('Insufficient funds');time.sleep(1.5)
         else:
             atm.withdraw(amount)
-            print(f'Withdrew ${amount}')
+            print(f'Withdrew ${amount}');time.sleep(1.5)
 
     elif command == 'Interest':
         amount = atm.calc_interest()  # call the calc_interest() method
         atm.deposit(amount)
-        print(f'Accumulated ${amount} in interest')
+        print(f'Accumulated ${amount} in interest');time.sleep(1.5)
 
     elif command == 'Exit':
-        print("Goodbye!")
+        print("Goodbye!");time.sleep(1.5)
         break
 
     else:
-        print('Command not recognized')
+        print('Command not recognized');time.sleep(1.5)
