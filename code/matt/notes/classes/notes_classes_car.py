@@ -41,5 +41,3 @@ neighbors_car = Car(neighbors_make, neighbors_model, neighbors_name)
 print(f"\n{neighbors_car.driver} drives a {neighbors_car.make} {neighbors_car.model}")
 print(f"\n{your_car.driver} drives a {your_car.make} {your_car.model}")
 
-
-print('hello world')
