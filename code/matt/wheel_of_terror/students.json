@@ -1,1 +1,22 @@
-[{"name": "Kevin", "turns": 7}, {"name": "Lauren", "turns": 6}, {"name": "Nathan", "turns": 7}, {"name": "Robert", "turns": 7}, {"name": "Tim", "turns": 7}]
+[
+    {
+        "name": "Kevin",
+        "turns": 7
+    },
+    {
+        "name": "Lauren",
+        "turns": 8
+    },
+    {
+        "name": "Nathan",
+        "turns": 7
+    },
+    {
+        "name": "Robert",
+        "turns": 7
+    },
+    {
+        "name": "Tim",
+        "turns": 7
+    }
+]

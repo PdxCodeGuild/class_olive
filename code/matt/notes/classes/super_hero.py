@@ -1,6 +1,5 @@
 import random
 
-
 class SuperHero:
     def __init__(self, name, health, damage, defense):
         self.name = name
@@ -64,5 +63,4 @@ while True:
     
 
 
-'abc'.upper()
 

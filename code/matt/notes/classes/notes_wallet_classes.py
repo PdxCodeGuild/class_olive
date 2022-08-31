@@ -29,3 +29,7 @@ if wallet.spend_money(cost) == True:
     print(f"\nYou spent ${wallet.money_spent} and have a remaining balance of ${wallet.balance}")
 else:
     print(f"\nYou tried to spend ${cost}, but you only have ${wallet.balance} available")
+
+
+
+print('hello'.upper())
