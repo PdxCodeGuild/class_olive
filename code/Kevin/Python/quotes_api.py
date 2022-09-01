@@ -33,11 +33,11 @@ keyword_choices = ['time','architecture','nature','relationship','profession','s
 
 
 def stay_or_go():
-    user_input = input('Return to start? Or go back to your page?\n1. Start\n2. Return to page\n>: ')
+    user_input = input('Return to start? Or go back to your page?\n1. Return to start.\n2. Return to page.\n>: ')
     if user_input == '1':
-        return True
-    elif user_input == '2':
         return False
+    elif user_input == '2':
+        return True
 
 
 while True:
@@ -76,10 +76,11 @@ while True:
                 page += 1
                 continue
             user_index_input = int(user_index_input)
+            user_index_input -= 1
             print(f'''{api_data_keyword['quotes'][user_index_input]['body']}
             {api_data_keyword['quotes'][user_index_input]['author']}''')
             time.sleep(3)
-            if stay_or_go == False:
+            if stay_or_go() == False:
                 break
         if user_input_prompt == '3':
             break
