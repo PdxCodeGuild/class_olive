@@ -6,7 +6,7 @@ CURRENTLY MESSY. REPL starts on line 43.
 import requests, json, time, random
 
 page = 1
-keyword = 'time'
+keyword = 'chungus'
 
 url_random = 'https://favqs.com/api/qotd/'
 url_keyword = f'https://favqs.com/api/quotes?page={page}&filter={keyword}'
@@ -67,6 +67,10 @@ while True:
             api_response_keyword = requests.get(url_keyword, headers = {'Authorization': 'Token token="855df50978dc9afd6bf86579913c9f8b"'})
             # print(api_response_keyword)
             api_data_keyword = json.loads(api_response_keyword.text)
+            if api_data_keyword['quotes'][0]['body'] == 'No quotes found':
+                print('No quotes with this keyword')
+                time.sleep(1.5)
+                break
             user_index_input = input(f'''
     There are {len(api_data_keyword['quotes'])} quotes on page {api_data_keyword['page']}.
     Which quote would you like to see?
