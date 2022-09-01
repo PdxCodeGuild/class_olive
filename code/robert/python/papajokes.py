@@ -22,7 +22,7 @@ while True:
         pages = range(0,int(data['total_pages']))
         total_jokes = range(0,int(data['total_jokes']))
         jokenumber = int(input(f"Select a random number for your joke (0 - {data['total_jokes']}) or any letter for a new search: "))
-        if jokenumber < 20:
+        if jokenumber >-1 and jokenumber < 20:
             print(data['results'][jokenumber]['joke'])
         elif jokenumber > 19 and jokenumber < 30:
             url_page = f"&page=2"
