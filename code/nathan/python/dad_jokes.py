@@ -18,28 +18,28 @@ while(True):
     elif choice == '2':
         counter = 0
         search_term = input("What do you want to search for? ")
-        response = requests.get(search_url + search_term, headers={"Accept":"application/json"})
+        search_response = requests.get(search_url + search_term, headers={"Accept":"application/json"})
         searching = True
         first_loop = False
     elif choice == '3':
         print("Goodbye")
         break
     elif choice == '4':
-        response = requests.get(search_url + search_term, headers={"Accept":"application/json"})
         searching = True
         counter += 1
     else:
         print("There was an error.")
         continue
-
-    data = json.loads(response.text)
+    
     if searching:
+        data = json.loads(search_response.text)
         if len(data['results']) > 0 and counter < data['total_jokes']:
             joke_words = data['results'][counter]['joke'].split(' ')
         else:
             print("No result")
             continue
     else:
+        data = json.loads(response.text)
         joke_words = data['joke'].split(' ')
 
     question = ''
