@@ -1,5 +1,6 @@
-import urllib.request, requests, json
+import urllib.request, requests, json, random, time
 from pprint import pprint
+
 
 #-------------------------------------------------------------------------------------------------#
 #convert unusable copy/paste txt file from internet into dictionary
@@ -41,6 +42,60 @@ def find_parks(state_or_state_code):
             state_code = state_or_state_code
         else:
             print("Error: state not found")
-    return call_api(f"parks?stateCode={state_code}")
+    data = call_api(f"parks?stateCode={state_code}")
+    return data
 
-print(find_parks("California"))
+def slow_print(str):
+    for letter in str:
+        print(letter, end="", flush=True)
+        time.sleep(.04)
+
+
+quotes = ["""
+Of all the paths you take in life, make sure a few of them are dirt. ~ John Muir
+ """,
+ """
+ I’d rather be in the mountains thinking of God, than in church thinking about the mountains. ~ John Muir
+ """,
+ """
+ In every walk with nature one receives far more than he seeks." ~ John Muir
+ """,
+ """
+ Thousands of tired, nerve-shaken, over-civilized people are beginning to find out 
+ that going to the mountains is going home; that wildness is a necessity. ~ John Muirs
+ """]
+
+
+
+slow_print(quotes[random.randint(0, 2)])
+time.sleep(1)
+print("""
+------------------------------------------------------------------------------------------------------
+                                    THIS LAND IS YOUR LAND..... SEE IT
+                                A JOURNEY IN SEEING ALL THE NATIONAL PARKS
+
+Select an option from the following menu:
+
+        1. See the parks you've been to                     2. See the parks you haven't been to
+        3. Plan a trip                                      4. Exit
+
+------------------------------------------------------------------------------------------------------
+""")
+
+# # for state in dict_states.keys():
+# #     parks_in_state = find_parks(state)['data']
+# #     print()
+# #     print(f"{state.upper()}\n")
+# #     for park in parks_in_state:
+# #         if park['designation'] == 'National Park':
+# #             print(f"\t{park['fullName']}")
+# # print()
+
+
+# # list_of_parks = data['data']
+# # # print(list_of_parks[0])
+# # for park in list_of_parks:
+# #     if park['designation'] == 'National Park':
+# #         print(park['fullName'])
+# with open('results.txt', 'w') as file:
+#             file.write(str(data))
