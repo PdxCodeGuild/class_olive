@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap');
+
 *{
     padding: 0;
     margin: 0;
@@ -73,3 +75,7 @@ body{
     height: 2.5rem;
 }
 
+
+#id_12{
+    font-family: 'Qwitcher Grypen', cursive;
+}
