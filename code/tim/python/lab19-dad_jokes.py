@@ -61,7 +61,7 @@ for joke in data['results']:
 
 
 
-# print(f"""
+## print(f"""
 # Current page {data['current_page']}  
 # Next page - {data['next_page']} 
 # Total pages - {data['current_page']}  """)
