@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+
+
 *{
     padding: 0;
     margin: 0;
@@ -5,10 +9,55 @@
 }
 
 body{
+    background-image: url(churchofvows.png);
+    background-repeat: no-repeat;
     color: antiquewhite;
     background-color: dimgray;
 }
 
-p.b {
+q{
     font-style: italic;
     }
+
+.div_1{
+    color: antiquewhite;
+    text-align: center;
+    font-family: 'Libre Baskerville', serif;
+}
+
+#dog{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+}
+
+
+li{
+    list-style: none;
+}
+
+li:before{
+    content: url(dew.png);
+    display: inline-block;
+    vertical-align: -1rem;
+    
+
+}
+
+h4{
+    margin-bottom: 1rem;
+}
+
+
+a:link{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+    font-size: 120%;
+}
+a{
+    color: blue;
+    border: black, 1rem;
+}
