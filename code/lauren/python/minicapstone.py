@@ -4,7 +4,7 @@ import webbrowser
 from tkinter import *
 from config import client_id
 from config import client_secret
-# p
+
 
 sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id=client_id, client_secret=client_secret))
                                                            
