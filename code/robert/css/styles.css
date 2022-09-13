@@ -88,6 +88,8 @@ a:link {
     text-decoration: underline;
   }
 
-  img {border: 3px solid black}
+   img {border: 3px solid black;
+    border-radius: 2rem;
+  }
 
  
