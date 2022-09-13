@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid white; */
+}
+
+body{
+    background-color: #1a1a1a;
+    color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 100vh;
+}
+
+#title{
+    color: rgba(255, 0, 0, 0.5);
+    text-align: center;
+
+    font-size: 1.5rem;
+}
+
+#hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#hero-left{
+    text-align: center;
+}
+
+#trogdor{
+    width: 10rem;
+}
+
+
+
+img{
+    border: 5px solid red;
+}
+
+
+button:hover{
+    background-color: black;
+    color: white;
+}

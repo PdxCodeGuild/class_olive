@@ -5,6 +5,7 @@ from tkinter import *
 from config import client_id
 from config import client_secret
 
+
 sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id=client_id, client_secret=client_secret))
                                                            
 key_dict = {0: ["C", "B#"], 1: ["C#", "Db"], 2: ["D"], 3:["D#", "Eb"],
