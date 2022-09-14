@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Shojumaru&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
 
 
 
@@ -8,7 +9,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px solid brown;
+    /* border: 1px solid brown; */
 }
 
 body{
@@ -41,15 +42,29 @@ body{
     color: rgb(115, 0, 0);
 }
 
+.party{
+    display: none;
+}
+
+
 #Manolios{
     /* display: flex; */
+    
     width: 100%;
 }
 
+
 a:link{
     text-decoration: none;
-}
-
-a:visited{
     color: black;
 }
+
+a:hover{
+    text-decoration: underline;
+    color: blue;
+    font-size: 5rem;
+}
+
+/* a:visited{
+    color: black;
+} */
