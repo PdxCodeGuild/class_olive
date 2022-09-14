@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shojumaru&display=swap');
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid brown;
+}
+
+body{
+    text-align: center;
+    background-color:bisque;
+    /* border: 1px solid brown; */
+}
+
+
+#header{
+    font-size: 1.5rem;
+    font-family: 'Shojumaru', cursive;
+    color: #1a1a1a;
+}
+
+.that_one_guy{
+    width: 2.5rem;
+}
+.that_other_guy{
+    width: 2.5rem;
+}
+
+#banner_image{
+    width: 23rem;
+}
+
+#intro_text{
+    font-size: 1.5rem;
+    font-family: 'Creepster', cursive;
+    color: rgb(115, 0, 0);
+}
+
+#Manolios{
+    /* display: flex; */
+    width: 100%;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+a:visited{
+    color: black;
+}
