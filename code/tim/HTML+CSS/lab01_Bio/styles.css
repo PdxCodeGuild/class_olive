@@ -20,13 +20,13 @@ h2{
     text-align: center;
 }
 
-h3{
+p{
     background-color: #1786a9;
     color: white;
     margin-left: 2rem;
     padding: 0.5rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    text-align: left
+    text-align: center;
 }
 
 #bio_info{
@@ -56,6 +56,7 @@ ul {
     margin-left: 2rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
+    background: transparent;
 }
 
 a {
