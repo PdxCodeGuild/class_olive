@@ -1,0 +1,10 @@
+@media screen and (max-width: 1440px) {
+    .article img {
+        width: 15rem;
+    }
+
+    #what_is_go_hunt {
+        margin: 10rem;
+    }
+
+}
