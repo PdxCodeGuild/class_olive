@@ -37,11 +37,24 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        padding-left: 20rem;
-        padding-right: 20rem;
-        width: 100vw;
+        min-width: 60vw;
+        max-width: 70vw;
     }
 
+    .article{
+        height: 20rem;
+        width: 22rem;
+    }
+
+    .img_article{
+        height: 17rem;
+        width: 22rem;
+    }
+
+    .article_name{
+        height: 3rem;
+    }
+    
     /* ##### Bottom Bar ##### */
     #bottom_bar{
         display: flex;
