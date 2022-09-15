@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=".\static\styles.css">
+    <link rel="stylesheet" href=".\static\desktop_styles.css">
+    <link rel="stylesheet" href=".\static\bigger_desktop_styles.css">
+    <title>Flask Blog</title>
+</head>
+<body>
+    <header>
+        <nav id="header_nav">
+            <a href="/">Home</a>
+            <a href="http://127.0.0.1:5000/about">About</a>
+            <a href="http://127.0.0.1:5000/contact">Contact</a>
+        </nav>
+        <h1 id="title">This is a blog generated from flask</h1>
+    </header>
+</br>
+    <h1 id="subtitle">Hello from the about page</h1>
+
+    <div id="side_nav_plus_section">
+
+        <aside>
+            <nav>
+                <a href="/"><img src=".\static\home.png" alt="home page link"></a>
+                <a href="http://127.0.0.1:5000/about"><img src=".\static\person.png" alt="about page link"></a>
+                <a href="http://127.0.0.1:5000/contact"><img src=".\static\phone.png" alt="contact page link"></a>
+            </nav>
+        </aside>
+
+        <section>
+            <p>{{ about_me }}</p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>This site is trademark of Nate LLC</p>
+    </footer>
+
+</body>
+</html>
