@@ -47,8 +47,12 @@ ul {
     padding: 0.5rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: medium; 
-    text-align: left;
+    text-align: center;
     width: 10rem
+}
+
+li{
+    text-align: center;
 }
 
 #quote{
