@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+</head>
+<body>
+    <h1>You made it to the to contact page</h1>
+
+    <h3>The random number is: {{number}}</h3>
+
+
+    {% if number < 50 %}
+        <p>The number is less than 50</p>
+    {% elif number < 70 %}
+        <p>The number is more than 50 but less than 70</p>
+    {% else %}
+        <p>The number is > 71</p>
+    {% endif %}
+
+
+
+
+</body>
+</html>
