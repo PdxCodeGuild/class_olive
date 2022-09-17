@@ -1,0 +1,63 @@
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: steelblue;
+    border: 1px solid black;
+    
+}
+
+
+#header_div{
+    border: 1px solid red;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    height: 4rem;
+    width: 100%;
+}
+
+#header{
+    position: relative;
+    right: 2rem;
+    
+}
+    
+#half_body{
+    border: 1px solid blueviolet;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+#side_nav{
+    border: 1px solid pink;
+    display: flex;
+    flex-direction: column;
+    width: 7rem;
+    padding: 0.5rem;
+}
+
+#main_article{
+    border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+    height: 30rem;
+    padding: .4rem;
+    font-size: small;
+}
+
+#main_article *{
+    margin: .1rem;
+}
+
+#footer{
+    display: flex;
+    justify-content: center;
+}
