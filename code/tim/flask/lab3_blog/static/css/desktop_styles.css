@@ -1,0 +1,6 @@
+@media only screen and (min-width: 1000px){
+    *{
+        background-color: purple;
+        font-size: 2rem;
+        border: 2px solid red;
+    }

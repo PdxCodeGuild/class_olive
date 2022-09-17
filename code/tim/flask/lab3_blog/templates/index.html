@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/desktop_styles.css') }}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+        </style>
+    <title>Blog</title>
+</head>
+<body>
+    <div class="nav_bar">
+        <div class="nav_menu">
+            <img id="img_avatar" alt="avatar" src="{{ url_for('static', filename='images/avatar.png') }}">
+            <br>
+            <h2>Lauren Ipsum's Blog</h2>
+            <br><br>
+            <div id="links">
+                <a href="/">Home</a>
+                <a href="/about">About Me</a>
+                <a href="/contact">Contact</a>
+            </div>
+            
+        </div>
+    </div>
+    <div class="blog_articles">
+        {% for post in posts %}
+            <div class="article_card">
+                <img class="blog_img" alt="clerks 3" src={{post.image}}>
+                <div class="article_title">
+                    <p>{{post.title}}</p>
+                </div>
+                <p>{{post.author}}</p>
+                <p>{{post.date}}</p>
+                <p>Read More</p>
+            </div>    
+        {% endfor %}    
+        
+        
+    </div>
+</body>
+</html>
