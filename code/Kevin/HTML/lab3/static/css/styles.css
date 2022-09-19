@@ -26,7 +26,19 @@
     right: 2rem;
     
 }
-    
+
+.link{
+    margin: .5rem;
+}
+
+
+.hr_border{
+    border-color: solid black;
+    border-top: 1rem;
+    border-radius: .5rem;
+}
+
+
 #half_body{
     border: 1px solid blueviolet;
     display: flex;
@@ -48,7 +60,7 @@
     display: flex;
     flex-direction: column;
     width: 25rem;
-    height: 30rem;
+    height: auto;
     padding: .4rem;
     font-size: small;
 }
@@ -58,6 +70,17 @@
 }
 
 #footer{
+    border: solid red;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+#footer_link{
+    display: flex;
+    align-items: flex-end;
+}
+
+#date{
+    align-self: flex-end;
 }
