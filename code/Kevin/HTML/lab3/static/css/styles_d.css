@@ -1,2 +1,84 @@
-@media only screen and (min-width: 720px)
+@media only screen and (min-width: 1280px){
+
+
+*{
+    background-color: red;
+
+}
+
+#header{
+    font-size: 170%;
+    
+}
+
+
+#title_and_author{
+    padding-bottom: 1rem;
+}
+
+.hr_border{
+    border: 0;
+    border-top: 0.35rem solid black;
+    padding-bottom: 2rem;
+}
+
+#side_nav{
+    font-size: 170%;
+}
+
+
+
+
+
+#main_article{
+    font-size: 150%;
+}
+
+#footer{
+    font-size: 150%;
+}
+
+}
+
+@media only screen and (min-width: 1920px){
+
+
+    *{
+        background-color: green;
+    
+    }
+    
+    #header{
+        font-size: 200%;
+        
+    }
+
+
+    #title_and_author{
+        padding-bottom: 1rem;
+    }
+    
+    .hr_border{
+        border: 0;
+        border-top: 0.35rem solid black;
+        padding-bottom: 1rem;
+    }
+
+
+    
+    #side_nav{
+        font-size: 200%;
+    }
+    
+    
+    #main_article{
+        font-size: 175%;
+    }
+    
+    #footer{
+        font-size: 175%;
+    }
+    
+    }
+    
 
