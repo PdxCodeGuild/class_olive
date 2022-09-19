@@ -1,0 +1,23 @@
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    /* background-color: aquamarine; */
+    border: 2px solid black;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+    /* background-color: chocolate; */
+
+}
+.post {
+    border: 2px solid red;
+}
