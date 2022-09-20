@@ -1,0 +1,22 @@
+@media only screen and (min-width: 700px) {
+
+    img {
+        margin: 1.5rem 0rem 4rem 0rem;
+        width: 30rem;
+    }
+    
+
+    aside {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        width: 4rem;
+        margin: 1rem;
+        margin-right: 2rem;
+    }
+
+    aside img {
+        width: 3rem;
+    }
+
+}
