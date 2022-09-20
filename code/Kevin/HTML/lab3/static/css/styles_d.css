@@ -7,16 +7,16 @@
 } */
 
 
-#header_div{
-    /* border: 1px solid red; */
+/* #header_div{
+    border: 1px solid red;
     display: flex;
-    align-content: center;
     flex-direction: column;
     height: 10rem;
     padding-top: 0.35rem;
     margin-bottom: 1rem;
+    position: relative; left:10rem;
     
-}
+} */
 
 #header{
     /* border: 1px solid blue; */
