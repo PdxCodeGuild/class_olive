@@ -1,118 +1,152 @@
 @media only screen and (min-width: 1000px){
-   /* Whole Page */
-   *{
+/* Whole Page */
+*{
     color: black;
     font-family: 'Lato', sans-serif;
     margin:0;
     padding:0;
-    border:0;
-}    
-   
-   body{
-        display: flex;
-        flex-direction: row;
-    }
+    background: whitesmoke;
+}
 
-  
+body{
+    display: flex;
+    flex-direction: row;
+    background: whitesmoke;
+}
 
-    /* Shared Text */
-    .headline{
-        display: flex;
-        margin-bottom: 0.5rem;
-        color: #3b9bdf;
-        font-weight: 300;
-        font-size: 3em;
-    }
+/* Shared Text */
+.headline{
+    display: flex;
+    margin-bottom: 0.5rem;
+    color: #3b9bdf;
+    font-weight: 300;
+    font-size: 3em;
+}
 
-    .author_date{
-        font-size: 1em;
-        /* font-weight: 300; */
-        
-    }
+.author_date{
+    font-size: 1em;
+}
 
-    /* Nav Bar */
-      .nav_bar{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        width: 15vw;
-        height: 100vh;
-        position: fixed;
-    }
-    
-    .avatar{
-        display: flex;
-        justify-content: center;
-        margin-top: 1rem;
-    }
-    
-    #img_avatar{
-        display: flex;
-        border-radius: 50%; 
-        width: 10rem;
-    }
+.article_text{
+    font-size: medium;
+}
 
-    .nav_menu{
-        display: flex;
-        flex-direction: column;
-    }
+.read_more_text{
+    font-size: 1em;
+}
 
-    #links{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        width: 15rem;
-        height: 7rem;
-    }
+/* Nav Bar */
+.nav_bar{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 15vw;
+    height: 100vh;
+    position: fixed;
+}
 
-    /* Main page */
-    .main{
-        background: whitesmoke;
-        display: flex;
-        flex-direction: column;
-        width: 85vw;
-        left: 15vw;
-        position:sticky;
-        /* border: 1px solid red; */
-    }
-    
-    .blog_articles{
-        align-items: flex-start;
-        margin-left: 2rem;
-        margin-top: 2rem;
-        margin-bottom: 2rem; 
-    }
+.avatar{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
 
-    .blog_img{
-        height: 15rem;
-        width: 15rem;
-    }
-    
-    .article_card{
-        /* width: 83vw; */
-    }
+#img_avatar{
+    display: flex;
+    border-radius: 50%; 
+    width: 10rem;
+}
 
-    .article_details{
-        /* width:83vw; */
-    }
+.nav_menu{
+    display: flex;
+    flex-direction: column;
+}
 
-    .card_author_date{
-        flex-direction: column;
-        justify-content:flex-start;
-        padding-bottom:7rem;
-    }
+#links{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 15rem;
+    height: 7rem;
+}
 
-    .read_more{
-        font-size: 1em;
-    }
+/* Main page */
+.main{
+    background: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    width: 1vw;
+    left: 15vw;
+    position:sticky;
+}
 
-    /* Footer */
-    .footer_bar{
-        display: flex;
-        flex-direction: row-reverse;
-        /* width: 85vw; */
-        /* left: 15vw; */
-        /* position:fixed; */
-        /* background: #313a46; */
-    }
+.blog_articles{
+    align-items: flex-start;
+    margin: 2rem;
+}
+
+.blog_img{
+    height: 15rem;
+    width: 15rem;
+}
+
+.article_card{
+    width: 82vw;
+}
+
+.article_details{
+    width:100%;
+}
+
+.card_author_date{
+    flex-direction: column;
+    justify-content:flex-start;
+    width:100%;
+}
+
+.fade{
+    width:100%;
+    height: 6em;
+    margin-top:0.5rem;
+    position: relative;
+    background: whitesmoke;
+}
+
+.fade:after {
+    content: "";
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 1.2em;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(245, 245, 245, 1) 50%);
+}
+
+.read_more{
+    font-size: 1em;
+    margin-right: 1.5rem;
+    width:100%;
+}
+
+/* Footer */
+.footer_bar{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    width: 84.8vw;
+}
+
+/* About Me */
+.about_me{
+    width: 85vw;
+    height: 95vh;
+    justify-content: flex-start;
+}
+
+/* Contact */
+.contact{
+    width: 85vw;
+    justify-content: flex-start;
+}}

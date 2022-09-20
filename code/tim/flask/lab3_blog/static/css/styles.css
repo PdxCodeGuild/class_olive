@@ -1,199 +1,237 @@
 @media (min-width: 300px) {
-    /* Whole Page */
-    *{
-        background: #313a46;
-        color: black;
-        font-family: 'Lato', sans-serif;
-        margin:0;
-        padding:0;
-        border:0;
-    }
+/* Whole Page */
+*{
+    background: #313a46;
+    color: black;
+    font-family: 'Lato', sans-serif;
+    margin:0;
+    padding:0;
+    border:0;
+}
 
-    body{
-        border:0;
-    }
+body{
+    border:0;
+}
+
+/* Shared Text */
+p{
+    background: transparent;
+    border:0;
+}
+
+h2{
+    background: transparent;
+    color: white;
+    font-weight: 200;
+}
+
+a{
+    background: transparent;
+    color: white;
+    font-size: small;
+    border:0;
+}
+
+.headline{
+    display: flex;
+    margin-bottom: 0.5rem;
+    color: #3b9bdf;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.author_date{
+    font-size: smaller;
+    background: whitesmoke;
+}
+
+.article_text{
+    background: whitesmoke;
+    color: black;
+    font-size: small;
+}
+.read_more_text{
+    color: #3b9bdf;
+    background: whitesmoke;
+    font-size: 1em;
+}
+
+.footer_text{
+    color: white;
+    background: transparent;
+    padding-right: 1rem;
+}
+
+/* Nav Bar */
+.nav_bar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    height: 15rem;
+    background: #313a46;
+    border:0;
+}
+
+.avatar{
+    display: flex;
+    justify-content: center;
+    background: transparent;
+}
+
+#img_avatar{
+    border-radius: 50%; 
+    width: 7rem;
+    border:0;
+}
+
+.nav_menu{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    background: transparent;
+    border: 0;
+}
+
+#links{
+    display: flex;
+    justify-content: space-evenly;
+    width: 99vw;
+    background: transparent;
+    border:0;
+}
+
+/* Main page */
+.main{
+    background: whitesmoke;
+}
+
+.blog_articles{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: fit-content;
+    padding-top: 1rem;
+    background: transparent;
+}
+
+.blog_img{
+    height: 7rem;
+    width: 7rem;
+    border-radius: 8%;
+    margin-right: 1rem;
+}
+
+.article_card{
+    display: flex;
+    flex-direction: row;
+    width: 90vw;
+    margin-bottom: 2rem;
+    background: transparent;
     
-    /* Shared Text */
-    p{
-        background: transparent;
-        border:0;
-    }
+}
 
-    h2{
-        background: transparent;
-        color: white;
-        font-weight: 200;
-    }
+.article_details{
+    display: flex;
+    flex-direction: column;
+    width:70vw;
+    background: whitesmoke;
+}
 
-    a{
-        background: transparent;
-        color: white;
-        font-size: small;
-        border:0;
-    }
+.card_author_date{
+    display: flex;
+    justify-content: space-between;
+    background: transparent;
+}
 
-    .headline{
-        display: flex;
-        margin-bottom: 0.5rem;
-        color: #3b9bdf;
-        font-weight: bold;
-        font-size: 1em;
-    }
+.module {
+    overflow: hidden;
+}
 
-    .author_date{
-        font-weight: 500;
-        font-size: 0.5em;
-        background: transparent;
-    }
+.fade{
+    position: relative;
+    height: 3.1em;
+    margin-top:0.5rem;
+    background: whitesmoke;
+}
 
-    .footer_text{
-        color: white;
-        background: transparent;
-        padding-right: 1rem;
-    }
+.fade:after {
+    content: "";
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 1.2em;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(245, 245, 245, 1) 50%);
+}
 
+.read_more{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.5em;
+    margin-top: 0.5rem;
+    background: whitesmoke;
+}
 
-    /* Nav Bar */
-    .nav_bar{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 100vw;
-        height: 15rem;
-        background: #313a46;
-        border:0;
-    }
-    
-    .avatar{
-        display: flex;
-        justify-content: center;
-        background: transparent;
-    }
+/* Footer */
+.footer_bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: fit-content;
+    width: 100vw;
+    background: #313a46;        
+}
 
-    #img_avatar{
-        border-radius: 50%; 
-        width: 7rem;
-        border:0;
-    }
+/* About Me */
+.about_me{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding-top: 2rem;
+    width: 95%;
+    background: whitesmoke;
+}
 
-    .nav_menu{
-        display: flex;
-        flex-direction: column;
-        justify-content:center;
-        align-items: center;
-        background: transparent;
-        border: 0;
-    }
+.about_card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    margin-bottom: 1rem;
+    background: whitesmoke;
+}
 
-    #links{
-        display: flex;
-        justify-content: space-evenly;
-        width: 99vw;
-        background: transparent;
-        border:0;
-    }
+/* Contact */
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding-top: 2rem;
+    width: 95%;
+    background: whitesmoke;
+}
 
+.contact_card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75vw;
+    margin-bottom: 1rem;
+    background: whitesmoke;
+}
 
-
-    /* Main page */
-    .main{
-        background: whitesmoke;
-    }
-
-    .blog_articles{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        height: fit-content;
-        padding-top: 1rem;
-        background: transparent;
-    }
-    
-    .blog_img{
-        height: 7rem;
-        width: 7rem;
-        border-radius: 8%;
-        margin-right: 1rem;
-    }
-    
-    .article_card{
-        display: flex;
-        flex-direction: row;
-        width: 90vw;
-        margin-bottom: 2rem;
-        background: transparent;
-        
-    }
-    
-    .article_details{
-        display: flex;
-        flex-direction: column;
-        width:70vw;
-        background: transparent;
-    }
-
-    .card_author_date{
-        display: flex;
-        justify-content: space-between;
-        padding-bottom:3rem;
-        background: transparent;
-    }
-
-    .read_more{
-        display: flex;
-        font-size: 0.5em;
-        background: transparent;
-    }
-
-    /* Footer */
-    .footer_bar{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        height: fit-content;
-        width: 100vw;
-        background: #313a46;        
-    }
-
-    /* About Me */
-    .about_me{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        height: 100vh;
-        padding-top: 1rem;
-        width: 90vw;
-        background: whitesmoke;
-    }
-
-    .about_card{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 75vw;
-        margin-bottom: 1rem;
-        background: whitesmoke;
-    }
-
-    /* Contact */
-    .contact{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        height: 100vh;
-        padding-top: 1rem;
-        background: whitesmoke;
-    }
-
-    .contact_card{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 90vw;
-        margin-bottom: 1rem;
-        background: transparent;
-    }
+.contact_links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 15rem;
+    color: black;
+    padding-top: 2rem;
+    background: whitesmoke;
+}}
