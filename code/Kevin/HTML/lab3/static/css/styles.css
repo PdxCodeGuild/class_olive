@@ -33,7 +33,9 @@
 #header{
     /* border: 1px solid blue; */
     height: 1.3rem;
-    width: 17rem
+    width: 18rem;
+    padding-left: 0.9rem;
+    
 }
 
 #header_img{
