@@ -19,7 +19,7 @@ posts = [
         'body': "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam id diam maecenas ultricies mi eget. Faucibus in ornare quam viverra orci sagittis eu volutpat odio. Risus feugiat in ante metus dictum at tempor commodo. Quam lacus suspendisse faucibus interdum posuere lorem ipsum. Risus nec feugiat in fermentum posuere urna nec tincidunt praesent. In eu mi bibendum neque egestas congue. Viverra maecenas accumsan lacus vel. Dui id ornare arcu odio ut sem nulla. Imperdiet dui accumsan sit amet nulla facilisi morbi tempus iaculis. Egestas dui id ornare arcu odio ut. Cras pulvinar mattis nunc sed blandit. Volutpat sed cras ornare arcu dui vivamus. Nulla pellentesque dignissim enim sit amet venenatis. Est lorem ipsum dolor sit amet consectetur adipiscing. Adipiscing commodo elit at imperdiet dui accumsan sit. Vivamus arcu felis bibendum ut tristique."
     }, 
     {
-        'title': "Clerks Animated Series Released!",
+        'title': "Animated Series Released!",
         'image': "https://comicvine.gamespot.com/a/uploads/square_medium/13/135098/6875582-clerkstas.jpg",
         'author': "Scott Mosier",
         'date': "5/31/00",

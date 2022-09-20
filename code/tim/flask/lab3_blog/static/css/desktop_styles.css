@@ -1,6 +1,118 @@
 @media only screen and (min-width: 1000px){
-    *{
-        background-color: purple;
-        font-size: 2rem;
-        border: 2px solid red;
+   /* Whole Page */
+   *{
+    color: black;
+    font-family: 'Lato', sans-serif;
+    margin:0;
+    padding:0;
+    border:0;
+}    
+   
+   body{
+        display: flex;
+        flex-direction: row;
+    }
+
+  
+
+    /* Shared Text */
+    .headline{
+        display: flex;
+        margin-bottom: 0.5rem;
+        color: #3b9bdf;
+        font-weight: 300;
+        font-size: 3em;
+    }
+
+    .author_date{
+        font-size: 1em;
+        /* font-weight: 300; */
+        
+    }
+
+    /* Nav Bar */
+      .nav_bar{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 15vw;
+        height: 100vh;
+        position: fixed;
+    }
+    
+    .avatar{
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    
+    #img_avatar{
+        display: flex;
+        border-radius: 50%; 
+        width: 10rem;
+    }
+
+    .nav_menu{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #links{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 15rem;
+        height: 7rem;
+    }
+
+    /* Main page */
+    .main{
+        background: whitesmoke;
+        display: flex;
+        flex-direction: column;
+        width: 85vw;
+        left: 15vw;
+        position:sticky;
+        /* border: 1px solid red; */
+    }
+    
+    .blog_articles{
+        align-items: flex-start;
+        margin-left: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem; 
+    }
+
+    .blog_img{
+        height: 15rem;
+        width: 15rem;
+    }
+    
+    .article_card{
+        /* width: 83vw; */
+    }
+
+    .article_details{
+        /* width:83vw; */
+    }
+
+    .card_author_date{
+        flex-direction: column;
+        justify-content:flex-start;
+        padding-bottom:7rem;
+    }
+
+    .read_more{
+        font-size: 1em;
+    }
+
+    /* Footer */
+    .footer_bar{
+        display: flex;
+        flex-direction: row-reverse;
+        /* width: 85vw; */
+        /* left: 15vw; */
+        /* position:fixed; */
+        /* background: #313a46; */
     }

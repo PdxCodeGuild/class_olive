@@ -6,25 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/desktop_styles.css') }}">
-    <title>About</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+        </style>
+    <title>About Me</title>
 </head>
 <body>
     <div class="nav_bar">
+        <div class="avatar">
+            <img id="img_avatar" alt="avatar" src="{{ url_for('static', filename='images/clerks.png') }}">
+        </div>
         <div class="nav_menu">
-            <img id="img_avatar" alt="avatar" src="{{ url_for('static', filename='images/avatar.png') }}">
             <br>
-            <h2>Lauren Ipsum's Blog</h2>
+            <h2>Inconvenience</h2>
             <br><br>
-            <div id="links">
-                <a href="/">Home</a>
-                <a href="/about">About Me</a>
-                <a href="/contact">Contact</a>
-            </div>
-            
+                <div id="links">
+                    <a href="/">Home</a><br>
+                    <a href="/contact">Contact</a><br>
+                    <a href="/about">About Me</a>
+                </div>
         </div>
     </div>
-    <div class="about_me">
-        <p>About Me</p>
+    <div class="main">
+        <div class="about_me">
+            <div class="about_card">
+                <p class="headline">t.bor22</p>
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Venenatis cras sed felis eget velit aliquet sagittis. Orci sagittis eu volutpat odio facilisis mauris sit amet. Eget magna fermentum iaculis eu non diam phasellus. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec. Nibh ipsum consequat nisl vel. Dui nunc mattis enim ut tellus elementum. Sit amet mauris commodo quis imperdiet massa. Morbi tristique senectus et netus et malesuada fames. Molestie a iaculis at erat.</p>
+                <br>
+                <p>Velit scelerisque in dictum non. Eros in cursus turpis massa. Feugiat in fermentum posuere urna nec tincidunt praesent semper. Pretium vulputate sapien nec sagittis aliquam. Sed ullamcorper morbi tincidunt ornare massa eget egestas. Id nibh tortor id aliquet lectus proin nibh. Vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis. Nisi scelerisque eu ultrices vitae auctor. Et malesuada fames ac turpis egestas. Ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt.</p>
+            </div>    
+        </div>
     </div>
 </body>
 </html>
