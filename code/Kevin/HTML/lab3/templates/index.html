@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,10 +9,12 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles_d.css') }}">
     <title>Home Page</title>
 </head>
+
 <body>
     <div id="header_div">
-        
+
         <h3 id="header">blaster COMMANDER attribute</h3>
+        <img id="header_img" src="{{ url_for('static', filename='images/1stdivide.png') }}">
 
     </div>
 
@@ -20,25 +23,55 @@
         <div id="side_nav">
             <h6 class="link"><a href="/about">About</a></h6>
         </div>
-
-        <div id="main_article">
-            <div id="title_and_author">
-                <h3>The Problem with Doors,</h3>
-                <h4>by Bob Dooglehousette</h4>
+        
+        <div id="main_place">
+            <div class="article">
+                <div id="title_and_author">
+                    <h3>{{blog_post_1['title']}},</h3>
+                    <h4>by {{blog_post_1['author']}}</h4>
+                    <h6 id="date">{{blog_post_1['date']}}</h6>
+                    <hr class="hr_border">
+                    <span class='test'>{{blog_post_1['body']}}</span>
+                </div>
             </div>
-            <hr class="hr_border">
-            <p>&emsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a congue sem. Pellentesque id enim commodo, gravida risus eget, tempor lectus. Praesent laoreet nisi non dui faucibus sollicitudin. Nulla porta neque eget velit placerat pretium. Vivamus sit amet justo fermentum, porttitor est in, tempus nunc. Integer congue diam eu ante aliquet ornare. In hac habitasse platea dictumst.</p>
-            <p>&emsp;Nulla gravida et ante non tempor. Fusce vestibulum, nisl iaculis venenatis viverra, nunc metus feugiat purus, id dictum augue orci et ipsum. Integer magna libero, fringilla id mattis efficitur, volutpat a dolor. Nunc sed elementum metus, eget commodo tortor. Donec dapibus ipsum turpis, sed aliquet massa mattis ut. Cras pretium, leo ac auctor venenatis, diam elit lacinia libero, sed porta augue nunc placerat mauris. Praesent a massa facilisis, volutpat diam non, fermentum nunc. Integer eu eros in magna consectetur varius nec nec nulla.</p>
-            <p>&emsp;Praesent eget arcu lorem. In hac habitasse platea dictumst. Nullam volutpat interdum metus sit amet placerat. Cras porta dui sit amet orci blandit tristique. Ut maximus pretium posuere. Proin id porta tortor. Proin gravida ante vel odio viverra placerat. Nunc lobortis pulvinar arcu a blandit. Vestibulum non arcu eget dolor ultricies condimentum id eget arcu. Curabitur cursus nunc eget nibh porta aliquam. Nulla ac venenatis felis. Vivamus volutpat nulla molestie augue condimentum cursus. Pellentesque vestibulum placerat libero. Praesent mauris odio, ullamcorper id fringilla vel, suscipit sed risus. Sed pellentesque velit et vulputate ornare. Donec sit amet ex eu magna venenatis semper.</p>
-            <p>&emsp;Nunc interdum accumsan magna. Nam sollicitudin massa fringilla eros rutrum sodales. Sed pulvinar, odio ac eleifend malesuada, urna urna aliquam sem, in tristique purus dolor sed diam. Mauris ultrices odio arcu, et vestibulum tellus euismod vel. Nullam neque est, consectetur ut ipsum id, lobortis porttitor purus. Ut mollis enim in magna bibendum, sodales venenatis orci porttitor. Curabitur scelerisque, ligula at molestie euismod, ipsum sapien consequat libero, vitae suscipit dui neque in ex. Integer bibendum sapien vitae ex iaculis, dapibus finibus turpis imperdiet. Morbi et lacus sed ipsum facilisis consectetur. Integer consequat, nunc quis vehicula ultricies, erat arcu volutpat nulla, in vulputate odio orci eget eros.</p>
-            <p>&emsp;Vestibulum consectetur, magna ut rutrum maximus, velit sem scelerisque turpis, vitae consequat augue felis eget lorem. Proin rutrum nibh vel suscipit placerat. Etiam et magna mi. Fusce sagittis purus ultrices lacus posuere ornare. Nulla facilisi. Mauris sapien velit, tristique eget orci et, semper efficitur mi. Donec venenatis dapibus imperdiet. Mauris a nisi lectus. Maecenas posuere feugiat nibh ac commodo. Maecenas sit amet purus non augue sagittis hendrerit finibus eu risus. Duis lorem nunc, lobortis sed pretium vitae, volutpat vel elit. Vestibulum in iaculis magna, at molestie erat. In sapien augue, viverra eget egestas semper, ornare sed risus. Donec euismod sagittis arcu. Aliquam sed dolor quis libero venenatis auctor. Praesent congue diam massa, eget sodales risus vehicula et.</p>
-        </div>
-    </div>
 
-    <div id="footer">
-        <br>
-        <h4 id="footer_link"><a href="https://www.lipsum.com/">Footer stuff</a></h4>
-        <h6 id="date">Date</h6>
+            <div class="article">
+                <div class="title_and_author">
+                    <h3>{{blog_post_2['title']}},</h3>
+                    <h4>by {{blog_post_2['author']}}</h4>
+                    <h6 class="date">{{blog_post_2['date']}}</h6>
+                    <hr class="hr_border">
+                    <span class='test'>{{blog_post_2['body']}}</span>
+                </div>
+            </div>
+
+            <div class="article">
+                <div class="title_and_author">
+                    <h3>{{blog_post_3['title']}},</h3>
+                    <h4>by {{blog_post_3['author']}}</h4>
+                    <h6 class="date">{{blog_post_3['date']}}</h6>
+                    <hr class="hr_border">
+                    <span class='test'>{{blog_post_3['body']}}</span>
+                </div>
+            </div>
+
+            <div class="article">
+                <div class="title_and_author">
+                    <h3>{{blog_post_4['title']}},</h3>
+                    <h4>by {{blog_post_4['author']}}</h4>
+                    <h6 class="date">{{blog_post_4['date']}}</h6>
+                    <hr class="hr_border">
+                    <span class='test'>{{blog_post_4['body']}}</span>
+                </div>
+            </div>
+
+            
+        </div>
+        
     </div>
+        <footer>
+            <h4 id="footer_link"><a href="https://www.lipsum.com/">Lorem Ipsum Generator.</a></h4>
+        </footer>
 </body>
+
 </html>
