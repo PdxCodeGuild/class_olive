@@ -35,26 +35,29 @@
       </div>
     <div class="container">
         <div class="column">
-            <h1>Hello, Stuff is written here {{x}} </h1>
+            <h1>Hello, Stuff is written here  </h1>
         </div>
         <div class="column">
             <h1>Hello, Other Stuff is written here</h1>
         </div>
-        <div class="column">
-            <h1></h1>
-        </div>
-        
+         
     </div>
-    <div class="container">
+    <div class="column">
         {% for post in blog_posts %}
         <div class="post">
-            <p>{{ post.title }}</p>
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.author }} - {{ post.date }}</p>
             <p>{{ post.content }}</p>
         </div>
         {% endfor %}
         
     </div>
-    
+    <div class="footer">
+        <ul>Cheetos</ul>
+        <ul>Lays</ul>
+        <ul>Fritos</ul>
+        <ul>Doritos</ul>
+    </div>
 
 </body>
 </html>

@@ -6,7 +6,7 @@
     justify-content: space-evenly;
     align-items: flex-start;
     /* background-color: aquamarine; */
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
 .column {
     display: flex;
@@ -19,5 +19,27 @@
 
 }
 .post {
-    border: 2px solid red;
+    /* border: 2px solid red; */
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+}
+
+.footer {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: container;
+    flex-direction: row;
+    padding: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: baseline;
 }
