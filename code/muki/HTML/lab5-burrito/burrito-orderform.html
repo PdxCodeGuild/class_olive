@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 5 Burrito Order Form Class-Olive</title>
+</head>
+<body>
+    <style>
+        div {
+            justify-content: center;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 02vh;
+            font-weight: bold;
+            
+        }
+        p {
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-size: x-large;
+        }
+
+        body {
+            background-color: black;
+        }
+        
+        .container {
+            justify-content: center;
+            align-items: center;
+            border: 3px solid green;
+        }
+
+        .row {
+            justify-content: center;
+            align-items: center;
+            border: 3px solid blue;
+            color: cornsilk;
+        }
+        }
+
+        .column {
+            justify-content: center;
+            align-items: center;
+            border: 3px solid red;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 02vh;
+            font-weight: bold;
+            color: cornsilk;
+        }
+    </style>
+    <div class="container">
+        <div class="row">
+            <h1>Delicious Burritos</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <form action="https://webhook.site/b0f5cbe4-7f85-454a-81a6-b7f811146610">
+                    <label for="username">First name:</label><br>
+                    <input type="text" id="username" name= "username" value=""><br><br>
+                    <label for="password">Password:</label><br>
+                    <input type="text" id="password" name= "password" value=""><br><br>
+                    
+                    
+                    <p> What kind of Tortilla?</p>
+                    <input type="radio" id="white_flour" name="tortilla" value="White Flour">
+                    <label for="white_flour">White Flour</label><br>
+                    <input type="radio" id="wheat_flour" name="tortilla" value="Wheat Flour">
+                    <label for="wheat_flour">Wheat Flour</label><br>
+                    <input type="radio" id="spinach" name="tortilla" value="Spinach">
+                    <label for="spinach">Spinach</label><br>
+                    <input type="radio" id="corn" name="tortilla" value="Corn">
+                    <label for="corn">Corn</label><br>
+         
+
+                    <p> What's Your Preference on Protien?</p>
+                    <input type="radio" id="carnitas" name="protein" value="Carnitas">
+                    <label for="carnitas">Carnitas</label><br>
+                    <input type="radio" id="chicken" name="protein" value="Chicken">
+                    <label for="chicken">Chicken</label><br>
+                    <input type="radio" id="sofritas" name="protein" value="Sofritas">
+                    <label for="sofritas">Sofritas</label><br>
+                    <input type="radio" id="none" name="protein" value="None">
+                    <label for="none">None</label><br>
+               
+
+                    <p> Rice?</p>
+                    <input type="radio" id="white_rice" name="rice" value="White Rice">
+                    <label for="white_rice">White Rice</label><br>
+                    <input type="radio" id="brown_rice" name="rice" value="Brown Rice">
+                    <label for="brown_rice">Brown Rice</label><br>
+                    <input type="radio" id="no_rice" name="rice" value="None">
+                    <label for="no_rice">No Rice</label><br>
+               
+                    <p> Beans?</p>
+                    <input type="radio" id="black_beans" name="beans" value="Black Beans">
+                    <label for="black_beans">Black Beans</label><br>
+                    <input type="radio" id="pinto_beans" name="beans" value="Pinto Beans">
+                    <label for="pinto_beans">Pinto Beans</label><br>
+                    <input type="radio" id="no_beans" name="beans" value="None">
+                    <label for="no_beans">No Beans</label><br>
+
+                    <p> Want Some Dairy?</p>
+                    <input type="radio" id="cheese" name="additional" value="Cheese">
+                    <label for="cheese">Cheese</label><br>
+                    <input type="radio" id="sour_cream" name="additional" value="Sour Cream">
+                    <label for="sour_cream">Sour Cream</label><br>
+                    
+                    <p> Special Requests?</p>
+                    <label for="special_instructions">Special Instructions:</label><br>
+                    <input type="text" id="special_instructions" name= "special_instructions" value=""><br><br> 
+                    <input type="submit" value="Get A Rito">
+                </form>
+            </div>
+            <!-- <div class="column">
+                <image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0HwGuNBcnBJJVH2cphtx2JQC1fQhZw63SDA&usqp=CAU"></image>
+            </div> -->
+        </div>
+    </div>
+    
+</body>
+</html>
