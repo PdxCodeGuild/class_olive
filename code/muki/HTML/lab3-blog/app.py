@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+import random
 
 app = Flask(__name__)
 
@@ -37,3 +38,8 @@ def index():
     return render_template('lab3blog.html', blog_posts=blog_posts)
 
 app.run(debug=True)
+
+# gallery = [
+#     "C:\Users\wills\Downloads\Galaxy-Cupcakes.jpg"
+
+# ]

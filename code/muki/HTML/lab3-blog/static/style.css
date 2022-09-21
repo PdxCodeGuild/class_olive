@@ -18,6 +18,15 @@
     /* background-color: chocolate; */
 
 }
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: first baseline;
+    align-items: stretch;
+}
+
 .post {
     /* border: 2px solid red; */
     border-radius: 5px;
@@ -36,10 +45,32 @@ h2 {
 
 .footer {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    display: container;
+    display: flex;
     flex-direction: row;
     padding: 10px;
     flex-wrap: wrap;
     align-items: center;
     justify-content: baseline;
+}
+
+body {
+    background-color: lightgrey;
+
+}
+
+.photograph {
+    border: 2px solid darkorchid;
+    border-radius: 8px;
+    width: 15vw;
+    /* padding-top: 10rem; not here but on the container */
+    
+
+}
+
+#container {
+    padding-top: 1rem;
+}
+
+#navbar {
+    border-bottom: 2px solid darkorchid;
 }
