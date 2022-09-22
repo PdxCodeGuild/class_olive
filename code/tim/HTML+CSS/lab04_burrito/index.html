@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Aaron Burrito</title>
+</head>
+<body>
+    <div class="order_page">
+        
+        <div class="logo_container">
+            <img id="logo_img" src="https://tinyurl.com/4wf995r9" alternate="logo">
+            <div class="logo_text">
+                <h1>Aaron Burrito</h1>
+                <br>
+                <h3>Everything is Legal in a Burrito!</h3>
+            </div>
+        </div>
+        
+        <div class="text_container">
+            <form action="https://webhook.site/dcc8cd78-90fd-44e8-9723-f2518541686e" method="post">
+                <div class="text_line">
+                    <label for="first_name">Name:</label>
+                    <input type="text" name="name" placeholder="Enter your name">
+                </div>
+                <div class="text_line">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" placeholder="Enter your password">
+                </div>
+        </div>
+
+        <div class="form_boxes">
+            <div class="form_box">
+                <!-- <label for="tortilla">Tortilla</label> -->
+                <h4>Tortilla</h4>
+                <div class="radio_box">
+                    <div class="radio_line">
+                        <input type="radio" name="tortilla" value="white_flour">
+                        <label for="white_flour">White Flour</label>
+                    </div>
+                    <div class="radio_line">
+                        <input type="radio" name="tortilla" value="wheat_flour">
+                        <label for="wheat_flour">Wheat Flour</label>
+                    </div>
+                    <div class="radio_line">
+                        <input type="radio" name="tortilla" value="corn">
+                        <label for="corn">Corn</label>
+                    </div>
+                    <div class="radio_line">
+                        <input type="radio" name="tortilla" value="spinach">
+                        <label for="spinach">Spinach</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form_box">
+                <h4>Rice</h4>
+                <div class="radio_box">
+                    <div class="radio_line">
+                        <input type="radio" name="rice" value="white">
+                        <label for="rice">White</label>
+                    </div>
+                    <div class="radio_line">
+                        <input type="radio" name="rice" value="brown">
+                        <label for="rice">Brown</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form_box">
+                <h4>Beans</h4>
+                <div class="radio_box">
+                    <div class="radio_line">
+                        <input type="radio" name="beans" value="black">
+                        <label for="beans">Black</label>
+                    </div>
+                    <div class="radio_line">
+                        <input type="radio" name="beans" value="pinto">
+                        <label for="beans">Pinto</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form_box">
+                <h4>Protein</h4>
+                <div class="radio_box">
+                    <div class="radio_line">
+                        <input type="radio" name="protein" value="carnitas">
+                        <label for="protein">Carnitas</label>
+                    </div>
+                    <div class="radio_line">
+                        <input type="radio" name="protein" value="chicken">
+                        <label for="protein">Chicken</label>
+                    </div>
+                    <div class="radio_line">
+                        <input type="radio" name="protein" value="sofritas">
+                        <label for="protein">Sofritas</label>
+                    </div>
+                    <div class="radio_line">
+                        <input type="radio" name="protein" value="none">
+                        <label for="protein">None</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form_box">
+                <h4>Cheese</h4>
+                <div class="radio_box">
+                    <div class="radio_line">
+                        <input type="radio" name="cheese" value="monterrey_jack">
+                        <label for="cheese">Monterrey Jack</label>
+                    </div>
+                    <div class="radio_line">
+                        <input type="radio" name="cheese" value="cotija">
+                        <label for="cheese">Cotija</label>
+                    </div>
+                    <div class="radio_line">
+                        <input type="radio" name="cheese" value="cheddar">
+                        <label for="cheese">Cheddar</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form_box">
+                <h4>Addons</h4>
+                <div class="radio_box">
+                    <div class="radio_line">
+                        <input type="checkbox" name="addon" value="lettuce">
+                        <label for="addon">Lettuce</label>
+                    </div>
+                    <div class="radio_line">
+                        <input type="checkbox" name="addon" value="gross_goop">
+                        <label for="addon">Sour Cream (Ruin your burrito!)</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text_container">
+                <div class="delivery_line">
+                    <label for="instructions">Delivery Instructions:</label>
+                    <!-- <h4>Delivery Instructions</h4> -->
+                    <input type="text" name="instructions" size="100">
+                </div>
+        </div>
+        <div class="text_container">
+            <button class="button" type="submit">Drop Some Hamiltons</button>
+        </div>
+    </div>
+
+</form>
+</body>
+</html>
