@@ -1,10 +1,25 @@
 @media screen and (max-width: 1440px) {
-    .article img {
-        width: 15rem;
+
+    body {
+        font-size: x-large;
+    }
+
+    #ad_image {
+        height: 25rem;
     }
 
     #what_is_go_hunt {
         margin: 10rem;
+    }
+
+    .articles_row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #articles_column img {
+        width: 45rem;
     }
 
 }
