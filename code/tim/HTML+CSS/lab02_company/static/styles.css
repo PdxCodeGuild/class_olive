@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    border:0;
+    background-color: #2c313d;
+    /* border: 1px solid red; */
+}
+
+body{
+    color: white;
+    border:0;
+    background-color: #323845;
+}
+
+/* ##### Top Bar ##### */
+#top_bar{
+    background-color: #2c313d;
+    display: flex;
+    height: 5rem;
+    border: 0;
+    width: 100vw;
+
+}
+
+#logo{
+    display: flex;
+    justify-content:flex-start;
+    height: 4rem;
+    margin-top: 0.5rem;    
+}
+
+#logo_text{
+    display: flex;
+    font-size:small;
+    text-align:center;
+    width: 14rem;
+    height: 2rem;
+    margin: 0.5rem;
+}
+
+#img_logo{
+    max-width: 50%;
+    border:0px;
+}
+
+/* ##### Menu Bar ##### */
+#menu_bar{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #2c313d;
+    width: 100vw;
+
+}
+
+.menu{
+    display: flex;
+}
+
+li{
+    display: flex;
+    padding: 0.2rem 0.5rem;
+    margin-bottom: 0.2rem;
+}
+
+li:hover{
+    color: goldenrod;
+}
+
+/* ##### Articles ##### */
+#articles{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content:flex-start;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background: #323845;
+}
+
+.article{
+    display: flex;
+    flex-direction: column;
+    height: 15rem;
+    width: 17rem;
+    background:#2e343f;
+}
+
+.img_article{
+    display: flex;
+    height: 12rem;
+    width: 17rem;
+    opacity: 0.7;
+    border: 1px solid #1e1e1e;
+    border-bottom: 0px;
+}
+
+.img_article:hover{
+    opacity: 1;
+}
+
+.article_name{
+    height: 3rem;
+    text-align:center;
+    font-size: large;
+    padding-top: 0.7rem;
+    border: 1px solid #1e1e1e;
+}
+
+.article_name:hover{
+    color: goldenrod;
+}
+
+/* ##### Bottom Bar ##### */
+#bottom_bar{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 0.5rem;
+    background: #2c313d;
+}
+
+.bottom_links{
+    display: flex;
+    border: 0;
+}
+
+a:link {
+    color: #7ba8d1;
+  
+}
+  
+a:visited {
+    color: #3c83e5;
+    
+}

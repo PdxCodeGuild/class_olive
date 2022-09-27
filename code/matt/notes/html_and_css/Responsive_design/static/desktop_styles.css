@@ -1,0 +1,28 @@
+@media only screen and (min-width: 1000px){
+    #title{
+        color: teal;
+        font-size: 2rem;
+    }
+
+    #hero{
+        justify-content: center;
+        flex-direction: row;
+
+
+    }
+
+    #hero-left{
+        padding-top: 2rem;
+        width: 30rem;
+        height: 29rem;
+
+    }
+
+    #trogdor{
+        width: 20rem;
+    }
+
+    #trog-desk{
+        margin-top: 1rem;
+    }
+}

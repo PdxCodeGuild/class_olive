@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color: #1a1a1a;
+    color: white;
+    margin-left: 2.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#id_1{
+    color: red;
+}
+
+
+#id_2{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#id_3{
+    font-size: 2rem;
+}
+
+#id_4{
+    text-align: center;
+    /* text-align: left;
+    text-align: right; */
+}
+
+#id_5{
+    color: black;
+    /* background-color: yellow; */
+    /* background-color: #ffff00; */
+    background-color: rgb(255, 255, 0);
+}
+
+#id_6{
+    background-image: url("./images/sunset.jpg");
+    height: 10rem;
+}
+
+
+#id_7{
+    /* margin: 5rem; */
+    /* margin: 1rem 1rem 1rem 1rem; */
+    margin-top: 2.5rem;
+
+    background-color: rgb(50, 50, 50);
+}
+
+#id_8{
+    padding-top: 2.5rem;
+
+    background-color: blue;
+}
+
+#id_9{
+    border: 1px solid red;
+}
+
+#id_10{
+    background-color: rgb(255, 0, 21);
+    width: 10rem;
+}
+
+#id_11{
+    background-color: rgb(21, 45, 2);
+    height: 2.5rem;
+}
+
+
+#id_12{
+    font-family: 'Qwitcher Grypen', cursive;
+}
+
+

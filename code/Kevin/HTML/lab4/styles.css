@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chango&display=swap');
+
+*{
+    /* border: 1px solid black; */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-color: #006341;
+    color: aliceblue;
+}
+
+#header_div{
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    background-color: #C8102E;
+    height: 10rem;
+    font-family: 'Chango', cursive;
+    border-bottom: dotted;
+}
+
+#logo{
+    height: 90%;
+    padding-left: 1rem;
+}
+
+form{
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+}
+
+input{
+    width: 10rem;
+}
+
+.radio_control{
+    display: flex;
+    width: 15rem;
+
+}
+
+.radio_tag{
+    width: 8rem;
+}
+
+.check_control{
+    /* border: 1px solid #C8102E; */
+    display: flex;
+    width: 13rem;
+}
+
+.check_tag{
+    width: 10rem;
+}
+
+#meat_section{
+    font-size: larger;
+    font-family: 'Creepster', cursive;
+    color: rgb(217, 31, 31);
+    text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+    width: 300px;
+    height: 200px;
+    background-image: url('https://baconmockup.com/300/200');
+}
+
+
+
+#additional{
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 2rem;
+}
+
+#submit_img{
+    /* border: solid red; */
+    position: relative; left:3rem;
+}

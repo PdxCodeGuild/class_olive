@@ -1,0 +1,12 @@
+body{
+    background-image: url("./astroblocks\ background.jpg");
+    background-size:cover;
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}

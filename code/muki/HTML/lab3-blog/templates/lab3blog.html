@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 3 Blog Class-Olive</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
+    <!-- <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            background-color: aquamarine;
+        }
+        .column {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 10px;
+            background-color: chocolate;
+        }
+    </style> -->
+    <div id="navbar" class="container" >
+        <a href="#home">Home</a>
+        <a href="#Latest">Latest</a>
+        <a href="#Contact">Contact</a>
+        <a href="#Random">Random</a>
+      </div>
+    <div class="container">
+        <div class="row" id="container">
+            <img class="photograph" src="https://beyondfrosting.com/wp-content/uploads/2022/01/Easy-Moist-Vanilla-Cupcakes-021-2.jpg"></img>
+            
+            
+        </div>
+         
+    </div>
+    <div class="column">
+        {% for post in blog_posts %}
+        <div class="post">
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.author }} - {{ post.date }}</p>
+            <p>{{ post.content }}</p>
+        </div>
+        {% endfor %}
+        
+    </div>
+    <div class="footer">
+        <ul>Cheetos</ul>
+        <ul>Lays</ul>
+        <ul>Fritos</ul>
+        <ul>Doritos</ul>
+    </div>
+
+</body>
+</html>

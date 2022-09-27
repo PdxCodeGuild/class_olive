@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles_d.css') }}">
+    <title>Home Page</title>
+</head>
+
+<body>
+    
+    <div id="header_div">
+
+        <h3 id="header">blaster COMMANDER attribute</h3>
+        <img id="header_img" src="{{ url_for('static', filename='images/1stdivide.png') }}">
+
+    </div>
+    <div id="half_body">
+
+        <div id="side_nav">
+            <h6 class="link"><a href="/about">About</a></h6>
+        </div>
+        
+        <div id="main_place">
+            <div class="article">
+                <div id="title_and_author">
+                    <h3>{{blog_post_1['title']}},</h3>
+                    <h4>by {{blog_post_1['author']}}</h4>
+                    <h6 id="date">{{blog_post_1['date']}}</h6>
+                    <hr class="hr_border">
+                    <span class='test'>{{blog_post_1['body']}}</span>
+                </div>
+            </div>
+
+            <div class="article">
+                <div class="title_and_author">
+                    <h3>{{blog_post_2['title']}},</h3>
+                    <h4>by {{blog_post_2['author']}}</h4>
+                    <h6 class="date">{{blog_post_2['date']}}</h6>
+                    <hr class="hr_border">
+                    <span class='test'>{{blog_post_2['body']}}</span>
+                </div>
+            </div>
+
+            <div class="article">
+                <div class="title_and_author">
+                    <h3>{{blog_post_3['title']}},</h3>
+                    <h4>by {{blog_post_3['author']}}</h4>
+                    <h6 class="date">{{blog_post_3['date']}}</h6>
+                    <hr class="hr_border">
+                    <span class='test'>{{blog_post_3['body']}}</span>
+                </div>
+            </div>
+
+            <div class="article">
+                <div class="title_and_author">
+                    <h3>{{blog_post_4['title']}},</h3>
+                    <h4>by {{blog_post_4['author']}}</h4>
+                    <h6 class="date">{{blog_post_4['date']}}</h6>
+                    <hr class="hr_border">
+                    <span class='test'>{{blog_post_4['body']}}</span>
+                </div>
+            </div>
+
+            
+        </div>
+        
+    </div>
+        <footer>
+            <h4 id="footer_link"><a href="https://www.lipsum.com/">Lorem Ipsum Generator.</a></h4>
+        </footer>
+</body>
+
+</html>

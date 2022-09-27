@@ -1,0 +1,122 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: 0;
+}
+
+body{   
+    display: flex;
+    justify-content: center;
+    background: #5a4b44;
+}
+
+.order_page{
+    display: flex;
+    flex-direction: column;
+    width: 66rem;
+    height: 98vh;
+    margin-top:0.5rem;
+    color: #321f16;
+    background: #efe8d4;
+}
+
+
+.logo_container{
+    display: flex;
+    align-self: center;
+    /* padding: 3rem; */
+    background: #efe8d4;
+}
+
+#logo_img{
+    width: 7rem;
+}
+
+.logo_text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    background: transparent;
+}
+
+.text_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    width: 64rem;
+    padding: 1rem 0rem;
+    border-top: 1px solid #c0b6a5;
+    border-bottom: 1px solid #c0b6a5;
+}
+
+.text_line{
+    display: inline;
+    width: 35rem;
+    justify-content:center;
+    margin-right:5rem;
+}
+
+.form_boxes{
+    display: flex;
+    flex-wrap: wrap;
+    width: 60rem;
+    align-self: center;
+    justify-content: center;
+}
+
+.form_box{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    width: 18rem;
+    height: 8rem;
+    margin: 1rem;
+    background: #e3dcc9;
+    border: 1px solid #c0b6a5;
+}
+
+.radio_box{
+    display: flex;
+    flex-direction: column;
+}
+
+/*
+.delivery_line{
+    display: flex; 
+    justify-content: space-between;
+    width: 60rem;
+    height: 3rem; 
+}*/
+
+h3{
+    font-size: x-small;
+}
+
+h4{
+    display: flex;
+    font-size: medium;
+    margin: 0.5rem 0rem;
+    border-bottom: 1px solid #c0b6a5;
+}
+
+.button {
+    background-color: #362d29;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+input[type=text],[type=password] {
+    border: 1px solid #321f16;
+    border-radius: 3px;
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+}

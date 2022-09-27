@@ -1,0 +1,33 @@
+* {
+    margin: 2;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image:url('https://i.pinimg.com/originals/93/4e/d1/934ed1d9f2d42d99ab480322dca3542f.jpg');
+    color:black;
+    margin-left: 1rem;
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+p{
+    color:darkred
+}
+
+#quote{
+    font-style: italic;
+}
+
+#about{
+    color: darkred;
+}
+
+.image{
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    width: 400px;
+    height: 400px;
+}
