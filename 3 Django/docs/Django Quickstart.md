@@ -221,7 +221,7 @@ urlpatterns = [
 3. Create a form inside your template:
 
 
-**myapp/templates/myapp/mytemplates.html**
+**myapp/templates/myapp/mytemplate.html**
 ```html
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
