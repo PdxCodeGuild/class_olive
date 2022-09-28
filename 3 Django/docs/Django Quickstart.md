@@ -186,7 +186,7 @@ def myview(request):
 
 1. Create a view for receiving a form submission:
 
-**myapp/views.html**
+**myapp/views.py**
 ```python
 from django.shortcuts import render
 from django.http import HttpResponse
