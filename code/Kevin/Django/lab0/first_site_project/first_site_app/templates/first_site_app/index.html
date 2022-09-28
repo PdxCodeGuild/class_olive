@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <form action="{% url 'first_site_app:site_create' %}" method="post">
+            {% csrf_token %}
+            <label for="input_field"><h3>Title</h3></label>
+            <input type="text" name="input_field"/>
+            <label for="body"><h3>Body</h3></label>
+            <textarea name="body" rows="4" cols="50"></textarea>
+            <label for="author"><h3>Author</h3></label>
+            <input type="text" name="author"/>
+            <br><br>
+            <button type="submit">submit</button>
+        </form>
+        <ul>
+            {% for instance in instances %}
+            <li>{{ instance.input_field }}</li>
+            <li>{{ instance.body }}</li>
+            <li>{{ instance.author }}</li>
+            <li>{{ instance.date_time }}</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
