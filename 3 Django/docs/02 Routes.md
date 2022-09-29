@@ -54,8 +54,8 @@ from django.http import HttpResponse
 def index(request):
     return HttpResponse('you are at the index')
 
-def about(request)
-    return HttpResponse('you are at the )
+def about(request):
+    return HttpResponse('you are at the')
 ```
 
 ## Reverse URL Lookup
