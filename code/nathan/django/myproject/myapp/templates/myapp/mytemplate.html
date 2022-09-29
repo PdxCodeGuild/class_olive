@@ -1,0 +1,31 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+    <title>Django Unchained</title>
+  </head>
+  <body>
+    <h1>Add a person</h1>
+    <form action="{% url 'myapp:mycreate' %}" method="post">
+      {% csrf_token %}
+      <div class=form_item>
+        <label for="name">Name: </label>
+        <input type="text" name="name"/>
+      </div>
+      <div class=form_item>
+        <label for="height">Height: </label>
+        <input type="text" name="height"/>
+      </div>
+      <div class=form_item>
+        <label for="Weight">Weight: </label>
+        <input type="text" name="weight"/>   
+      </div>
+      <button type="submit">submit</button>
+    </form>
+      {% for human in person %}
+        <h1>{{ human.name }}</h1>
+      {% endfor %}
+  </body>
+</html>
