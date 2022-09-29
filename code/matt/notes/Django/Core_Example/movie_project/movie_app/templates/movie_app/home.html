@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'movie_app/styles.css' %}" >
+    <title>Movie App</title>
+  </head>
+  <body>
+    <div id='form-container'>
+      <form action="{% url 'movie_app:add_new_movie' %}" method="post">
+        {% csrf_token %} 
+        <label for='title'>Title</label>
+        <input type="text" name="title" placeholder="Movie Title">
+
+        <label for='director'>Director</label>
+        <input type="text" name="director" placeholder="Director">
+
+        <label for='release_date'>Release Date</label>
+        <input type="date" name="release_date" placeholder="Movie Title">
+
+        <label for='genre'>Genre</label>
+        <input type="text" name="genre" placeholder="Genre">
+
+        <label for='in_theatres'>In Theatres</label>
+        <input type="radio" name="in_theatres" value="on" placeholder="In Theatres">
+        <label for='in_theatres'>NOT in Theatres</label>
+        <input type="radio" name="in_theatres" value="off" placeholder="In Theatres" >
+        <button type="submit">Submit</button> 
+      </form>
+    </div>
+    <div id="lists">
+      <div>
+        <h1>In Theatres</h1>
+        {% for movie in all_movies %} 
+          {% if movie.in_theatres is True %}
+            <div class="movie">
+              <p class='title'>{{ movie.title }}</p>
+              <p>Director {{ movie.director }}</p>
+              <p>Genre {{ movie.genre }}</p>
+              <p>{{ movie.release_date }}</p>
+              <div class='links'>
+                <a href="{% url 'movie_app:toggle_in_theatres' movie.id %}"><p>In Theatres</p></a>
+                <a href="{% url 'movie_app:delete_route' movie.id %}"><p>x</p></a>
+              </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+      </div>
+      <div>
+        <h1>Not in Theatres</h1>
+        {% for movie in all_movies %} 
+          {% if movie.in_theatres is False %}
+            <div class="movie">
+              <p class='title'>{{ movie.title }}</p>
+              <p>Director: {{ movie.director }}</p>
+              <p>Genre: {{ movie.genre }}</p>
+              <p>{{ movie.release_date }}</p>
+              <div class='links'>
+                <a href="{% url 'movie_app:toggle_in_theatres' movie.id %}"><p>Out of Theatres</p></a>
+                <a href="{% url 'movie_app:delete_route' movie.id %}"><p>x</p></a>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+  </body>
+</html>
