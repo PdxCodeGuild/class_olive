@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Grocery Tracker</title>
+  </head>
+  <body>
+    <div id ='form_c'>
+        <form action="{% url 'groc_list:add_groc' %}" method="post">
+            {% csrf_token %} 
+        <label for="item">Item</label>
+        <input type="text" name="item" placeholder="Item">
+        <label for="created_date">Date Added</label>
+        <input type="date" name="created_date" placeholder="Date Added">
+        <label for="comp">Completed</label>
+        <input type="radio" name="comp" placeholder="Completed">
+        <label for="comp">Incomplete</label>
+        <input type="radio" name="comp" placeholder="Incomplete">
+        <button type="submit">Submit</button> 
+        </form>
+    </div>
+  </body>
+</html>
