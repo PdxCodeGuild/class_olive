@@ -2,4 +2,190 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+<<<<<<< HEAD
+    font-family: "HCo Ringside Wide","Ringside Wide", Inter, Helvetica, Airal, sans-serif;
 }
+
+.header_icon {
+    padding: 1rem;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.footer_icon {
+    padding: 2rem;
+}
+
+.header_right_icon {
+    padding: 0rem 1rem 0rem 1rem;
+}
+
+.articles_row {
+    display: flex;
+    margin: 1rem;
+    justify-content: space-evenly;
+    margin: 3rem 25rem 3rem 25rem;
+}
+
+.article {
+    margin: 1rem;
+}
+
+#logo {
+    padding: 0rem;
+    margin: 0rem;
+}
+
+#left_header {
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+}
+
+#right_header {
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+}
+
+#button_login {
+    background-color: #1c1c1d;
+    color: #fafafa;
+    border-radius: 5rem;
+    padding: .5rem 1rem .5rem 1rem;
+    border: transparent;
+}
+
+#button_signup {
+    background-color: #f37735;
+    color: #f9f2fa;
+    border-radius: 5rem;
+    padding: .5rem 1rem .5rem 1rem;
+}
+
+#menu_bar {
+    display: flex;
+    justify-content: space-between;
+    border-top: solid #424c42;
+    border-bottom: solid #424c42;
+    border-width: .001rem;
+    padding: 2rem;
+    margin: 2.5rem 0rem 2.5rem 0rem;
+}
+
+#ad_image {
+    width: 100%;
+}
+
+#soc_med_etc_bar {
+    display: flex;
+    align-items: center;
+}
+
+#info_signup_footer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-right: 1rem;
+}
+
+#input_and_button {
+    display: flex;
+    margin-top: 3rem; 
+    margin-bottom: 1rem;
+}
+
+#button_sumbit {
+    background-color: #1c1c1d;
+    color: #fafafa;
+    border-radius: 5rem;
+    padding: .5rem 1rem .5rem 1rem;
+    border-color: #e5e5e5;
+}
+
+#social_media_footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0rem;
+}
+
+#left_bottom_footer {
+    display: flex
+}
+
+#right_bottom_footer {
+    display: flex
+}
+
+#real_footer {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+    font-size: xx-small;
+}
+
+#what_is_go_hunt {
+    border-left: solid #424c42;
+    border-width: .005rem;
+    display: flex;
+    justify-content: space-between;
+    margin: 5rem 20rem 1rem 20rem;
+    padding-left: 1rem;
+}
+
+#who_is {
+    color: grey;
+    margin-bottom: 1rem;
+}
+
+#we_are {
+    margin: 1rem 1rem 1rem 0rem;
+}
+
+#further_explain {
+    margin-top: 1rem;
+    margin-left: 5rem;
+}
+
+#what_is_column {
+    display: flex;
+    flex-direction: column;
+}
+
+#button_about_us {
+    margin-top: 1rem;
+    border-radius: 5rem;
+    padding: .5rem 0rem .5rem 0rem;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1c1c1d;
+    color: #e5e5e5;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: #202620;
+    color: #fafafa;
+    padding: 1rem;
+}
+
+nav {
+    display: flex;
+}
+
+input {
+    color: white;
+    background-color: transparent;
+    border-bottom: solid e5e5e5;
+}
+
+=======
+}
+>>>>>>> 09a84714dd9f6853c40c2b8151940696c6027ddc
