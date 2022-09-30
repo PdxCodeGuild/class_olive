@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Grocery List</title>
+  </head>
+  <body>
+    <form action="{% url 'grocery_list_app:create_grocery_item' %}" method="post">
+      {% csrf_token %}
+      <input type="text" placeholder="Input Description" name="description">
+      <input type="submit" value="Submit">
+    </form>
+    {% for grocery_item in grocery_list %}
+      <h1>{{grocery_item.description}}</h1>
+      <p>{{grocery_item.created_date}}</p>
+      <p>{{grocery_item.completed}}</p>
+    {% endfor %}
+  </body>
+</html>
