@@ -1,10 +1,12 @@
+{% load static tailwind_tags %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
         <title></title>
+        {% tailwind_css %}
     </head>
-    <body>
+    <body class="bg-amber-900">
         <form action="{% url 'first_site_app:site_create' %}" method="post">
             {% csrf_token %}
             <label for="input_field"><h3>Title</h3></label>

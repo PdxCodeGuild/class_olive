@@ -3,5 +3,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('first_site_app.urls'))
+    path('', include('first_site_app.urls')),
+    path("__reload__/", include("django_browser_reload.urls"))
 ]
