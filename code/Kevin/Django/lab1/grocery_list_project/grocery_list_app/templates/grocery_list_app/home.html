@@ -1,0 +1,44 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        {% tailwind_css %}
+        <title>Grocery List</title>
+    </head>
+    <body class="flex flex-col items-center bg-cyan-200">
+        <div class="h-28 w-full bg-cyan-100 text-4xl flex justify-center items-center">
+            <h1>Grocery List</h1>
+
+        </div>
+        <form action="{% url 'grocery_list_app:item_create' %}" method="post" class="p-2">
+            {% csrf_token %}
+            <input type="text" name="item_name"/>
+            <button type="submit">submit</button>
+        </form>
+        <ul>
+            <h1 class="text-2xl">ITEMS TO ACQUIRE</h1>
+            <br>
+            {% for item in grocery_items %}
+                {% if item.in_cart is False %}
+                    <li>{{ item.item_name }} &nbsp;&nbsp;<a href="{% url 'grocery_list_app:item_delete' item.id%}">&gt;Delete&lt;</a></li>
+                    <li>{{ item.created_date }}</li>
+                    <a href="{% url 'grocery_list_app:item_toggle' item.id%}"><li>&gt;Cart Toggle&lt;</li></a>
+                    <br>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <ul>
+            <h1 class="text-2xl">ITEMS ACQUIRED</h1>
+            <br>
+            {% for item in grocery_items %}
+                {% if item.in_cart is True %}
+                <li>{{ item.item_name }} &nbsp;&nbsp;<a href="{% url 'grocery_list_app:item_delete' item.id%}">&gt;Delete&lt;</a></li>
+                    <li>{{ item.created_date }}</li>
+                    <a href="{% url 'grocery_list_app:item_toggle' item.id%}"><li>&gt;Cart Toggle&lt;</li></a>
+                    <br>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </body>
+</html>
