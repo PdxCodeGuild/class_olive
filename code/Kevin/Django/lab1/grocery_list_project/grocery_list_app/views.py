@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404, redirect, render, reverse
 from django.http import HttpResponseRedirect
+from requests import request
 from .models import GroceryItem
 
 def site_view(request):
@@ -26,9 +27,23 @@ def item_toggle(request, id):
 
         return redirect('grocery_list_app:site_view')
 
-def item_delete(request, id):
+def item_delete(requests, id):
     item = get_object_or_404(GroceryItem, id=id)
     item.delete()
+
+    return redirect('grocery_list_app:site_view')
+
+def make_favorite(request, id):
+    item = get_object_or_404(GroceryItem, id=id)
+    favorite_item = GroceryItem(item_name=item.item_name, is_favorite=True)
+    favorite_item.save()
+
+    return redirect('grocery_list_app:site_view')
+
+def make_from_favorites(request, id):
+    item = get_object_or_404(GroceryItem, id=id)
+    new_item = GroceryItem(item_name=item.item_name)
+    new_item.save()
 
     return redirect('grocery_list_app:site_view')
     

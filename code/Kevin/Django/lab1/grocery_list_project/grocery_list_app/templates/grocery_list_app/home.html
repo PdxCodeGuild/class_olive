@@ -11,34 +11,54 @@
             <h1>Grocery List</h1>
 
         </div>
-        <form action="{% url 'grocery_list_app:item_create' %}" method="post" class="p-2">
-            {% csrf_token %}
-            <input type="text" name="item_name"/>
-            <button type="submit">submit</button>
-        </form>
-        <ul>
-            <h1 class="text-2xl">ITEMS TO ACQUIRE</h1>
-            <br>
-            {% for item in grocery_items %}
-                {% if item.in_cart is False %}
-                    <li>{{ item.item_name }} &nbsp;&nbsp;<a href="{% url 'grocery_list_app:item_delete' item.id%}">&gt;Delete&lt;</a></li>
-                    <li>{{ item.created_date }}</li>
-                    <a href="{% url 'grocery_list_app:item_toggle' item.id%}"><li>&gt;Cart Toggle&lt;</li></a>
+        <div class="flex justify-evenly w-full border-pink-400 border-8" >
+            <div class="border-indigo-800 border-8"></div>
+            <div class="border-gray-900 border-8">
+                <form action="{% url 'grocery_list_app:item_create' %}" method="post" class="p-2">
+                    {% csrf_token %}
+                    <input type="text" name="item_name" placeholder="Enter Item"/>
+                </form>
+                <ul>
+                    <h1 class="text-2xl">ITEMS TO ACQUIRE</h1>
                     <br>
-                {% endif %}
-            {% endfor %}
-        </ul>
-        <ul>
-            <h1 class="text-2xl">ITEMS ACQUIRED</h1>
-            <br>
-            {% for item in grocery_items %}
-                {% if item.in_cart is True %}
-                <li>{{ item.item_name }} &nbsp;&nbsp;<a href="{% url 'grocery_list_app:item_delete' item.id%}">&gt;Delete&lt;</a></li>
-                    <li>{{ item.created_date }}</li>
-                    <a href="{% url 'grocery_list_app:item_toggle' item.id%}"><li>&gt;Cart Toggle&lt;</li></a>
+                    {% for item in grocery_items %}
+                        {% if item.in_cart is False and item.is_favorite is False%}
+                            <li>{{ item.item_name }} &nbsp;&nbsp;<a href="{% url 'grocery_list_app:item_delete' item.id%}">&gt;Delete&lt;</a></li>
+                            <li>{{ item.created_date }}</li>
+                            <a href="{% url 'grocery_list_app:item_toggle' item.id%}"><li>&gt;Cart Toggle&lt;</li></a>
+                            <a href="{% url 'grocery_list_app:make_favorite' item.id%}"><li>&gt;Favorite&lt;</li></a>
+                            <br>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <ul>
+                    <h1 class="text-2xl">ITEMS ACQUIRED</h1>
                     <br>
-                {% endif %}
-            {% endfor %}
-        </ul>
+                    {% for item in grocery_items %}
+                        {% if item.in_cart is True and item.is_favorite is False%}
+                        <li>{{ item.item_name }} &nbsp;&nbsp;<a href="{% url 'grocery_list_app:item_delete' item.id%}">&gt;Delete&lt;</a></li>
+                            <li>{{ item.created_date }}</li>
+                            <a href="{% url 'grocery_list_app:item_toggle' item.id%}"><li>&gt;Cart Toggle&lt;</li></a>
+                            <a href="{% url 'grocery_list_app:make_favorite' item.id%}"><li>&gt;Favorite&lt;</li></a>
+                            <br>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="flex justify-center border-red-50 border-8 w-72">
+                <ul>
+                    <h1 class="text-2xl">FAVORITES</h1>
+                    <br>
+                    {% for item in grocery_items %}
+                        {% if item.is_favorite is True %}
+                        <li>{{ item.item_name }} &nbsp;&nbsp;<a href="{% url 'grocery_list_app:item_delete' item.id%}">&gt;Delete&lt;</a></li>
+                        <a href="{% url 'grocery_list_app:make_from_favorites' item.id%}"><li>&gt;Add to Cart&lt;</li></a>
+
+                            <br>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
     </body>
 </html>
