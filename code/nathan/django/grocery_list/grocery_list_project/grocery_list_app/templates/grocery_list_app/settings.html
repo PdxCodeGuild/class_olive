@@ -4,6 +4,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+
     {% if mode == "light" %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/light_mode.css' %}"/>
 
@@ -14,14 +15,12 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/light_mode.css' %}"/>
 
     {%endif%}
-    <title>Grocery List</title>
+    <title>Grocery List Settings</title>
   </head>
   <body>
-    <form action="{% url 'grocery_list_app:create_grocery_item' %}" method="post">
-      {% csrf_token %}
-      <input type="text" placeholder="Input Description" name="description">
-      <input type="submit" value="Submit">
-    </form>
+
+
+
     <h1>Not Completed Items</h1>
     {% if message|length > 0 and which == "all_completed" %}
       {{message}}
@@ -32,7 +31,7 @@
       <h2>{{grocery_item.description}}</h2>
       <p>{{grocery_item.created_date}}</p>
       <p>{{grocery_item.completed}}</p>
-      <a href="{% url 'grocery_list_app:complete_this_item' grocery_item.id %}" >Complete this item</a>
+      <a href="{% url 'grocery_list_app:delete_item' grocery_item.id %}" >Delete Item</a>
       {% endif %}
     </div>
     {% endfor %}
@@ -46,11 +45,25 @@
       <h2>{{grocery_item.description}}</h2>
       <p>{{grocery_item.created_date}}</p>
       <p>{{grocery_item.completed}}</p>
+      <a href="{% url 'grocery_list_app:reset_this_item' grocery_item.id %}" >Reset to not completed</a> 
+      <a href="{% url 'grocery_list_app:delete_item' grocery_item.id %}" >Delete Item</a>
       {% endif %}
     </div>
     {% endfor %}
     <div>
-      <a href="{% url 'grocery_list_app:to_settings' %}"> <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fflyclipart.com%2Fthumb2%2Fsettings-cogwheel-button-651311.png&f=1&nofb=1&ipt=914ce95f49558f360f4b4ae83fb19662de1237987f4d7a0bb2f3bd0c516cd07f&ipo=images" alt="settings button"> </a>
+      <form action="{% url 'grocery_list_app:change_mode' %}" method="post">
+        {% csrf_token %}
+
+        <input type="radio" value="light" name="mode">
+        <label for="light">Light Mode</label>
+        <input type='radio' value="dark" name="mode">
+        <label for="dark">Dark Mode</label>
+
+        <button type=submit value=Change>Change</button>
+      </form>
+    </div>
+    <div>
+      <a href="{% url 'grocery_list_app:index' %}"><h1>EXIT Settings</h1></a>
     </div>
   </body>
 </html>

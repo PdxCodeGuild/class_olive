@@ -1,3 +1,4 @@
+from xmlrpc.client import boolean
 from django.db import models
 from datetime import datetime
 
@@ -8,3 +9,6 @@ class GroceryItem(models.Model):
 
     def __str__(self):
         return self.description
+
+class Settings(models.Model):
+    dark_mode = models.BooleanField(default=False)
