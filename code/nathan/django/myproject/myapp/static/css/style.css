@@ -1,0 +1,23 @@
+.form_item {
+    display: flex;
+    margin: 1rem;
+}
+
+body {
+    background-color: darkgray;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: xx-large;
+    text-align: center;
+    margin: 2rem;
+}
+
