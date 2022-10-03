@@ -3,8 +3,6 @@ from django.http import HttpResponseRedirect
 from .models import GroceryItem, Settings
 
 
-
-
 def items_completed(items):
     for item in items:
         if item.completed:

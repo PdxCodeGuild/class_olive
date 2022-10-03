@@ -1,0 +1,33 @@
+@media only screen and (max-width: 700px){
+    #body_row {
+        flex-direction: column;
+    } 
+
+    #settings_cog{
+        display: flex;
+        justify-content: end;
+        margin-right: .5rem;
+    }
+
+    button {
+        margin: 1rem;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #textbox {
+        margin: .5rem
+    }
+    
+
+    label {
+        font-size: x-large;
+    }
+
+}
+

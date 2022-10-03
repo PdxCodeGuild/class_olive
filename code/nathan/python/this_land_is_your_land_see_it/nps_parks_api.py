@@ -139,23 +139,4 @@ class NPSParks():
         return self.__call_api("webcams", parameters=parameters)
 
 
-    # def retrieve_parks(self, state_code, result_limit=50, result_start=0, sort=""):
-    #     return self.__call_api(f"parks?stateCode={state_code}&limit={str(result_limit)}&start={str(result_start)}&sort={sort}")
-
-    # def retrieve_parks_by_activity_search_term(self):
-    #     return self.__call_api(f"activities/parks")
-    # def find_parks(self, state_code):
-    #     # if len(state_or_state_code) != 2:
-    #     #     if state_or_state_code in dict_states.keys():
-    #     #         state_code = dict_states[state_or_state_code]
-    #     #     else:
-    #     #         print("Error: state not found.")
-    #     # else:
-    #     #     if state_or_state_code in dict_states.values():
-    #     #         state_code = state_or_state_code
-    #     #     else:
-    #     #         print("Error: state not found")
-    #     data = self.__call_api(f"parks?stateCode={state_code}")
-    #     return data
-
     
