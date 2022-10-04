@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% if mode == "light" %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/light.css' %}"/>
+
+    {% elif mode == "dark" %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dark_mode.css' %}"/>
+
+    {% else %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/light.css' %}"/>
+
+    {%endif%}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/mobile.css' %}"/>
+    <title>Grocery List</title>
+  </head>
+  <body>
+    <h1 id="title">Keep track of your grocery list!</h1>
+    <div id=border>
+      <form action="{% url 'grocery_list_app:create_grocery_item' %}" method="post">
+        <h2>Add an item to your grocery list</h2>
+        {% csrf_token %}
+        <div id="textbox">
+          <input type="text" placeholder="Input Description" name="description">
+        </div>
+        <div id="submit">
+          <input type="submit" value="Submit">
+        </div>
+      </form>
+      <div id="body_row">
+        <div id="not_completed">
+          <h1>Not Completed Items</h1>
+          {% if message|length > 0 and which == "all_completed" %}
+            <h3>{{message}}</h3>
+          {%endif%}
+          {% for grocery_item in grocery_list %}
+            {% if not grocery_item.completed %}
+            <div id="item">
+              <strong>{{grocery_item.description}}</strong>
+              <p>{{grocery_item.created_date}}</p>
+              <a href="{% url 'grocery_list_app:complete_this_item' grocery_item.id %}" >Complete this item</a>
+            </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div id="completed">
+          <h1>Completed Items</h1>
+          {% if message|length > 0 and which == "no_completed" %}
+            <h3>{{message}}</h3>
+          {%endif%}
+          {% for grocery_item in grocery_list %}
+            {% if grocery_item.completed %} 
+            <div id="item">  
+            <strong>{{grocery_item.description}}</strong>
+            <p>{{grocery_item.created_date}}</p>
+            </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div id="settings_cog">
+          <a href="{% url 'grocery_list_app:to_settings' %}"> <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fflyclipart.com%2Fthumb2%2Fsettings-cogwheel-button-651311.png&f=1&nofb=1&ipt=914ce95f49558f360f4b4ae83fb19662de1237987f4d7a0bb2f3bd0c516cd07f&ipo=images" alt="settings button"> </a>
+        </div>
+      </div>
+    </div
+  </body>
+</html>
