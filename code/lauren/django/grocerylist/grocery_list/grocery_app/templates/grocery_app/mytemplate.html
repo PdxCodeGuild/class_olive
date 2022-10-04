@@ -47,7 +47,6 @@
                 <p>Description {{ item.description }}</p>
                 <div class='links'>
                   <a href="{% url 'grocery_app:toggle_in_cart' item.id %}"><p>In Cart</p></a>
-                  <a href="{% url 'grocery_app:delete_route' groceries.id %}"><p>x</p></a>
                 </div>
               </div>
               {% endif %}
@@ -62,7 +61,6 @@
                 <p>{{ item.description }}</p>
                 <div class='links'>
                   <a href="{% url 'grocery_app:toggle_in_cart' item.id %}"><p>Not in Cart</p></a>
-                  <a href="{% url 'grocery_app:delete_route' groceries.id %}"><p>x</p></a>
                 </div>
               </div>
             {% endif %}
