@@ -1,0 +1,13 @@
+
+{% block content %}
+
+    <nav>
+        <h1 id='logo'>Local Biz Finder</h1>
+        <div>
+            <a href="{% url 'biz_app:home' %}">Home</a>
+            {% comment %} <a href="https://google.com">About</a> {% endcomment %}
+            <a href="{% url 'biz_app:addbiz' %}">Add Your Biz</a>
+        </div>
+    </nav>
+
+{% endblock %}
