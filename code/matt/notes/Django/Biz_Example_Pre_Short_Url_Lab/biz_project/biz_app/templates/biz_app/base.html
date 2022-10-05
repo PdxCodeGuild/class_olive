@@ -1,4 +1,4 @@
-{% comment %} {% load static %}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -10,12 +10,20 @@
   <body>
     <main>
       <div>
-        <p>hi</p>
-        {% include 'biz_app/navbar.html' %}
-        {% block content %}
-        {% endblock content %}
+
+        <nav>
+          <h1 id='logo'>Local Biz Finder</h1>
+          <div>
+            <a href="{% url 'biz_app:home' %}">Home</a>
+            <a href="{% url 'biz_app:addbiz' %}">Add Your Biz</a>
+          </div>
+        </nav>
+        {% block home %}
+        {% endblock %}
         
+        {% block addbiz %}
+        {% endblock %}
       </div>
     </main>
   </body>
-</html> {% endcomment %}
+</html>

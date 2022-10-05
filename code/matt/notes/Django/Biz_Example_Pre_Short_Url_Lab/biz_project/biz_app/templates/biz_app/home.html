@@ -1,35 +1,26 @@
-{% load static %}
+{% extends "biz_app/base.html" %}
+  {% block home %}
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="{% static 'biz_app/styles.css' %}">
-    <title>Biz Finder</title>
-  </head>
-  <body>
-    <main>
-      <div>
-        {% include 'biz_app/navbar.html' %}
-          <main>
-            <div id='hero'>
-              <h1>Welcome To Biz Finder</h1>
-            </div>
-
-            <div id="cards-section">
-              {% for item in biz %}
-                <div class='card'>
-                  <h4>{{item.name}}</h4>
-                  <ul>{{item.phone}}</ul>
-                  <ul>{{item.email}}</ul>
-                  <ul><a href="{% url 'biz_app:send_to_page' item.name %}">Google Image</a></ul>
-                </div>
-                {% endfor %}
-
-              
-            </div>
-          </main> 
+  <main>
+  <div>
+      <main>
+        <div id='hero'>
+          <h1>Welcome To Biz Finder</h1>
         </div>
-      </main>
-    </body>
-  </html>
+
+        <div id="cards-section">
+          {% for item in biz %}
+            <div class='card'>
+              <h4>{{item.name}}</h4>
+              <ul>{{item.phone}}</ul>
+              <ul>{{item.email}}</ul>
+              <ul><a href="{% url 'biz_app:send_to_page' item.name %}">Google Image</a></ul>
+            </div>
+            {% endfor %}
+
+          
+        </div>
+      </main> 
+    </div>
+  </main>
+{% endblock %}
