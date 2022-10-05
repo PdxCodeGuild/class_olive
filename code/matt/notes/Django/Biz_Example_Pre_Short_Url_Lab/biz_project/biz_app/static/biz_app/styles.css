@@ -1,0 +1,122 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #1a1a1a1a;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5rem;
+    background-color: #1a1a1a;
+}
+
+#logo{
+    padding-left: 2rem;
+}
+
+#logo:after{
+    content: ".";
+}
+
+
+nav a{
+    padding-right: 2rem;
+    text-decoration: none;
+    color: rgb(117, 117, 230);
+}
+a:hover{
+    color: rgb(247, 107, 27);
+}
+
+#hero{
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+    text-align: center;
+    background-color: #272727;
+}
+
+
+#cards-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 40rem;
+}
+
+.card{
+    text-align: center;
+    padding: 2rem;
+    margin: 2rem;
+    border: 1px solid black;
+    border-radius: 7px;
+    background-color: #272727;
+    width: 15rem;
+    height: 11rem;
+}
+
+.card h4 {
+    padding-bottom: 1rem;
+}
+
+.card ul{
+    padding: .2rem;
+}
+
+a{
+    text-decoration: none;
+    color: aquamarine;
+}
+
+footer{
+    height: 3rem;
+    background-color: #1a1a1a;
+}
+
+#test{
+    color: red;
+}
+
+
+
+/* About Your Biz Page ----------------------------------- */
+
+#add-page{
+    background-color: #1a1a1a;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: s;
+
+    align-items: center;
+
+}
+
+
+form{
+    display: flex;
+    padding-top: 2rem;
+    color: black;
+    background-color: white;
+    align-items: center;
+    flex-direction: column;
+    height: 90vh;
+    /* width: 20rem; */
+    width: 100vw;
+}
+form label{
+    padding: .5rem;
+}
+
+form button{
+    margin: 1rem;
+    padding: .5rem 1rem .5rem 1rem;
+    width: 5rem;
+}
