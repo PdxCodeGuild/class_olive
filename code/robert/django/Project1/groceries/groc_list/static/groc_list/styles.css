@@ -1,0 +1,48 @@
+*{
+    background-color: coral;
+    padding: .5rem;
+    margin: .5rem;
+}
+
+.header{
+    display: flex;
+    flex-flow: wrap;
+    flex-direction:row;
+    justify-content: center;
+    border: 1rem;   
+    border-style: double;
+}
+
+.form_cont{
+    border: 1rem;
+    border-style:groove;
+    background-color: bisque;
+    text-align: center;
+}
+
+.form_groc{
+    background-color: bisque;
+    font:medium;
+    font-family:fantasy;
+}
+.clicks{
+    background-color: bisque;
+    font:medium;
+    font-family:fantasy;
+    text-align: center;
+}
+.item{
+    align-items: center; 
+    background-color: bisque;
+    font:medium;
+    font-family:fantasy;
+    text-align: center;
+}
+.submit{
+    justify-items:center;
+    background-color: bisque;
+    font:medium;
+    font-family:fantasy;
+    align-self: center;
+    text-align: center;
+}

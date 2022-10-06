@@ -1,23 +1,76 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static "groc_list/styles.css" %}" >
     <title>Grocery Tracker</title>
   </head>
   <body>
-    <div id ='form_c'>
-        <form action="{% url 'groc_list:add_groc' %}" method="post">
-            {% csrf_token %} 
-        <label for="item">Item</label>
+    <h1 class="header">Grocery List!</h1>
+    <div class ="form_cont">
+      <form class ="form_groc" action="{% url "groc_list:add_groc" %}" method="post">
+        {% csrf_token %} 
+        <label class="item" for="store">Store Name</label>
+        <input type="text" name="store" placeholder="Store Name">
+        <label class="item" for="brand">Brand</label>
+        <input type="text" name="brand" placeholder="Brand">
+        <label class="item" for="item">Item</label>
         <input type="text" name="item" placeholder="Item">
-        <label for="created_date">Date Added</label>
+        <label class="item" for="created_date">Date Added</label>
         <input type="date" name="created_date" placeholder="Date Added">
-        <label for="comp">Completed</label>
-        <input type="radio" name="comp" placeholder="Completed">
-        <label for="comp">Incomplete</label>
-        <input type="radio" name="comp" placeholder="Incomplete">
-        <button type="submit">Submit</button> 
-        </form>
-    </div>
+        <div class ="clicks">
+          <label class="item" for="coupon">Coupon</label>
+          <input type="checkbox" name="coupon" value="True" placeholder="Coupon">
+          <label class="item" for="comp">Completed</label>
+          <input type="checkbox" name="comp" value="True" placeholder="Completed">
+        </div>
+        <div class ="submit">
+          <button type="submit">Submit</button> 
+        </div>
+      </form>
+    </div>  
+    <div class="lists">
+      <div>
+        <h1 class="header">Need To Get</h1>
+        {% for item in groc_list %} 
+          {% if item.comp is True %}
+            <div class="item">
+              <p class="item">Store: {{ item.store|upper }}</p>
+              <p class="item">Brand: {{ item.brand|upper }}</p>
+              <p class="item">Item: {{ item.item|upper }}</p>
+              {% if item.coupon == True %}
+                <p class="item">Has Coupon </p>
+              {% else %}
+                <p class="item">No Coupon </p>
+              {% endif %}
+              <p class="item">{{ item.created_date|upper }}</p>
+                <a class="item" href="{% url 'groc_list:delete_groc' item.id %}"><p>Remove This Item?</p></a>
+                <a class="item" href="{% url 'groc_list:change_comp' item.id %}"><p>Change to Completed?</p></a>
+             </div>
+            {% endif %}
+        {% endfor %}
+      </div>
+      <div>
+        <h1 class="header">Already Got It!</h1>
+        {% for item in groc_list %} 
+          {% if item.comp is False %}
+          <div class="item">
+            <p class="item">Store: {{ item.store|upper }}</p>
+            <p class="item">Brand: {{ item.brand|upper }}</p>
+            <p class="item">Item: {{ item.item|upper }}</p>
+            {% if item.coupon == True %}
+              <p class="item">Has Coupon </p>
+            {% else %}
+              <p class="item">No Coupon </p>
+            {% endif %}
+            <p class="item">{{ item.created_date|upper }}</p>
+              <a class="item" href="{% url 'groc_list:delete_groc' item.id %}"><p>Remove This Item?</p></a>
+              <a class="item" href="{% url 'groc_list:change_comp' item.id %}"><p>Change to Need to Get?</p></a>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
   </body>
 </html>
