@@ -52,7 +52,6 @@ nav strong {
 #main form input {
     padding: .25rem;
     margin: .5rem;
-    border-radius: 10%;
 }
 
 #main form textarea {
@@ -86,4 +85,36 @@ footer {
     font-size: x-small;
 }
 
+@media only screen and (min-width: 700px){
+    nav {
+        padding: .5rem;
+        text-decoration: underline;
+        display: flex;
+    }
 
+    #hero img {
+        height: 30rem;
+    }
+
+    nav strong {
+        font-size: x-large;
+    }
+
+    #main {
+        font-size: x-large;
+    }
+
+    #main form {
+        display: flex;
+        justify-content: center;
+    }
+
+    #main form input {
+        padding: .5rem 3rem .5rem 3rem;
+    }
+
+    #main form textarea {
+        padding: 2rem 3rem 2rem 3rem;
+    }
+    
+}
