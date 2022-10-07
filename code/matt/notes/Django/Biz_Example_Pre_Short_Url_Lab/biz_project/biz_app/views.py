@@ -1,5 +1,5 @@
 from multiprocessing import context
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseRedirect
 import random 
 from .models import Biz
@@ -46,8 +46,9 @@ def add_your_biz(request):
         }
         return render(request, 'biz_app/addbiz.html', context )
 
-def redirect_to_images(request, name):
-    # print("!!!!!!!!!!!!!!!!!!!", name)
+def redirect_to_images(request, id):
+    biz_obj = get_object_or_404(Biz, id=id)
+    name = biz_obj.name
     url = 'https://www.google.com/search?q=' + name 
 
     return HttpResponseRedirect(url)

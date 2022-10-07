@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'myapp/styles.css' %}">
+    <title>Quickstart Example Django (with some edits)</title>
+  </head>
+  <body>
+    <form action="{% url 'myapp:new_post_url_name' %}" method="post">  
+      {% csrf_token %}
+      <input name='title' type='text' placeholder='Post Title'> 
+      <input name='text' type='text' placeholder='Post Body'> 
+      <button type='submit'>Submit</button>
+    </form>
+    
+    {% for post in blog_posts %}
+
+      <ul><strong>Title: {{ post.title }} </strong></ul>
+      <ul>{{ post.text }} </ul>
+      <ul>{{ post.create_date }} 
+      <a a href="{% url 'myapp:edit_post' post.id %}">
+        {{post.active}}
+      </a>
+      </ul>
+
+      <br>
+
+    {% endfor %}
+
+  </body>
+</html>

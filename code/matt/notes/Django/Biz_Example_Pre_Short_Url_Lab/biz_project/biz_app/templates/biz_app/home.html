@@ -14,7 +14,7 @@
               <h4>{{item.name}}</h4>
               <ul>{{item.phone}}</ul>
               <ul>{{item.email}}</ul>
-              <ul><a href="{% url 'biz_app:send_to_page' item.name %}">Google Image</a></ul>
+              <ul><a href="{% url 'biz_app:send_to_page' item.id %}">{{item.name}}</a></ul>
             </div>
             {% endfor %}
 
