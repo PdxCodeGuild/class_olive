@@ -1,0 +1,13 @@
+{% block content %}
+
+<nav>
+    <h3>Add your site link</h3>
+    <form action="{% url 'url_app:shorten_url' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="url_name" placeholder="Site Name" required/>
+        <input type="url" name="long_url_field" pattern="https://.*" value="https://" required/>
+        <button type="submit">Submit</button>
+    </form>
+</nav>
+
+{% endblock %}
