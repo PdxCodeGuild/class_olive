@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class='create-container'>
+        <h1>New post</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Save">
+        </form>
+    </div>
+    <img src='https://64.media.tumblr.com/001feae4bd34ca37b419764e2da07d62/tumblr_phftx45DBr1ujgi1qo1_250.gif'/>
+
+
+{% endblock content %}
