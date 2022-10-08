@@ -1,0 +1,48 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}"/>
+    <title>Otherworld Abductees</title>
+  </head>
+  <body>
+    <nav>
+        <h1>Otherworld Abductees 👽</h1>
+        <div>
+            {% if user.is_authenticated %}
+              <a href="{% url 'users:profile' user.username %}">{{ user }}</a>
+            {% endif %}
+            <a href="{% url 'posts:home' %}">Home</a>
+            {% if user.is_authenticated == False %}
+              <a href="{% url 'login' %}">Login</a>
+              <a href="{% url 'users:signup' %}">Sign up</a>
+            {% endif %}
+            {% if user.is_authenticated %}
+              <a href="{% url 'logout' %}">Logout</a>
+            {% endif %}
+        </div>
+    </nav>
+    
+    <div id='container'>
+
+        <div id='new-btn'>
+          {% if user.is_authenticated %}
+            <a  href="{% url 'posts:new' %}">New Post</a>
+          {% endif %}
+        </div>
+
+        {% block content %}
+        {% endblock content %} 
+
+        <div id='alien-waving'>
+          <img src='https://media2.giphy.com/media/qlOso7alCUTiAX7aG5/giphy.gif?cid=ecf05e47mmf2pudd8hcs29ampuqc2rrqq76bnebxv34el1fa&rid=giphy.gif&ct=s'/>
+        </div>
+    </div>
+
+  </body>
+</html>
+
