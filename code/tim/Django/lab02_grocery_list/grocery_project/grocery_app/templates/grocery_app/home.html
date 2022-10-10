@@ -1,0 +1,69 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'grocery_app/styles.css' %}" >
+  <title>Grocery List</title>
+</head>
+<body>
+  <div id="form_wrapper">
+    <div class='form'>    
+      <div id='title'> 
+        <h2>Add to List</h2>
+      </div>
+      <form action="{% url 'grocery_app:add_to_list' %}" method="post">
+        {% csrf_token %}
+        <input type="text" id="grocery_name" name="grocery_name" placeholder="Grocery Name" alt="Grocery Name"/><br>
+        <input type="text" id="grocery_comment" name="grocery_comment" placeholder="Comment" alt="Comment"/><br>
+        <button type="submit" class="button" id="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  
+  <div id='page_wrapper'>
+    <div class='list_shopping'>
+      <div id='title'> 
+        <h2>Shopping List</h2>
+      </div>
+      <ul>
+        {% for grocery in groceries %}
+          {% if grocery.completed is False %}
+            <br>
+            <li>{{ grocery.grocery_name }}</li>
+            <p>Comment: {{ grocery.grocery_comment }}</p>
+            <p>Added: {{ grocery.date_added }}</p>
+            <div class="buttons">
+              <a href="{% url 'grocery_app:toggle_completed' grocery.id %}" class="button" id="complete">Complete</a>
+              <a href="{% url 'grocery_app:delete_grocery' grocery.id %}" class="button" id="delete">Delete</a>
+            </div>
+            {% endif %}
+        {% endfor %}
+      </ul> 
+    </div> 
+    
+    <div class='list_completed'>
+      <div id='title'> 
+        <h2>Completed</h2>
+      </div>
+      <ul>
+        {% for grocery in groceries %}
+          {% if grocery.completed is True %}
+            <br>
+            <li>{{ grocery.grocery_name }}</li>
+            <p>Comment: {{ grocery.grocery_comment }}</p>
+            <p>Added: {{ grocery.date_added }}</p>
+            <div class="buttons">
+              <a href="{% url 'grocery_app:toggle_completed' grocery.id %}" class="button" id="return">Return</a>
+              <a href="{% url 'grocery_app:delete_grocery' grocery.id %}" class="button" id="delete">Delete</a>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </ul> 
+    </div> 
+  </div>
+</body>
+</html>
