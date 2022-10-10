@@ -1,0 +1,7 @@
+*{
+    margin: 1;
+    padding: 1;
+    box-sizing: border-box;
+    background-image: "{{ url_for('static', filename='images/luchador background.jpg') }}";
+    background-size: cover;
+}
