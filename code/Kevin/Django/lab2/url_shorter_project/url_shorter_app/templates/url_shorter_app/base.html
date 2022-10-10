@@ -1,0 +1,25 @@
+{% load tailwind_tags %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chango&family=Faster+One&display=swap" rel="stylesheet">
+    {% tailwind_css %}
+    <title></title>
+  </head>
+  <body class="bg-repeat-x bg-gradient-to-t from-cyan-500 to-blue-500 box-border h-screen">
+      <div class="flex justify-between items-center w-screen h-28 border-2 border-gray-900">
+        <div class="border-2 border-gray-900 w-52"></div>
+            <h1 class="text-cyan-900 text-4xl font-faster_one border-2 border-gray-900">FAST URL!</h1>
+            <div class="flex justify-evenly border-2 border-gray-900 w-52">
+                <h1 class=>Home</h1>
+                <h1 class=>About</h1>
+            </div>
+        </div>
+        {% block home %}
+        {% endblock %}
+  </body>
+</html>
