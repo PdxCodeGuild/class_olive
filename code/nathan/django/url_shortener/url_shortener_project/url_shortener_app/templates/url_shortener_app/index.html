@@ -1,0 +1,33 @@
+{% extends 'url_shortener_app/base.html' %}
+
+{% block main %}
+    <div id="main">
+        <h4>Enter a URL and we will provide you with a shortened version</h4>
+        <form action="{% url 'url_shortener_app:shorten_url' %} "method='post'>
+            {% csrf_token %}
+            <div id="form_row">
+                <div id="form_column">
+                    <input type="text" placeholder="Long..... URL" name="long_url">
+                    <textarea name="description" placeholder="Please provide short description of website"></textarea>
+                </div>
+                <div>
+                    <input type="submit">
+                </div>
+            </div>
+        </form> 
+        <div id="table_div">
+            <table>
+                <tr>
+                    <th>Short URL</th>
+                    <th>Description</th>
+                </tr>
+                {% for url in urls %}
+                <tr>
+                    <td><a href="{% url 'url_shortener_app:redirect_url' url.id  %}">{{ url.short_url }}</a></td>
+                    <td>{{ url.description }} </td>
+                </tr>  
+                {% endfor %}             
+            </table>
+        </div>
+    </div>
+{% endblock %}

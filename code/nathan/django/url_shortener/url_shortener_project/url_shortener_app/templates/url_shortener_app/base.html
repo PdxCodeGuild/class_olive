@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'url_shortener_app/all_styles.css' %}"/>
+    <title>URL Shortener</title>
+  </head>
+  <body>
+    <header>
+        <div>
+            <h1>URL Shortener</h1>
+        </div>
+        <nav>
+            <strong>Home</strong>
+            <strong>About</strong>
+            <strong>Contact</strong>
+        </nav>
+    </header>
+    <div id="hero">
+        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.explicit.bing.net%2Fth%3Fid%3DOIP.LiuXXsK7iPD25hkGs0QqeAHaE8%26pid%3DApi&f=1&ipt=3e51b6bf0c3ab00fea8b5ade538d42559ff4a13b777cfc039401ec384c9fe81d&ipo=images" alt="hero">
+        <h2 id="text_bottom_right">We make URLs manageable</h2>
+    </div>
+    <main id>
+            {% block main%}
+            {% endblock %}
+    </main>
+    <footer>
+        <p>trademark url shortener llc</p>
+    </footer>
+  </body>
+</html>
