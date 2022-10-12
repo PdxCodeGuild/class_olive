@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="border-2 h-32 flex justify-center">
+        <form action="" method="post" class="flex justify-center flex-col">
+            {% csrf_token %}
+            <p >Are you Sure you want to delete?</p>
+
+            <input class="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded p-2" type="submit" value="Confirm">
+        </form>
+    </div>
+
+{% endblock content %}
