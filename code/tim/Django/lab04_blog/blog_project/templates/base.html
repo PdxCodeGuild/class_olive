@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}"/>
+    <title>Blog Home</title>
+</head>
+<body>
+    
+    <nav>
+        <a href="{% url 'posts:home' %}" id="nav_link">home</a>
+        {% if user.is_authenticated == False %}
+            <a href="{% url 'users:register' %}" id="nav_link">register</a>
+            <a href="{% url 'login' %}" id="nav_link">login</a>
+        {% endif %}
+        {% if user.is_authenticated %}
+            <a href="{% url 'users:profile' user.username %}" id="nav_link">{{ user }}</a>
+            <a href="{% url 'logout' %}" id="nav_link">logout</a>
+        {% endif %}
+    </nav>
+
+    <div id='new_post'>
+          {% if user.is_authenticated %}
+            <a  href="{% url 'posts:new' %}" id="nav_link">Add New Post</a>
+          {% endif %}
+    </div>
+    
+        {% block content %}
+        {% endblock content %}
+        
+</body>
+</html>

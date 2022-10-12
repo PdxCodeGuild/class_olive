@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>profile</title>
+</head>
+<body>
+{% comment %} {% if user.is_authenticated == False %} {% endcomment %}
+{% if user.username != user_profile.username %}
+    <p>This isn't YOUR profile, poser!  Go away now.</p>
+{% endif %}
+{% if user.username == user_profile.username %}
+  <h1>{{ user_profile.username }}</h1>
+  <h5><em>Member since {{ user_profile.date_joined }}!</em></h5>
+
+  {% for post in user_profile.posts.all %}
+    <div>
+        <h2><a href="{% url 'posts:detail' post.pk %}">{{ post.title }}</a></h2>
+        <h4><em><a href="{% url 'users:profile' post.author.username %}">{{ post.author.username }}</a></em></h4>
+        <p>{{ post.body|linebreaksbr }}</p>
+    </div>
+  {% endfor %}
+{% endif %}
+</body>
+</html>
+{% endblock content %}

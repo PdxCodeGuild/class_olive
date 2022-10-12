@@ -1,0 +1,101 @@
+/* supersecret99 */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+body{
+    background-color: #7C98B3;
+    color: #CAD2C5;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+    padding: 0.5rem;
+    background-color: #637081;
+}
+
+#nav_link{
+    color: #CAD2C5;
+    text-decoration: none;
+}
+
+#nav_link:hover {
+    color: #b9a47f;
+    text-decoration: none;
+}
+
+#new_post{
+    display: flex;
+    justify-content: center;
+    background-color: #637081;
+}
+
+#posts_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#post{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 2rem;
+    /* padding: 0.5rem; */
+    width: 50rem;
+    background-color: #27333a;
+    border: 5px solid #27333a;
+}
+
+#post_title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding-inline: 1rem;
+    padding-bottom: 0.5rem;
+    background-color: #27333a;
+}
+
+#post_dates{
+    display: flex;
+    justify-content: space-between;
+}
+
+#post_dates a {
+    color: #b9a47f;
+}
+
+#post_body {
+    text-align:justify ;
+    padding: 0.5rem;
+    background-color: #637081;
+}
+
+#post h2{
+    font-size: 14pt;
+}
+
+#post h3{
+    font-size: 10pt;
+    font-weight: 200;
+    text-align: left;
+}
+
+#post h4{
+    font-size: 10pt;
+    font-weight: 200;
+    text-align: right;
+}
+
+#post p{
+    font-size: 14pt;
+    font-weight: 200;
+}
