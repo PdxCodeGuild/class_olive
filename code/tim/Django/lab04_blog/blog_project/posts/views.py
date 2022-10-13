@@ -13,11 +13,14 @@ from .models import Blog_Post
 #     template_name = 'home.html'
 
 def home(request):
-    all_objects = Blog_Post.objects.all()
-    context = {
-        'object_list' : all_objects
-    }
-    return render(request, 'home.html', context)
+    if request.user.is_authenticated:  
+        all_objects = Blog_Post.objects.all()
+        context = {'object_list' : all_objects}
+        return render(request, 'home.html', context)
+    else:
+        all_objects = Blog_Post.objects.all().filter(public=True)
+        context = {'object_list' : all_objects}
+        return render(request, 'home.html', context)
 
 class PostDetailView(DetailView):
     model = Blog_Post

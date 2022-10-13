@@ -51,8 +51,18 @@ nav{
     margin: 1rem 2rem;
     /* padding: 0.5rem; */
     width: 50rem;
-    background-color: #27333a;
+    background-color: #637081;
     border: 5px solid #27333a;
+}
+
+#post.private {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 2rem;
+    /* padding: 0.5rem; */
+    width: 50rem;
+    background-color: #573f4b;
+    border: 5px solid #573f4b;
 }
 
 #post_title {
@@ -61,6 +71,7 @@ nav{
     gap: 0.25rem;
     padding-inline: 1rem;
     padding-bottom: 0.5rem;
+    margin: -0.1rem;
     background-color: #27333a;
 }
 
@@ -76,7 +87,16 @@ nav{
 #post_body {
     text-align:justify ;
     padding: 0.5rem;
-    background-color: #637081;
+    background-color: transparent;
+}
+
+#edit_delete{
+    display: flex;
+    gap: 1rem;
+    padding-left: 0.5rem;
+    font-size: 10pt;
+    font-weight: 200;
+    border-top: 2px solid #27333a;
 }
 
 #post h2{
@@ -98,4 +118,16 @@ nav{
 #post p{
     font-size: 14pt;
     font-weight: 200;
+}
+
+#profile_container{
+    display: flex;
+    flex-direction: column;
+}
+
+#profile_member_info{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    padding-right: 1rem;
 }

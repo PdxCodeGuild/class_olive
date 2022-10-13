@@ -7,6 +7,7 @@ class Blog_Post(models.Model):
     body = models.TextField(max_length=250)
     date_created = models.DateTimeField(auto_now_add=True)
     date_edited = models.DateTimeField(auto_now=True)
+    public = models.BooleanField(default=True)
 
 
     def __str__(self):
