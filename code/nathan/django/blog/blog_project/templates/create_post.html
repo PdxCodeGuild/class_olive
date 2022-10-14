@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <div class="post_row">
+            <div class="post_column">
+                <h4>Write a post about Pronhorn here</h4>
+                <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" value="Save">
+                </form>
+            </div>
+        <img alt="Speed Goat in the snow" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsuccessfulhunter.com%2FMedia%2F2019%2F04%2520Jul-Aug%2FLEW-01.jpg&f=1&nofb=1&ipt=17d84e2e3bef488cbd406f7b0e56eb14fda09871489e8b095d18ddd4d296bee6&ipo=images" >
+    </div>
+{% endblock content %}

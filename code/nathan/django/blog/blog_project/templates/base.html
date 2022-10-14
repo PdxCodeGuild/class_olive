@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% comment %} <meta name="viewport" content="width=device-width, initial-scale=1"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}"/>
+    <title>Speed Goats</title>
+  </head>
+  <body>
+    <div id="top_menu">
+      <div id="left_side_top_menu">
+        <h1>Speed Goats</h1>
+        <img src="https://media0.giphy.com/media/j0qcaVjjT0EjPE6mHl/200w.webp?cid=ecf05e47r0p9y4vtn7dapra2f11u70rijbz33mevgjd7nz2i&rid=200w.webp&ct=g" alt="moving goat">
+      </div>
+      <nav>
+          <a href="{% url 'posts:index' %}">Home</a>
+          {% if user.is_authenticated == False %}
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'users:register' %}">Sign up</a>
+          {% endif %}
+          {% if user.is_authenticated %}
+            <a href="{% url 'users:profile' user.username %}">{{ user }}/Profile</a>
+          {% endif %}
+          {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}">Logout</a>
+          {% endif %}
+      </nav>
+    </div>
+    <div id="hero">
+      <img src="{% static 'goats_mountain.png' %}" alt="Pronghorn Antelope below mountains">
+    </div>
+    <div class="content">
+      {% block content %}
+      {% endblock content %}
+    </div>
+    <footer>
+      <p>Website built by Nate</p>
+      <p>10/12/2022</p>
+    </footer>
+  </body>
+</html>
