@@ -46,7 +46,7 @@ class DeletePost(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 class EditPost(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
-    template_name: str = 'post_edit.html'
+    template_name = 'post_edit.html'
     fields = ['title', 'body']
 
     def test_func(self):
