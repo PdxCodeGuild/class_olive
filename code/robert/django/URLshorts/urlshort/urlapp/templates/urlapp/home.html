@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>URL Shorts</title>
+  </head>
+  <body>
+    <main>
+      <h1 class='headers'>Shorten Your URLS!</h1>
+        <form action="{%url 'urlapp:home'%}" method="post">
+        {% csrf_token %}
+        <input type="text" name="url" placeholder='URL'>
+        <input type="text" name="name" placeholder='Nickname'>
+        <button type="submit">Shorten It!</button>
+        </form>
+        <div>
+          {% for item in shortened %}
+          <a href="/{{item.code}}">{{item.name}}</a>
+          {% endfor %}
+        </div>
+    </main>
+  </body>
+</html>
