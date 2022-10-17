@@ -1,5 +1,3 @@
-/* supersecret99 */
-
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;400;500;600;700;800&display=swap');
 
 *{
@@ -28,6 +26,11 @@ nav{
     text-decoration: none;
 }
 
+#post a {
+    color: #dcaf62;
+    text-decoration: none;
+}
+
 #nav_link:hover {
     color: #b9a47f;
     text-decoration: none;
@@ -43,14 +46,16 @@ nav{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    /* max-width: 100vw; */
+    /* padding-inline: 40rem; */
 }
 
 #post{
     display: flex;
     flex-direction: column;
     margin: 1rem 2rem;
-    /* padding: 0.5rem; */
-    width: 50rem;
+    min-width: 40rem;
+    max-width: 50rem;
     background-color: #637081;
     border: 5px solid #27333a;
 }
@@ -59,8 +64,8 @@ nav{
     display: flex;
     flex-direction: column;
     margin: 1rem 2rem;
-    /* padding: 0.5rem; */
-    width: 50rem;
+    min-width: 40rem;
+    max-width: 50rem;
     background-color: #573f4b;
     border: 5px solid #573f4b;
 }
@@ -120,14 +125,35 @@ nav{
     font-weight: 200;
 }
 
+
 #profile_container{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding-block: 2rem;
+}
+
+#avatar {
+    width: 7rem;
+    height: 7rem;
+    border: 8px solid #27333a;
 }
 
 #profile_member_info{
     display: flex;
-    flex-direction: column;
-    align-self: flex-end;
-    padding-right: 1rem;
+    justify-content: center;
+    gap: 5rem;
 }
+
+#profile_name_date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+
+#profile_private{
+    display: flex;
+    color: rgb(106, 60, 60);
+    /* border: 1px solid blue; */
+} 

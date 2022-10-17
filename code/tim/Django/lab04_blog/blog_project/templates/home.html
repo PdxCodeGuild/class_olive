@@ -22,10 +22,8 @@
                     </div>
                     {% if user == post.author %}
                     <div id='edit_delete'>
-                        {% comment %} <a href="{% url 'posts:edit' post.pk %}">edit</a> {% endcomment %}
-                        {% comment %} <a href="{% url 'posts:delete' post.pk %}">delete</a> {% endcomment %}
-                        <a>edit</a>
-                        <a>delete</a>
+                        <a href="{% url 'posts:edit' post.pk %}">edit</a>
+                        <a href="{% url 'posts:delete' post.pk %}">delete</a>
                     </div>
                     {% endif %}
             </div>
@@ -34,6 +32,7 @@
         {% if post.public == False and user.username == post.author.username %}
             <div id='post' class='private'>
                 <div id='post_title'>
+                    {% comment %} <h2>{{post.title}}</h2> {% endcomment %}
                     <h2>{{post.title}}</h2>
                     <div id='post_dates'>
                         {% if post.date_created != post.date_edited %}
@@ -49,10 +48,8 @@
                 </div>
                 {% if user == post.author %}
                 <div id='edit_delete'>
-                    {% comment %} <a href="{% url 'posts:edit' post.pk %}">edit</a> {% endcomment %}
-                    {% comment %} <a href="{% url 'posts:delete' post.pk %}">delete</a> {% endcomment %}
-                    <a>edit</a>
-                    <a>delete</a>
+                    <a href="{% url 'posts:edit' post.pk %}">edit</a>
+                    <a href="{% url 'posts:delete' post.pk %}">delete</a>
                 </div>
                 {% endif %}
             </div>

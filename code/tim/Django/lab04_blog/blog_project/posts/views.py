@@ -4,6 +4,7 @@ from django.urls import reverse_lazy
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import Blog_Post
+from django.contrib.auth.models import User
 
 # class HomeListView(ListView):
 #     print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
@@ -29,8 +30,26 @@ class PostDetailView(DetailView):
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Blog_Post
     template_name = 'post_new.html'
-    fields = ['title', 'body']
+    fields = ['title', 'body', 'public']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+class EditPostView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Blog_Post
+    template_name: str = 'post_edit.html'
+    fields = ['title', 'body', 'public']
+
+    def test_func(self):
+        post = self.get_object()
+        return self.request.user == post.author
+
+class DeletePostView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Blog_Post
+    template_name = 'post_delete.html'
+    success_url = reverse_lazy('posts:home')
+
+    def test_func(self):
+        post = self.get_object()
+        return self.request.user == post.author
