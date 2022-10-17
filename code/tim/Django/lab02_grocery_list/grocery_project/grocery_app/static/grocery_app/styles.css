@@ -1,0 +1,135 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+body{
+    background: #333333;
+    color: whitesmoke;
+}
+
+/* Text Styling */
+p{
+    margin-left: 1rem;
+    font-size: small;
+    font-weight: 100;
+}
+
+.list_completed p, .list_completed li {
+    text-decoration: line-through;
+    text-decoration-thickness: 1%;
+}
+
+/* Wrappers */
+#form_wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+#page_wrapper{
+    display: flex;
+    justify-content: center;
+    column-gap: 2rem;
+}
+
+/* Add New Item Form */
+.form{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 40.3rem;
+    padding:1rem;
+    margin-block: 2rem;
+    background: #d2e9d2;
+    color: black;
+}
+
+.form #title{
+    display: flex;
+    justify-content: center;
+    color: #474f47;
+    border:1px solid #474f47;
+    margin-bottom: 1rem;
+}
+
+.form #grocery_name {
+    width: 40rem ;
+    padding: 0.2rem;
+}
+
+.form #grocery_comment {
+    width: 40rem ;
+    height:3rem ;
+    padding: 0.2rem;
+    margin-block: 0.5rem;
+}
+
+/* Lists */
+
+.list_shopping #title{
+    display: flex;
+    justify-content: center;
+    color: #595934;
+    border:1px solid #caca6c;
+}
+
+.list_shopping{
+    display: flex;
+    flex-direction: column;
+    width: 17rem;
+    padding:1rem;
+    padding-left:2rem;
+    border: 1px solid #3f3f3f;
+    background: #FFFF88 ;
+    color: black;
+}
+
+.list_completed #title{
+    display: flex;
+    justify-content: center;
+    color: #5b2b32;
+    border:1px solid #5b2b32;
+    text-decoration: none;
+}
+
+.list_completed{
+    display: flex;
+    flex-direction: column;
+    width: 17rem;
+    padding:1rem;
+    padding-left:2rem;
+    border: 1px solid #3f3f3f;
+    background: #f16c7f ;
+    color: black;
+}
+
+/* Buttons */
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.button{    
+    color: white;
+    padding: 0.2rem;
+    text-align: center;
+    text-decoration: none;
+    font-size: 10pt;
+}
+
+#submit{
+    background-color: #008CBA;
+}
+
+#complete{    
+    background-color: #4CAF50;
+}
+
+#return{
+    background-color: #555555;
+}
+
+#delete{
+    background-color: #f44336;
+}

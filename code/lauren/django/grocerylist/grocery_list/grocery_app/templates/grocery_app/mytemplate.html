@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groceries</title>
+</head>
+<body>
+    {% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'movie_app/styles.css' %}" >
+    <title>Grocery app</title>
+  </head>
+  <body>
+    <div id='form-container'>
+      <form action="{% url 'grocery_app:add_new_item' %}" method="post">
+        {% csrf_token %} 
+        <label for='item'>Item</label>
+        <input type="text" name="item" placeholder="Grocery item">
+
+        <label for='expiration_date'>Expiration Date</label>
+        <input type="date" name="expiration_date" placeholder="Expiration date">
+
+        <label for='description'>Description</label>
+        <input type="text" name="description" placeholder="Description">
+
+        <label for='in_cart'>In cart</label>
+        <input type="radio" name="in_cart" value="on" placeholder="In cart">
+        <label for='in_theatres'>NOT in cart</label>
+        <input type="radio" name="in_cart" value="off" placeholder="NOT in cart" >
+        <button type="submit">Submit</button> 
+      </form>
+    </div>
+    <div id="lists">
+        <div>
+          <h1>In Cart</h1>
+          {% for item in grocery_items %} 
+            {% if item.in_cart is True %}
+              <div class="groceries">
+                <p>Item {{ item.item }}</p>
+                <p>Expiration Date {{ item.expiration_date }}</p>
+                <p>Description {{ item.description }}</p>
+                <div class='links'>
+                  <a href="{% url 'grocery_app:toggle_in_cart' item.id %}"><p>In Cart</p></a>
+                </div>
+              </div>
+              {% endif %}
+          {% endfor %}
+        </div>
+        <div>
+          <h1>Not in Cart</h1>
+          {% for item in grocery_items %} 
+            {% if item.in_cart is False %}
+                <p>{{ item.item }}</p>
+                <p>{{ item.expiration_date }}</p>
+                <p>{{ item.description }}</p>
+                <div class='links'>
+                  <a href="{% url 'grocery_app:toggle_in_cart' item.id %}"><p>Not in Cart</p></a>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>   
+</body>
+</html>
+ 

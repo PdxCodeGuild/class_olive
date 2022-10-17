@@ -1,0 +1,31 @@
+{% extends "url_shorter_app/base.html" %}
+    {% block home %}
+
+    <div class="flex justify-center items-center flex-col h-96 w-screen border-2 border-gray-900">
+        <h1 class="relative top-28 font-faster_one text-2xl border-2 border-gray-900">Go!</h1>
+        <form action="{% url 'url_shorter_app:url_shortener' %}" method="post" class="border-2 border-gray-900 relative top-32">
+            {% csrf_token %}
+            <input type="text" name="user_url" placeholder="Enter Item"/>
+        </form>
+    </div>
+    <div class="flex flex-wrap items-start border-2 border-gray-900 w-screen">
+    {% for x in shorter_url_models %}
+        <div class="p-4 border-2 border-gray-900 h-16">
+            <a href="{% url 'url_shorter_app:url_link' x.id%}"><h1>{{ x.shorter_url }}</h1></a>
+        </div>
+    {% endfor %}
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {% endblock %}

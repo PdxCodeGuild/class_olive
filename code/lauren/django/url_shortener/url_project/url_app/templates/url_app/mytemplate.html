@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form action="{% url 'url_app:shortener' %}" method="post">
+        {% csrf_token %}
+        <label>URL to be shortened</label>
+        <input type="text" name="url"/>
+        <button type="submit">submit</button>
+    </form>
+    <ul>
+      {% for item in urls %}
+      <a href="{% url 'url_app:send_to_page' item.id %}">{{item.code}}</a>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

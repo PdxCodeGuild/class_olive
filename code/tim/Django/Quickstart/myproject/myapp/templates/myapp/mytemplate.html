@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% comment %} <form action="{% url 'mypath:mycreate' %}" method="post"> {% endcomment %}
+      <form action="{% url 'myapp:mycreate' %}" method="post">
+      {% csrf_token %}
+      <input type="text" name="post_title" placeholder="Title"/><br><br>
+      <textarea rows="5" cols="60" name="post_body" placeholder="Body"></textarea><br>
+      <button type="submit">submit</button>
+    </form>
+    <ul>
+      {% for myinstance in myinstances %}
+      <li>Title: {{ myinstance.post_title }}</li>
+      <li>Date: {{ myinstance.post_date }}</li>
+      <li>Body: {{ myinstance.post_body }}</li>
+      <br>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
