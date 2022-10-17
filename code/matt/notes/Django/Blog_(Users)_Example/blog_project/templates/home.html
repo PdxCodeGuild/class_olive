@@ -1,6 +1,24 @@
 {% extends 'base.html' %}
-
 {% block content %}
+
+    {% comment %} Example of how to render a sign up page form a view that was from posts {% endcomment %}
+    {% if user.is_authenticated == False %}
+        <h1>Register</h1>
+        <form action="{% url 'posts:home_register' %}" method='post'>
+            {% csrf_token %} 
+            <label name='name'>Username</label>
+            <input type='text' name='name'>
+
+            <label name='password'>Password</label>
+            <input type='text' name='password'>
+
+            <label name='password2'>Confirm Password</label>
+            <input type='text' name='password2'>
+
+            <button type='submit'>Submit</button> 
+        </form>
+        {% endif %}
+
     <div class='posts-container'>
         {% for post in object_list %}
             <div class='posts'>

@@ -2,9 +2,11 @@ from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
 from django.urls import reverse_lazy
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.models import User
+from django.contrib.auth.hashers import make_password
 
 from .models import Post
 
@@ -52,3 +54,27 @@ class EditPost(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def test_func(self):
         post = self.get_object()
         return self.request.user == post.author
+
+def HomeRegister(request):
+    # print('!!!!!!!!!!!!!!!!!', request.POST['password2'])
+    # print(request.POST['password'])
+    # print(request.POST['password2'])
+    
+    # stops passwords that are shorter than 8 being accepted. You can add in more credentials
+    # like number requirements, symbols and so on.
+    if len(request.POST['password']) < 8:
+        print("not long enough of a pass")
+        return redirect('posts:home')
+
+    if request.POST['password'] == request.POST['password2']:
+        print("PASSWORDS MATCHED")
+
+        encrypted_password=make_password(request.POST['password'])
+        user_model = User(username=request.POST['name'], password=encrypted_password)
+        user_model.save()
+
+        return redirect('posts:home')
+
+    else:
+        return redirect('posts:home')
+
