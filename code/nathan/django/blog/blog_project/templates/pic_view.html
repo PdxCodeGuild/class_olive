@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div id="pic_view">
+        <h3><a href="{% url 'posts:index' %}">Return <-</h3>
+        <img src="{{ blogpost.post_image.url}}">
+    </div>
+
+{% endblock content %}

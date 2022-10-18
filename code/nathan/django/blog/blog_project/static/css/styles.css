@@ -104,6 +104,18 @@ footer {
     text-align: center;
 }
 
+#pic_view {
+    margin: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#pic_view img {
+    width: 90%
+}
+
 #profile_id {
     display: flex;
     flex-direction: column;

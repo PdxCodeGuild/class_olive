@@ -3,6 +3,24 @@
 {% block content %}
 <div id="centered_text_and_link">
     <h1>All about the fastest land animal in North America</h1>
+
+    {% if user.is_authenticated == False %}
+        <h1>Join the herd</h1>
+        <form action="{% url 'posts:index_register' %}" method='post'>
+            {% csrf_token %} 
+            <label name='name'>Username</label>
+            <input type='text' name='name'>
+
+            <label name='password'>Password</label>
+            <input type='password' name='password'>
+
+            <label name='password2'>Confirm Password</label>
+            <input type='password' name='password_confirm'>
+
+            <button type='submit'>Submit</button> 
+        </form>
+        {% endif %}
+
     <a id="post_link" href="{% url 'posts:create_post' %}">Write a Post about Pronghorn Antelopes</a>
 </div>
 
@@ -11,7 +29,7 @@
         {% if item.author.username == user.username or item.public %}       
         <div class="each_post">
             {% if item.post_image != None %}
-                <img src="{{ item.post_image.url }}">
+                <a href="{% url 'posts:pic_view' item.pk  %}"><img src="{{ item.post_image.url }}"></a>
             {% endif %}
             <h3>{{ item.title }}</h3>
             <p>{{ item.body }}<p>
