@@ -18,13 +18,25 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     fields = ['title', 'body']
     success_url = reverse_lazy('texas_app:home')
 
-class DeletePost(DeleteView):
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+class DeletePost(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = BlogModel
     template_name = 'delete_post.html'
     success_url = reverse_lazy('texas_app:home')
 
-class EditPost(UpdateView):
+    def test_func(self):
+        post = self.get_object()
+        return self.request.user == post.author
+
+class EditPost(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = BlogModel
     template_name: str = 'edit_post.html'
     fields = ['title', 'body']
     success_url = reverse_lazy('texas_app:home')
+
+    def test_func(self):
+        post = self.get_object()
+        return self.request.user == post.author
