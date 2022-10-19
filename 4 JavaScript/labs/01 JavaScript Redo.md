@@ -11,7 +11,7 @@ Pick a Python lab and re-do it in JavaScript. You should first try to write them
 - Rot13
 - Number to Phrase
 
-## Version 2 (optional)
+## NOTE for DOM Manipulation and Events
 
 Once you have that working, use `input` and `button` elements, with events. You can read the docs on **DOM Manipulation** and **Events**. You can view a demo [here](https://codepen.io/flux2341/pen/rJpBXe?editors=1010).
 
