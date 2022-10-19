@@ -10,10 +10,11 @@
                     <h2>{{post.title}}</h2>
                     <div id='post_dates'>
                         {% if post.date_created != post.date_edited %}
-                            <h3>posted by <a href="{% url 'users:profile' post.author.username %}" id="nav_link">{{post.author.username}}</a> at {{post.date_created}}</h3>
-                            <h4>this post was edited at {{post.date_edited}}</h4>
+                            <h3><a href="{% url 'users:profile' post.author.username %}" id="nav_link">{{post.author.username}}</a> on {{post.date_created}}</h3>
+                            
+                            <h4 id="edited">Edited {{post.date_edited}}</h4>
                         {% else %}
-                            <h3>posted by <a href="{% url 'users:profile' post.author.username %}" id="nav_link">{{post.author.username}}</a> at {{post.date_created}}</h3>
+                            <h3><a href="{% url 'users:profile' post.author.username %}" id="nav_link">{{post.author.username}}</a> {{post.date_created}}</h3>
                         {% endif %}
                     </div>
                 </div>
@@ -36,10 +37,10 @@
                     <h2>{{post.title}}</h2>
                     <div id='post_dates'>
                         {% if post.date_created != post.date_edited %}
-                            <h3>posted by <a href="{% url 'users:profile' post.author.username %}" id="nav_link">{{post.author.username}}</a> at {{post.date_created}}</h3>
-                            <h4>this post was edited at {{post.date_edited}}</h4>
+                            <h3><a href="{% url 'users:profile' post.author.username %}" id="nav_link">{{post.author.username}}</a> {{post.date_created}}</h3>
+                            <h4>edited {{post.date_edited}}</h4>
                         {% else %}
-                            <h3>posted by <a href="{% url 'users:profile' post.author.username %}" id="nav_link">{{post.author.username}}</a> at {{post.date_created}}</h3>
+                            <h3><a href="{% url 'users:profile' post.author.username %}" id="nav_link">{{post.author.username}}</a> {{post.date_created}}</h3>
                         {% endif %}
                     </div>
                 </div>
