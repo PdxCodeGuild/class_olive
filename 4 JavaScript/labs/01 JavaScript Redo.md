@@ -2,7 +2,7 @@
 
 ## Version 1
 
-Pick a Python lab and re-do it in JavaScript. You should first try to write them using JavaScript's `prompt` and `alert` in place of Python's `input` and `print`.
+Pick a Python lab and re-do it in JavaScript. You should first try to write them using JavaScript's console.log() and then take any possible inputs from html and display the results on the dom. The rendering in HTML does not need to be fancy, but connect the script logic to display the resuts and take in inputs.
 
 - Random Password Generator
 - Rock, Paper, Scissors
