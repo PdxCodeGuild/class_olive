@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap');
+
+body {
+    margin: 0rem;
+    padding: 0rem;
+    font-family: 'Fuzzy Bubbles', cursive;
+}
+
+#banner {
+    width: 100%;
+    height: 40rem;
+}
+
+#contentContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#contentContainer button {
+    width: 10rem;
+    margin-bottom: 1rem;
+}
+
+#content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+#kevinLaughing {
+    margin: 2rem;
+}
+
+h1 {
+    margin: 1rem;
+}
