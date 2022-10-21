@@ -109,6 +109,10 @@ resetGameBtn.addEventListener('click', function() {
     csPaper.style.visibility = 'hidden'
     csScissors.style.visibility = 'hidden'
 
+    for (let i = 0, len = radioButtons.length; i < len; i++) {
+        radioButtons[i].checked = false
+    }
+
     winner.innerHTML = theStart
 })
 
