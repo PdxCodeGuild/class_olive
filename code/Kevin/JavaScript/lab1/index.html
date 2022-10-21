@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JavaScript Lab1</title>
+    <script src="script.js" defer></script>
+  </head>
+  <body style="display: flex; flex-direction: column;">
+    <form id="pickSixForm">
+        <p>What are your Pick6 numbers? :</p>
+        <input id="userPick6" type="text" placeholder='Separate with a comma'>
+        <input type="button" onclick="pickSix()" value="Submit">
+    </form>
+    <br><h1>--------------------------</h1>
+    <form id="multiPickForm">
+        <p>How many times would you like to autoplay with unique numbers?</p>
+        <input id="userPick6Multi" type="text" placeholder="Enter number">
+        <input type="button" onclick="pickSixMulti()" value="Submit">
+    </form>
+    <br><h1>--------------------------</h1>
+    <form id="distanceForm" action="">
+      <p>Enter a distance and a unit.</p>
+      <input id="userDistance" type="text" placeholder="Enter distance">
+      <br>
+      <label for="metersUser">Meters:</label>
+      <input type="radio" id="metersUser" name="userRadios" value="meters" >
+
+      <label for="feetUser">Feet:</label>
+      <input type="radio" id="feetUser" name="userRadios" value="feet">
+
+      <label for="milesUser">Miles:</label>
+      <input type="radio" id="milesUser" name="userRadios" value="miles">
+
+      <label for="kilometersUser">Kilometers:</label>
+      <input type="radio" id="kilometersUser" name="userRadios" value="kilometers">
+
+      <label for="yardsUser">Yards:</label>
+      <input type="radio" id="yardsUser" name="userRadios" value="yards">
+
+      <label for="inchesUser">Inches:</label>
+      <input type="radio" id="inchesUser" name="userRadios" value="inches">
+
+      <br>
+      <p>Choose what to convert to:</p>
+      <label for="metersConvert">Meters:</label>
+      <input type="radio" id="metersConvert" name="convertRadios" value="meters">
+
+      <label for="feetConvert">Feet:</label>
+      <input type="radio" id="feetConvert" name="convertRadios" value="feet">
+
+      <label for="milesConvert">Miles:</label>
+      <input type="radio" id="milesConvert" name="convertRadios" value="miles">
+
+      <label for="kilometersConvert">Kilometers:</label>
+      <input type="radio" id="kilometersConvert" name="convertRadios" value="kilometers">
+
+      <label for="yardsConvert">Yards:</label>
+      <input type="radio" id="yardsConvert" name="convertRadios" value="yards">
+
+      <label for="inchesConvert">Inches:</label>
+      <input type="radio" id="inchesConvert" name="convertRadios" value="inches">
+
+      <br>
+      <input type="button" value="Submit" onclick="convertUnits()">
+    </form>
+    <br><h1>--------------------------</h1>
+    <p>Let's see whether you should hit or stay in Blackjack.</p>
+    <p>(A1 or A11 for Ace's value)</p>
+    <form id="blackjackForm">
+      <input id="card1" type="text" placeholder="card 1"><br>
+      <input id="card2" type="text" placeholder="card 2"><br>
+      <input id="card3" type="text" placeholder="card 3"><br>
+      <input type="button" value="Submit" onclick="blackjack()">
+    </form>
+
+      <br><br><br><br>
+  </body>
+</html>
