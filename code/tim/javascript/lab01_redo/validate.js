@@ -5,7 +5,8 @@ let buttonSubmit = document.querySelector('#buttonSubmit')
 buttonSubmit.onclick = function(){
     let originalArray = []
     for (i of inputCard.value){
-        originalArray.push(i)}
+        originalArray.push(i)
+    }
     output1.innerHTML = `<p>1) Original Array: [${originalArray}]</p>`
     console.log('1) Original Array: [' + originalArray + ']' + '\nLength:' + originalArray.length)
 
@@ -25,9 +26,12 @@ buttonSubmit.onclick = function(){
         // console.log(reverseArray[i])
         if (i % 2 === 0){
             // console.log('even')
-            reverseArray[i] = reverseArray[i] * 2}
+            reverseArray[i] = reverseArray[i] * 2
+        }
         else {
-            reverseArray[i] = reverseArray[i] * 1}}
+            reverseArray[i] = reverseArray[i] * 1
+        }
+    }
     console.log('4) Doubled Array: [' + reverseArray + ']' + '\nLength:' + reverseArray.length)
     output4.innerHTML = `<p>4) Doubled Array: [${reverseArray}]</p>`
     
@@ -35,9 +39,12 @@ buttonSubmit.onclick = function(){
     for (let i = 0; i < reverseArray.length; i++){
         if (reverseArray[i] > 9){
             // console.log(reverseArray[i])
-            reverseArray[i] = reverseArray[i] - 9}
+            reverseArray[i] = reverseArray[i] - 9
+        }
         else {
-            reverseArray[i] = reverseArray[i] * 1}}
+            reverseArray[i] = reverseArray[i] * 1
+        }
+    }
     console.log('5) Minus 9: [' + reverseArray + ']' + '\nLength:' + reverseArray.length)    
     output5.innerHTML = `<p>5) Minus 9: [${reverseArray}]</p>`
 
@@ -55,8 +62,10 @@ buttonSubmit.onclick = function(){
     // console.log(checkDigitSum)
     if (checkDigitSum === checkDigit){
         console.log('7) Check digits match')
-        output7.innerHTML = `<p>7) Check Digits match.  Card number is valid.</p>`}
+        output7.innerHTML = `<p>7) Check Digits match.  Card number is valid.</p>`
+    }
     else{
         console.log('7) Check digits do not match')
-        output7.innerHTML = `<p>7) Check Digits do not match.  Card number is not valid.</p>`}
+        output7.innerHTML = `<p>7) Check Digits do not match.  Card number is not valid.</p>`
+    }
 }
