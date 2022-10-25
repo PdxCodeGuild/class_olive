@@ -1,5 +1,5 @@
 
-
+// Get 6 random numbers for the pick6 function to use
 function randomSixNumbers()
 {
     const randomNumbers = []
@@ -13,6 +13,7 @@ function randomSixNumbers()
 
 }
 
+// play pick6 once based on the user's 6 given numbers.
 function pickSix()
 {
     const winnings = ['nothing!','$4!','$7!','$100!','$500,000!','$1,000,000!','$25,000,000!!!!!']
@@ -31,6 +32,9 @@ function pickSix()
     document.getElementById('userPick6').value = ''
     return console.log('you won ' + winnings[score])
 }
+
+// play pick 6, but this time generate numbers for the user. 
+// The user can also generate as many numbers as they like
 function pickSixMulti()
 {
     const winnings = [0,4,7,100,500000,1000000,25000000]
@@ -64,6 +68,7 @@ function pickSixMulti()
 }
 
 
+// make an object for units of measurement.
 const convertDict = {
     'meters': 1,
     'feet': 0.3048,
@@ -73,6 +78,7 @@ const convertDict = {
     'inches': 0.0254
 }
 
+// function for taking the users measurement and converting it into a different unit.
 function convertUnits()
 {
     let userUnit = ''
@@ -100,6 +106,7 @@ function convertUnits()
 }
 
 
+// make and object for card values in Blackjack
 const cardDict = {
     'A11':11,
     'A1':1,
@@ -117,6 +124,7 @@ const cardDict = {
     'K':10
 }
 
+// advice the user on whether they should hit or stay in Blackjack based on their given hand.
 function blackjack()
 {
     let card1 = document.querySelector('#card1').value
