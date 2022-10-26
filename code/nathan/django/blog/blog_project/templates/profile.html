@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="center_the_middle">
+        <div id="profile_id">
+            <h1>{{ user_profile.username }}</h1>
+            <h5><em>Writing stuff since {{ user_profile.date_joined }}!</em></h5>
+            <h4>Post History:</h4>
+            {% for post in user_profile.authored_posts.all %}
+                <h1>{{ post.title }}</h1>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock content %}
