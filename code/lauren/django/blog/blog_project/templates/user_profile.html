@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>{{ user_profile.username }}</h1>
+    <h5><em>Writing stuff since {{ user_profile.date_joined }}!</em></h5>
+        <div class="'profile-posts">
+        {% for post in user_profile.blog_app.all %}
+            <div class='posts2'>
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.body }}</p>
+                <h3>{{ post.author }}</h3>
+                <h4>{{post.created}}</h4>
+            </div>
+        {% endfor %}
+
+{% endblock content %}

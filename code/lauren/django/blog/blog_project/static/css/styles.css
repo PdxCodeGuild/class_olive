@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+    
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+
+}
+
+
+body{
+   background-color: rgb(215, 226, 199);
+   font-family: 'Amatic SC', cursive;
+    background-color: beige;
+}
+
+h1{
+    color: rgb(90, 57, 11);
+    font-size: 3rem;
+}
+
+
+a{
+    color: #4d3c09;
+    text-decoration: none;
+    font-size: x-large;
+    border: solid 1px rgb(254, 250, 250);
+    border-style:dashed;
+    width: 4rem;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+}
+
+a:hover{
+    color: #53e758;
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#new-btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    width: 90%;
+}
+
+/* Nav Section base.html ------------------------------------------- */
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    height: 13rem;
+    padding: 0 1rem 0 1rem;
+    background-image: url('https://hdqwalls.com/download/1/raindrop-grass-plant-5k-8w.jpg');
+    background-size: cover;
+    background-position: center;
+    
+}
+
+nav div {
+    display: flex;
+    gap: 2rem;
+}
+
+
+
+
+/* Home.html Section ------------------------------------------- */
+
+.posts-container{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    gap: 5rem;
+    margin-top: 3rem;
+}
+
+.posts2{
+    width: 60rem;
+    margin: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: larger;
+    border: solid rgb(11, 168, 25);
+    border-style: dashed;
+}
+
+.profile-posts{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.posts{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 18rem;
+    height: 15rem;
+    padding: 1rem;
+    background-image: url('https://th.bing.com/th/id/R.f9117f6ede150272434327c8f4532ee5?rik=7zP1rfarUwnG5Q&riu=http%3a%2f%2fwww.10wallpaper.com%2fwallpaper%2f1366x768%2f1207%2fFresh_aesthetic_green_small_leaves-Plant_wallpaper_1366x768.jpg&ehk=NmAoXabbGMqlu5hOymQtkBYbCPg7dtdYM6yPPxLSWZs%3d&risl=&pid=ImgRaw&r=0');
+    background-size: cover;
+    background-position: center;
+    border: none;
+    border-radius: 2rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.posts h2{
+    color: rgb(249, 251, 249);
+    margin-bottom: .5rem;
+}
+
+.posts p{
+    color: rgb(252, 250, 250);
+}
+
+.posts h3{
+    text-align: center;
+    margin: 1rem 0 1rem 0;
+    font-size: larger;
+    color: white;
+    padding-right: 0.5rem;
+}
+
+.posts h5{
+    color: bisque;
+    text-align: center;
+    
+}
+
+

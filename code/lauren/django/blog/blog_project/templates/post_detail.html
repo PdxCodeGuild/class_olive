@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>hi</h1>
+<h1>s {{post}} </h1>
+    <div class="post-entry">
+        <h2>{{ post.title }}</h2>
+        <h4><em>{{ post.author.username }}</a></em></h4>
+        <h4><em>Posted on {{ post.created }}</em></h4>
+        <h4><em>Last updated on {{ post.updated }}</em></h4>
+        <p>{{ post.body|linebreaksbr }}</p>
+    </div>
+
+{% endblock content %}
