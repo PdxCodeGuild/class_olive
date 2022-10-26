@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/dd6b6dce0f.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="{% static 'star2.png' %}"/>
+    <title></title>
+  </head>
+  <body class="bg-amber-400" style="font-family: 'Old Standard TT', serif;">
+
+    <div class="flex justify-center items-center border-2 h-32" >
+      <img src="{% static 'star2.png' %}"></img>
+      <h1 class="text-4xl p-2" style="font-family: 'Old Standard TT', serif;">
+      Lone Star Blog
+      </h1>
+    </div>
+    
+    {% block content %}
+    {% endblock content %} 
+
+
+  </body>
+</html>
