@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: rgb(25, 210, 25);
+    font-family: 'VT323', monospace;
+}
+
+body{
+    background-color: #141414;
+}
+
+
+#page_wrap{
+    display: flex;
+    flex-direction: column;
+    min-height: 60vh;
+    max-height: 99vh;
+    
+}
+
+/* ################## WINDOWS WRAP ################## */
+#windows_wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height:50vh; 
+    height:100vh;
+    max-height: 100vh;
+    background-color: #007a7a;
+    
+    /* border: 1px solid red; */
+}
+
+
+/* ################## FIREWALL ################## */
+#firewall{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    bottom: 10rem;
+    right: 0.5rem;
+    width: 10rem;
+    height: 20rem;
+    background-color: #b6b6b6;
+    opacity: 20%;
+    
+    /* border: 1px solid blue; */
+}
+
+[id^="firewall"] {
+    display: flex;
+    height: 1.4rem;
+}
+
+/* ################## TERMINAL ################## */
+#terminal_wrap{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap-reverse;
+    margin: 5rem 0rem 2rem 5rem;
+    min-width: 30rem;
+    width: 45rem;
+    height: 25rem;
+    max-height: 37rem;
+    background-color: #c3c3c3;
+    border: 4px solid #c3c3c3;
+    z-index: 2;
+}
+
+#terminal_bar{
+    display: flex;
+    justify-content: space-between;
+    background-color: #000081;
+    border-bottom: 4px solid #c3c3c3;
+}
+
+#terminal_bar img{
+    display: flex;
+    align-items: center;
+    padding: 0.2rem;
+    height: 1.3rem;
+}
+
+#terminal_title{
+    display: flex;
+    font-size: small;
+}
+
+#terminal_title p{
+    display: flex;
+    color: white;
+    align-items: center;
+}
+
+#terminal_toolbar{
+    display: flex;
+    height: max-content;
+    align-items: center;
+    padding-bottom: 0.3rem;
+    background-color: #c3c3c3;
+}
+
+#terminal_toolbar img{
+    height: 1.3rem;
+}
+
+#terminal_dos{
+    display: flex;
+    flex-direction: column;
+    padding: 0.25rem;
+    width: 44.5rem;
+    max-width: 44.5rem;
+    height: 21.4rem;
+    max-height: 21.4rem;
+    border-left: 2px solid grey;
+    border-top: 2px solid grey;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    background-color: #141414;
+}
+
+#terminalOutputText{
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    min-width: 30rem;
+    width: 44.5rem;
+    max-width: 44.5rem;
+    min-height: 15rem;
+    height: 21rem;
+    max-height: 21rem;
+    overflow: hidden;
+    
+    /* border: 1px solid blue; */
+}
+
+/* ################## WINDOWS ################## */
+#win_icons{
+    position: absolute;
+    margin: 0.3rem;
+    z-index: 0; 
+    overflow: hidden;
+}
+
+#start_bar{
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+    background-color: #c0c0c0;
+    z-index: 1;
+}
+
+#tray_clock {
+    display: flex;
+    position: absolute;
+    width: 3.2rem;
+    height: 1rem;
+    right: 0.4rem;
+    bottom: 0.65rem;
+    /* border: 1px solid red; */
+}
+
+#tray_clock p{
+    /* font-size: x-small; */
+    font-weight: 200;
+    color: rgb(24, 24, 24);
+}
