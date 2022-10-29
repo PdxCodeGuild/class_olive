@@ -1,0 +1,32 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(209, 209, 66);
+}
+
+#app{
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+}
+
+#lower_wrapper{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+
+#input_wrapper{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+#app button{
+    padding: 0.2rem;
+}
