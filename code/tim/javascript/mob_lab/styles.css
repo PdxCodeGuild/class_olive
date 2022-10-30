@@ -2,6 +2,7 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -27,6 +28,6 @@ body {
     margin-top: 2rem;
 }
 
-#app button{
-    padding: 0.2rem;
+#submit_btn{
+    padding-inline: 0.5rem;
 }

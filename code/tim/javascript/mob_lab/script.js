@@ -10,7 +10,7 @@ const todoObject = [
         id: 1
     }   
 ]
-let submit = document.querySelector('#submit-btn')
+let submit = document.querySelector('#submit_btn')
 let todoSection = document.querySelector('#todos-section')
 let completedSection = document.querySelector('#completed-section')
 let inputTodo = document.querySelector('#input-todo')
