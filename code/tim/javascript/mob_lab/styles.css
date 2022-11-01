@@ -6,13 +6,12 @@
 }
 
 body {
-    background-color: rgb(209, 209, 66);
+    background-color: rgb(232, 232, 232);
 }
 
 #app{
     display: flex;
     flex-direction: column;
-    /* border: 1px solid red; */
 }
 
 #lower_wrapper{
@@ -28,6 +27,47 @@ body {
     margin-top: 2rem;
 }
 
+button, input {
+    border-radius: 6px;
+    border: 1px solid black;
+    padding: 0.1rem 0.5rem;
+}
+
 #submit_btn{
     padding-inline: 0.5rem;
+}
+
+#todo_item {
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #fd6e41;
+    border-radius: 6px;
+}
+
+#todo_complete {
+    margin-bottom: 1rem;
+    padding: 0.3rem;
+    background-color: rgb(91, 224, 91);
+    border-radius: 7%;
+}
+
+#todo_item p, #todo_complete p {
+    margin-bottom: 1rem;
+}
+
+
+#btn_complete {
+    background-color: rgb(91, 224, 91);
+    border: 1px solid black;
+    margin-right: 9rem;
+    /* border-radius: 6px; */
+}
+
+#btn_uncomplete {
+    background-color: #3f98ea;
+    margin-right: 9rem;
+}
+
+#btn_delete {
+    background-color: rgb(165, 72, 77);
 }

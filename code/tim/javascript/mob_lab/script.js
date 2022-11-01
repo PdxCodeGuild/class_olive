@@ -26,11 +26,11 @@ function addToDom(){
     todoObject.forEach(task => {
         if(!task.completed) 
         {
-            todoSection.innerHTML += `<p>${task.name}</p> <button onclick="completeTodo(${task.id})">Complete</button> <button onclick="deleteTodo(${task.id})">Delete</button>`
+            todoSection.innerHTML += `<div id='todo_item'><p>${task.name}</p> <button id="btn_complete" onclick="completeTodo(${task.id})">Complete</button> <button id="btn_delete" onclick="deleteTodo(${task.id})">Delete</button></div>`
         }
         else
         {
-            completedSection.innerHTML += `<p>${task.name}</p> <button onclick="completeTodo(${task.id})">Uncomplete</button> <button onclick="deleteTodo(${task.id})">Delete</button>`
+            completedSection.innerHTML += `<div id='todo_complete'><p>${task.name}</p> <button id="btn_uncomplete" onclick="completeTodo(${task.id})">Uncomplete</button> <button id="btn_delete" onclick="deleteTodo(${task.id})">Delete</button></div>`
         }
         }
     )
