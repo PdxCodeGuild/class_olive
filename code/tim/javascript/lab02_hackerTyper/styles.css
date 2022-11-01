@@ -167,3 +167,47 @@ body{
     font-weight: 200;
     color: rgb(24, 24, 24);
 }
+
+#warnings{
+    display: none;
+}
+
+#warning{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    z-index: 99;
+}
+
+#warning_msg{
+    position: relative;
+    left: 2.8rem;
+    bottom: 4.3rem;
+    max-width: 11.5rem;
+    height: 2rem;
+    color: black;
+}
+
+#warning_btn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 0.5rem;
+    width: 4rem;
+    transform: translate(-50%, -50%); 
+    
+    color: black;
+    outline: 0.5px dashed black;
+    outline-offset: -4px;
+
+
+    background: transparent;
+    z-index: 99;
+}
