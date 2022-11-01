@@ -54,3 +54,4 @@ gsap.to('#triggers-container', {
     opacity: 1,
 
 })
+
