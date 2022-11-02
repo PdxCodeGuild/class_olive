@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="script.js" defer></script>
+    <title>Lab4
+
+    </title>
+</head>
+<body class="p-1">
+    <h1 class="text-lg font-semibold
+    ">Random QOTD</h1>
+    <p id="quote-body">body</p>
+    <br>
+    <p id="quote-author">-author</p>
+    <br><br>
+    <p class="underline">Search a quote.</p>
+    <input id="user-input" class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="text" placeholder="Enter keyword here">
+    <button onclick="searchQuotes()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
+    <form action=""></form>
+    <div id="quote-div"></div>
+    <br>
+    <div class="flex justify-between">
+        <button onclick="pageLeft()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">&lt; Page</button>
+        <button onclick="pageRight()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Page ></button>
+    </div>
+</body>
+</html>
