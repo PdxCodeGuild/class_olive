@@ -50,8 +50,3 @@ let warningPopups = function() {
         console.log(currentIndex, startmin, startmax, warningCount)
     }
 }
-
-warningBtn.onclick = function() {
-    warningDiv.style.display = 'none'
-}
-
