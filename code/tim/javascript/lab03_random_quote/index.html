@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Random Quote API</title>
+</head>
+<body>
+    
+    <div id="selection">
+        <button id="btn_random">Random QOTD</button>
+        <button id="btn_list">Quote List</button>
+    </div>
+    
+    <div id="quote_random">
+        <p id="random_body"></p>
+    </div>
+    
+    <div id="quote_list" style="display:none;">
+        <h1>Quote List</h1><button id="btn_prev">Prev Page</button><button id="btn_next">Next Page</button><br>
+        <input id="list_filter" type="text" placeholder="Filter by"><button id="btn_filter">Submit</button>
+        <p id="list_body"></p>
+    </div>
+
+</body>
+</html>
