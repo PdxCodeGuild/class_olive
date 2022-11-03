@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="convert.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Unit Converter</title>
+</head>
+<body>
+<div id="wrap_page">
+    <div id="wrap_input">
+        <label for="inpDistance">Original Distance: </label>
+        <input id="inpDistance" type="text" inputmode="numeric" placeholder="How many feet?" value="10">
+        <select name="startUnits" id="startUnits">
+            <option value="feet">Feet</option>
+            <option value="miles">Miles</option>
+            <option value="meters">Meters</option>
+            <option value="kilometers">Kilometers</option>
+            <option value="yards">Yards</option>
+            <option value="inches">Inches</option>
+        </select>
+        <br><br>
+        <label for="endUnits">Convert to: </label>
+        <select name="endUnits" id="endUnits">
+            <option value="feet">Feet</option>
+            <option value="miles">Miles</option>
+            <option value="meters">Meters</option>
+            <option value="kilometers">Kilometers</option>
+            <option value="yards">Yards</option>
+            <option value="inches">Inches</option>
+        </select>
+        <button id="btnSubmit">Submit</button>
+    </div>
+    <div id="wrap_output">
+        
+    </div>
+
+</div>
+</body>
+</html>
