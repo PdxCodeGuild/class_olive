@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&family=Kanit:wght@300&display=swap');
+
+body {
+    margin: 1rem;
+    padding: 0rem;
+    background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Forig00.deviantart.net%2F11f7%2Ff%2F2008%2F222%2F2%2F0%2Fsecret_squirrel_by_brant5studios.png&f=1&nofb=1&ipt=51b71c1a75117e34ff5df9af6ff2426caefb7d0b40f46ae248e3fccb1d14dbc9&ipo=images);
+    color: white;
+    font-family: 'Kanit', sans-serif;
+    font-size: xx-large;
+}
+
+h1 {
+    background-color: rgba(0, 0, 0, 0.219);
+}
+
+label {
+    background-color: rgba(0, 0, 0, 0.438);
+    padding: 3rem;
+    border-radius: 50%;
+}
+
+input {
+    width: 30rem;
+}
+
+input[type="text"] {
+    font-size: xx-large;
+    font-family: 'Kanit', sans-serif;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem;
+    gap: 5rem;
+}
+
+#encryptSection {
+    display: flex;
+    gap: 1rem;
+}
+
+#decryptSection {
+    display: flex;
+    gap: 1rem;
+}
+
+#history {
+    background-color: black;
+    border: solid white;
+    visibility: hidden;
+}
+
+@media screen and (max-width: 600px) {
+
+    body {
+        font-size: large;
+    }
+
+    #encryptSection {
+        flex-direction: column;
+    }
+
+    #decryptSection {
+        flex-direction: column;
+    }
+
+    label {
+        padding: 1rem;
+    }
+
+    input {
+        width: 15rem;
+        height: 2rem;
+    }
+
+}
