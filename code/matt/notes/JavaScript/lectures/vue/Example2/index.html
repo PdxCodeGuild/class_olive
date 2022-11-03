@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <title>Vue 3.0</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Registry App</h1>
+        <!-- <p>{{people}}</p>     -->
+
+        <h2>Residents</h2>
+        <div v-for="person in people">
+            <div @click="getState(person)" v-if="person.state !== 'florida'">
+                <span>{{person.name}}  &nbsp;</span>
+                <span >id: {{person.id}} &nbsp;</span>
+            </div>
+        </div>
+
+        <h2>Florida Residence</h2>
+        <div v-for="person in people">
+            <div @click="getState(person)" v-if="person.state === 'florida'">
+                <span >{{person.name}} &nbsp;</span>
+                <span>id: {{person.id}} &nbsp;</span>
+            </div>
+        </div>
+        
+        <div v-if="subject">
+            <h2>Subject</h2>
+            <p>{{subject}}</p>
+        </div>
+
+        </br></br>
+
+        <label>Search for person: </label>
+        <input v-model="searchSubject" placeholder="enter name">
+        <button @click="findSubject()">Search</button>
+
+        </br></br>
+        <p>
+            {{displaySubject}}
+        </p>
+
+    </div>
+
+    <!-- Import App -->
+    <script src="./main.js"></script>
+
+    <!-- Mount App -->
+    <script>
+        const mountedApp = app.mount('#app')
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <title>Vue 3.0</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{message}}</p>
+
+        <button @click="changeText()">Change Text</button>
+        
+        </br> </br>
+        <!-- <p>{{colors}}</p> -->
+
+        <div v-for="color in colors">
+            <div v-if="color !== 'error'">
+                <p>{{color}}</p>
+            </div>
+        </div>
+        
+        </br> </br>
+
+        <input v-model="name" placeholder="enter your name">
+        {{name}}
+    </div>
+
+    <!-- Import App -->
+    <script src="./main.js"></script>
+
+    <!-- Mount App -->
+    <script>
+        const mountedApp = app.mount('#app')
+    </script>
+</body>
+</html>
