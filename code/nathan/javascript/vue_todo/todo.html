@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/icon" href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.cJXJEElMr33Q7Q4hPNjYYQHaHa%26pid%3DApi&f=1&ipt=d3c818704a8620ada697a0a85620e28651aa4a6ec53ce8bad3130d84da7e3852&ipo=images">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Todo</title>
+</head>
+<body>
+    <h1>Your Todo List</h1>
+    <div id="app">
+
+        <input v-model="task_name" placeholder="Input your next task"  @keyup.enter="addToDo(task_name)">
+        <button @click="addToDo(task_name)">Submit</button>
+        
+        <div id="the-entire-todo-list">
+            <div id="to-do-container">
+                <div v-show="areThereTodos()"><h2>To Do</h2></div>
+                <div v-for="task in tasks">        
+                    <div class="not-completed-tasks" v-if="!task.complete">
+                        <p>{{task.name}}</p>
+                        <button @click="complete(task)">Complete</button>
+                        <button @click="deleteToDo(task)">Delete</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="complete-container">
+                <div v-show="arethereCompleted()"><h2>Completed</h2></div>
+                <div v-for="task in tasks">        
+                    <div class="completed-tasks" v-if="task.complete">
+                        <p>{{task.name}}</p>
+                        <button @click="unComplete(task)">Undo Completion</button>
+                        <button @click="deleteToDo(task)">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Import App -->
+    <script src="./todo.js"></script>
+
+    <!-- Mount App -->
+    <script>
+        const mountedApp = app.mount('#app')
+    </script>
+</body>
+</html>

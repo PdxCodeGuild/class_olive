@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Oswald:wght@500&display=swap');
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    background: #1a1a1a;
+    color:  white;
+}
+
+input {
+    margin: 1rem;
+    padding: .5rem;
+}
+
+button {
+    margin: .25rem;
+    width: 5rem;
+    background-color:rgba(155, 233, 0, 0.5);
+    border: white solid;
+    border-radius: 5%;
+    padding: .5rem;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.not-completed-tasks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: white solid;
+    margin-block: 1rem;
+    margin-inline: 5rem;
+    padding: 1rem;
+    background-color: rgba(255, 166, 0, 0.5);
+}
+
+.completed-tasks {
+    display: flex;
+    flex-direction: column;
+    border: white solid;
+    align-items: center;
+    margin-block: 1rem;
+    margin-inline: 5rem;
+    padding: 1rem;
+    background-color: rgba(153, 205, 50, 0.5);
+}
+
+.not-completed-tasks button {
+    width: 10rem;
+    font-weight: bold;
+}
+
+.completed-tasks button {
+    background-color: rgba(255, 166, 0, 0.5);
+    width: 10rem;
+    font-weight: bold;
+}
+
+#the-entire-todo-list {
+    display: flex;
+    justify-content: center;
+}
+
+#to-do-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#complete-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media screen and (max-width: 1000px) {
+
+    #the-entire-todo-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+}
