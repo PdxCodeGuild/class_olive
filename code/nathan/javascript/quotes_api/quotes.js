@@ -1,4 +1,4 @@
-api_key = "94c859882d0ad76ecd5016219689ed93"
+api_key = ""
 
 const theQuotes = document.querySelector('#the-quotes')
 const nextPageButton = document.querySelector('#next-page-btn')
