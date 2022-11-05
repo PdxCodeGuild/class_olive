@@ -48,7 +48,6 @@ document.addEventListener('keypress', (event) => {
         document.querySelector('#deniedContainer').style.display='flex'
     }
     keyCount ++
-    console.log(keyCount)
 })
 
 
