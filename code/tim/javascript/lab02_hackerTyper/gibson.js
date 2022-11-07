@@ -33,20 +33,20 @@ document.addEventListener('keypress', (event) => {
     currentIndex = updatedIndex
     // console.log(`end: ${currentIndex}`)
     terminalOutput.innerHTML = `<div id="terminalOutputText">${hacker_text.slice(0,15)} ${slice}</div>`
-    warningPopups()
+    // warningPopups()
 })
 
-let warningPopups = function() {
-    let startmin = 880
-    let startmax = 910
-    if (currentIndex > startmin && currentIndex < startmax){
-        console.log(currentIndex, startmin, startmax, warningCount)
-        // console.log('!!!!! ' + warnings[warningCount])
-        warningDiv.style.display = 'block'
-        warningMsg.innerHTML = warnings[warningCount]
-        warningCount++
-        startmin += 880 
-        startmax += 880
-        console.log(currentIndex, startmin, startmax, warningCount)
-    }
-}
+// let warningPopups = function() {
+//     let startmin = 880
+//     let startmax = 910
+//     if (currentIndex > startmin && currentIndex < startmax){
+//         console.log(currentIndex, startmin, startmax, warningCount)
+//         // console.log('!!!!! ' + warnings[warningCount])
+//         warningDiv.style.display = 'block'
+//         warningMsg.innerHTML = warnings[warningCount]
+//         warningCount++
+//         startmin += 880 
+//         startmax += 880
+//         console.log(currentIndex, startmin, startmax, warningCount)
+//     }
+// }
