@@ -1,0 +1,77 @@
+body {
+    background-color:rgb(11, 7, 7);
+    margin:0;
+    overflow:auto;
+    padding:0;
+  }
+  
+  #screen {
+    animation:colorPulse 5s infinite ease-in-out;
+    box-shadow:0 0 5vmin 1vmin #000 inset;
+    box-sizing:content-box;
+    font-family:fantasy;
+    font-size: 1rem;
+    overflow:visible;
+    padding:10vmin;
+    width:100vw;
+  }
+  
+  #screen:before {
+    animation:wave 7s infinite ease-in;
+    content:"";
+    height:20vh;
+    left:0;
+    opacity:.5;
+    position:absolute;
+    right:0;
+    z-index:1;
+  }
+  
+  #screen:after {
+    background: size 4rem;;
+    bottom:0;
+    content:"";
+    left:0;
+    pointer-events:none;
+    position:absolute;
+    right:0;
+    top:0;
+    z-index: index 2;
+  }
+  
+  #pre:last-child:after {
+    animation:blink 1s infinite;
+    overflow:visible;
+  }
+  
+  @keyframes colorPulse {
+    0%, 100% {
+      color:#0c0;
+    }
+    48%, 52% {
+      color:#090;
+    }
+    50% {
+      color:#060;
+    }
+  }
+  
+  @keyframes wave {
+    0% {
+      box-shadow:0 -10vh 20vh #0c0;
+      top:-100vh;
+    }
+    50% {
+      box-shadow:0 -10vh 20vh #060;
+    }
+    100% {
+      box-shadow:0 -10vh 20vh #0c0;
+      top:100vh;
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity:0;
+    }
+  }
