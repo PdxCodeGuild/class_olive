@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>ToDoList</title>
+</head>
+<body>
+    <div id="app">
+        <h1>New Task</h1>
+            <input type="text" v-model="newTask" placeholder="What's the Task" @keyup.enter="submitTask">
+        <h1>To Do!</h1>
+            <div v-for="task in toDo">
+                <div v-if="task.complete === false">
+                    <p>{{task.task}}</p>
+                    <button @click="completed(task)">Completed?</button><button @click="deleteTask(task)">Delete</button>
+                </div>
+            </div>
+        <h1>Completed</h1>
+            <div v-for="task in toDo">
+                <div v-if="task.complete === true">
+                    <p>{{task.task}}</p>
+                    <button @click="completed(task)">Back to the To Do List?</button><button @click="deleteTask(task)">Delete</button>
+                </div>
+            </div>
+    </div>
+    <script src="./main.js"></script>
+
+    <script>
+        const mountedApp = app.mount('#app')
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="randomQuote.js" defer></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+<title>Get a Quote</title>
+</head>
+    <body>
+        <h2>Daily Quote</h2>
+        <h3 id="quote">Quote of the Day</h3>
+        <h2>Written by
+            <h3 id="author"></h3>
+        </h2>
+        <br>
+        <label name="filter">Filter the Quotes</label>
+        <input id='filters'/>
+        <button id="search" onclick="searchQuotes()">Search for Quotes</button>
+        <h2 id="page"></h2>
+        <h2 id="display"></h2>
+        <button id="next" value="1" onclick="pageNumber()">Next Page</button>
+    </body>
