@@ -1,0 +1,39 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: coral;
+}
+
+#burrito{
+    width: 15rem;
+    height: 15rem;
+}
+
+#toppings{
+    display: flex;
+    flex-wrap: wrap;
+    height: 18rem;
+    width: 100vw;
+    align-items:center;
+    flex-direction:column;
+    justify-content: space-evenly;
+}
+
+#logo{
+    height:18rem;
+    width:30rem;
+}
+
+#userandpass{
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    width: 30rem;
+    justify-content: center;
+    justify-content: space-evenly;
+
+}
