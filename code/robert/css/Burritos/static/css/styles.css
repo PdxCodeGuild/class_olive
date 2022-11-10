@@ -1,0 +1,9 @@
+body{
+    background-image: url(img/luchadorbackground.png);
+    background-size:contain;
+    background-position:center;
+    color: blueviolet;
+    border: 3rem;
+    border-radius: 3rem;
+    border-style: double;
+}
