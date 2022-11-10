@@ -6,6 +6,6 @@ const app = Vue.createApp({
     },
     methods: {
     },
-    setup(){
+    mounted(){
     }
 })
