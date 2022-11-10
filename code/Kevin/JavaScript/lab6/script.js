@@ -1,3 +1,6 @@
+
+
+
 const app = Vue.createApp({
     data(){
         return{
@@ -12,6 +15,15 @@ const app = Vue.createApp({
             transitionState: true,
             correct: '',
             correctAnswer : '',
+            difficulty: '',
+            category: '',
+            categoryCount: 9,
+            categoryList: {
+                9:'General Knowledge', 10:'Books', 11:'Film', 12:'Music', 13:'Musicals & Theatre', 14:'Television', 15:'Computer Games',
+                16:'Board Games', 17:'Science & Nature', 18:'Computers', 19:'Math', 20:'Mythology', 21:'Sports',
+                22:'Geography', 23:'History', 24:'Politics', 25:'Art', 26:'Celebrities', 27:'Animals', 28:'Vehicles', 29:'Comics',
+                30:'Gadgets', 31:'Anime', 32:'Cartoon and Animation'
+            }
         }
     },
     methods: {
@@ -80,6 +92,11 @@ const app = Vue.createApp({
             txt.innerHTML = question
             return txt.value
         },
+
+        categoryCounter(){
+            this.categoryCount++
+
+        },
         
 
         getData(){
@@ -88,9 +105,12 @@ const app = Vue.createApp({
                 url: 'https://opentdb.com/api.php',
                 params:{
                     amount: 10,
-                    type: 'multiple'
+                    type: '',
+                    difficulty: this.difficulty,
+                    category: this.category,
                 }
               }).then((response) => {
+                console.log(this.category, 'category')
                 triviaResponse = response.data.results
                 console.log(triviaResponse)
                 this.question = triviaResponse[0].question

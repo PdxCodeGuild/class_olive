@@ -23,7 +23,23 @@
     
     <div class="flex justify-center">
         <transition name="fade" mode="out-in" @leave="onLeave" @enter="onEnter">
-            <button id="play-button" @click="getData()" v-on:click="toggleSeen" v-if="seen" class="play_buttons bg-[#ffd79d] rounded-full h-10 w-14 text-[#320d3e] font-bold">Play!</button>
+            <div v-if="seen" class="flex flex-col items-center justify-evenly h-[15rem]">
+                <button id="play-button" @click="getData()" v-on:click="toggleSeen"  class="play_buttons bg-[#ffd79d] rounded-full h-10 w-14 text-[#320d3e] font-bold">Play!</button>                
+                    <select  v-model="difficulty" class="p-[.4rem] appearance-none rounded-full text-center bg-[#ffd79d] text-[#320d3e] font-bold ">
+                        <option value="" disabled selected >Difficulty</option>
+                        <option value="" class="font-bold">Any</option>
+                        <option value="easy" class="font-bold">Easy</option>
+                        <option value="medium" class="font-bold">Medium</option>
+                        <option value="hard" class="font-bold">Hard</option>
+                    </select>
+                    <select v-model="category" class="p-[.4rem]   appearance-none rounded-full text-center bg-[#ffd79d] text-[#320d3e] font-bold">
+                        <div >
+                            <option value="" disabled selected>Category</option>
+                            <option value="" class="font-bold">Any</option>
+                            <option :value="number" v-for="(thing, number) in categoryList"  class="font-bold">{{thing}}</option>
+                        </div>
+                    </select>
+            </div>
             <div v-else-if="transitionState === true" class="border-2 mr-2 ml-2 p-1 border-[#ffd79d]">
                 <p class="text-[#ffd79d]">{{this.convertHTML(this.question)}}</p>
                 <div v-for="answer in answers">
