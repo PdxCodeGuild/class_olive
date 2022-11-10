@@ -10,6 +10,7 @@ body {
 
 .question {
     color: blue;
+    font-size: x-large;
 }
 
 .acknowledge {
@@ -26,5 +27,19 @@ body {
 
 .showEm {
     color: greenyellow;
+    border: solid greenyellow;
+}
+
+.questionOption {
+    border: solid white;
+    padding: 1rem;
+    margin-inline: 5rem;
+    margin-block: 1rem;
+    text-align: center;
+}
+
+.questionOption:hover {
+    color: blue;
+    border: blue solid;
 }
 

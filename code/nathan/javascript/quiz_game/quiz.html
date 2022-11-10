@@ -44,8 +44,8 @@
         </div>
         <div v-for="question in questions"> 
             <p class="question">{{question.question}}</p>
-            <div v-for="option in question.options">
-                <div v-if="option == question.answer && graded" class="showEm">
+            <div v-for="option in question.options" class="questionOption">
+                <div v-if="option === question.answer && graded" class="showEm">
                     <div @click="checkAnswer(question.id, option)">{{option}}</div>
                 </div>
                 <div v-else>
