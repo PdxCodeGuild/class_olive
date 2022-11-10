@@ -43,15 +43,14 @@ const app = Vue.createApp({
                         item['options'][3] = item['options'][3].replace(word, "")
                     }
                     item['options'].sort((a, b) => 0.5 - Math.random())
-                    item['clicked'] = false
                     this.questions.push(item)
                 }
             })
         },
         checkAnswer(questionID, option){
             for (question of this.questions) {
-                if (question.id === questionID) {
-                    question.clicked = true
+                if (question.id === questionID) { 
+                    question['selection'] = option
                     if(question['answer'] === option){
                         question['wasCorrect'] = true
                     }
@@ -66,7 +65,6 @@ const app = Vue.createApp({
             let correct = 0 
             let incorrect = 0
             for (question of this.questions) {
-                question.clicked = false
                 if(question.wasCorrect){
                     correct++
                 }
@@ -78,7 +76,7 @@ const app = Vue.createApp({
             if (correct > 0) {
                 grade = ( correct / (correct + incorrect)) * 100
             }
-            this.grade = `You got ${correct} questions right. ${incorrect} questions wrong. You made a ${grade}%`
+            this.grade = `You got ${correct} questions right. ${incorrect} questions wrong. You made a(n) ${grade}%`
         },
         onChangeDifficulty($event) {
             this.difficulty = $event.target.value

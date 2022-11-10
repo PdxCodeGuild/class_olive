@@ -28,6 +28,10 @@ body {
 .showEm {
     color: greenyellow;
     border: solid greenyellow;
+    padding: 1rem;
+    margin-inline: 5rem;
+    margin-block: 1rem;
+    text-align: center;
 }
 
 .questionOption {
@@ -41,5 +45,18 @@ body {
 .questionOption:hover {
     color: blue;
     border: blue solid;
+    padding: 1rem;
+    margin-inline: 5rem;
+    margin-block: 1rem;
+    text-align: center;
+}
+
+.selection {
+    color: blue;
+    border: blue solid;
+    padding: 1rem;
+    margin-inline: 5rem;
+    margin-block: 1rem;
+    text-align: center;
 }
 
