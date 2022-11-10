@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: white;
+    background-color: #163678;
+}
+
+#app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block: 2rem;
+    gap: 1rem;
+}
+
+#test{
+    display: block;
+    visibility: visible;
+    height: 10rem;
+    width: 10rem;
+    border: 1px solid red;
+}
+
+#wrap_question{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 60vh;
+    width: 55vw;
+    border-radius: 10px;
+    border: 2px solid black;
+    background-color: #2724c0;
+    border: 1px solid yellow;
+}
+
+
+
+#wrap_question p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    font-variant-caps:all-petite-caps ;
+    padding: 0.5rem;
+    height: inherit;
+    text-shadow: 0.2rem 0.2rem 0.1rem black, -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#wrap_answers{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 55vw;
+    min-height: 100%;
+}
+
+#wrap_answers div{
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    flex-basis: calc(50% - 20px);
+}
+
+#wrap_answers button{
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+    min-height: 2rem;
+    font-size: small;
+    margin: 0.5rem;
+    border-radius: 10px;
+    /* color: #f9c08e;   USE THIS FOR SCORE */
+    background-color: #2724c0;
+    border: 2px solid black;
+}
+
+#wrap_answers #answer4{
+    border: 1px dashed lime;
+}
