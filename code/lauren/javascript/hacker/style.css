@@ -1,0 +1,70 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+    color:chartreuse;
+    font-size:xx-small;
+    font-family:monospace;
+    padding-left: 2rem;
+    padding-right: 15rem;
+
+}
+
+.data{
+    color: black;
+    padding: 2rem;
+}
+
+#accessContainer{
+    display: none;
+    position: absolute;
+    top: 45vh;
+    justify-content: center;
+    width: 95vw;
+    padding-left: 0;
+}
+
+#deniedContainer{
+    display: none;
+    position: absolute;
+    top: 45vh;
+    justify-content: center;
+    width: 95vw;
+    padding-left: 0;
+}
+
+#accessMessage{
+    font-family: monospace;
+    border: 1px solid chartreuse;
+    font-size: 3rem;
+    font-weight: 600;
+    width: 20rem;
+    height: 8rem;
+    align-content: center;
+    text-align: center;
+    background-color: black;
+}
+
+#accessDenied{
+    font-family: monospace;
+    border: 1px solid rgb(241, 33, 18);
+    font-size: 3rem;
+    font-weight: 600;
+    width: 20rem;
+    height: 8rem;
+    align-content: center;
+    text-align: center;
+    background-color: black;
+    color: crimson;
+}
+
+
+
