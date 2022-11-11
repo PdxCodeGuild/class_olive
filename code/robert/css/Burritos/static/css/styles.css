@@ -1,0 +1,13 @@
+body{
+    background-image: url(img/luchadorbackground.png);
+    background-size:contain;
+    background-position:center;
+    color: blueviolet;
+    border: 1rem;
+    border-radius: 1rem;
+    border-style: solid;
+}
+#form{
+    background-color: rgba(51, 250, 250, 0.809);
+    text-align: center;
+}
