@@ -7,15 +7,44 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <title>Burritos!</title>
 </head>
-<body id="form">
-    <h1>Welcome to El Luchador!</h1>
-    <h2>!!!ORDER HERE!!!</h2>   
-    <h3>Tortilla</h3>
-    {% for instances in tortilla %}
-        <ul>
-            <input type="radio">
-            <label>{{instances}}
-        </ul>
-    {%endfor%}
+<body>
+    <div id="form">
+    <form action = "https://webhook.site/48606058-2963-4c4f-9384-1f62d704adf4" and method = "post">
+        
+        <h1>Welcome to El Luchador!</h1>
+        <h2>!!!ORDER HERE!!!</h2>  
+        <input type="text" name="name" placeholder="Name"></input>
+        <br>
+        <input type="text" name="pw" placeholder="Password"></input>
+        <h3>Tortilla</h3>
+            <select name="tortillas">
+                {% for instances in tortilla %}
+                    <option value={{instances}}>{{instances}}</option>
+                {%endfor%}
+            </select>
+        <br>
+        <h3>Meats</h3>
+            <select name="meats">
+                {% for instances in meats %}
+                    <option value={{instances}}>{{instances}}</option>
+                {%endfor%}
+            </select>
+        <br>
+        <h3>Salsa</h3>
+            <select name="salsa">
+                {% for instances in salsa %}
+                    <option value={{instances}}>{{instances}}</option>
+                {%endfor%}
+            </select>
+        <br>
+        <h3>Additional</h3>
+                {% for instances in additional %}
+                    <input type="checkbox" value={{instances}} name={{instances}}>{{instances}}</input>
+                {%endfor%}
+        <br>
+        <br>
+        <button id="submit">Submit</button>
+        </form>
+    </div>
 </body>
 </html>

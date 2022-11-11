@@ -3,7 +3,11 @@ body{
     background-size:contain;
     background-position:center;
     color: blueviolet;
-    border: 3rem;
-    border-radius: 3rem;
-    border-style: double;
+    border: 1rem;
+    border-radius: 1rem;
+    border-style: solid;
+}
+#form{
+    background-color: rgba(51, 250, 250, 0.809);
+    text-align: center;
 }
