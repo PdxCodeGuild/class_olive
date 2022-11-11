@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@1&display=swap');
+
+body {
+    padding: 0rem;
+    margin: 1rem;
+    background-color: black;
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+}
+
+.question {
+    color: blue;
+    font-size: x-large;
+}
+
+.acknowledge {
+    color: greenyellow;
+}
+
+.right {
+    color: green
+}
+
+.wrong {
+    color: red;
+}
+
+.showEm {
+    color: greenyellow;
+    border: solid greenyellow;
+    padding: 1rem;
+    margin-inline: 5rem;
+    margin-block: 1rem;
+    text-align: center;
+}
+
+.questionOption {
+    border: solid white;
+    padding: 1rem;
+    margin-inline: 5rem;
+    margin-block: 1rem;
+    text-align: center;
+}
+
+.questionOption:hover {
+    color: blue;
+    border: blue solid;
+    padding: 1rem;
+    margin-inline: 5rem;
+    margin-block: 1rem;
+    text-align: center;
+}
+
+.selection {
+    color: blue;
+    border: blue solid;
+    padding: 1rem;
+    margin-inline: 5rem;
+    margin-block: 1rem;
+    text-align: center;
+}
+
