@@ -16,7 +16,8 @@
         <h2 @click="getQuiz()">Get Quiz</h2>
         <div id="wrap_question">
             <div v-for="question in questionsList">
-                <span>{{this.responseQ}}</span>
+                <p>{{responseQ}}</p>
+                <p>{{correctAnswer}}</p>
             </div>
         </div><br>
 
