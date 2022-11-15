@@ -1,0 +1,72 @@
+body{
+    background-image: url("./yeti background.jpg");
+    background-size:cover;
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+}
+
+.headers{
+    background-color: rgb(1, 13, 13);
+    display:flex;
+    flex-wrap: nowrap;
+    border: 1rem;
+    border-color: aliceblue;
+    border-style:outset;
+    position: sticky;
+    top: 0;
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+.item{
+    border: .5rem;
+    border-color: aliceblue;
+    border-style:groove;
+    background-color: red;
+    width: 20%;
+}
+a:link {
+    color: pink;
+    background-color: rgba(0, 0, 0, 0.71);
+    text-decoration: none;
+}
+a:visited {
+    color: pink;
+    background-color: rgba(0, 0, 0, 0.71);
+    text-decoration: none;
+}
+a:hover {
+    color: black;
+    background-color: rgba(0, 0, 0, 0.71);
+    text-decoration: underline;
+}
+a:active {
+    color: yellow;
+    background-color: rgba(0, 0, 0, 0.71);
+    text-decoration: underline;
+}
+#title{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 3rem;
+    font-style: italic;
+    text-align: center;
+    background-color: rgba(0, 255, 81, 0.213);
+}
+
+#words{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.56rem;
+    font-style: italic;
+    text-align: center;
+    background-color: rgba(232, 106, 171, 0.38);
+}
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: whitesmoke;
+    text-align: center;
+}
