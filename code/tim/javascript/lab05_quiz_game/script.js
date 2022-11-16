@@ -2,24 +2,31 @@ const app = Vue.createApp({
     data(){
         return{
             quizList: [],
-            quizAmount: 10,
+            quizAmount: 5,
             quizCategory: null,
+            quizDifficulty: null,
             currentQuestion: {},
             currentQuestionIndex: -1,
             originalAnswers: [],
             randomAnswers: [],
             totalScore: 0,
-            gameStatus: 'waiting',
+            gameStatus: 'chooseCat',
             resultImage: { backgroundImage: "url()"},
-            playerResult: '',
         }
     },
     methods: {
         setCategory(buttonCategory){
             this.quizCategory = buttonCategory
-            this.startQuiz()
+            this.gameStatus = 'chooseDiff'
         },
         
+        setDifficulty(buttonDifficulty){
+            this.quizDifficulty = buttonDifficulty
+            console.log(buttonDifficulty)
+            console.log(this.quizDifficulty)
+            this.startQuiz()
+        },
+
         startQuiz(){
             axios({
                 method: 'get',
@@ -27,7 +34,7 @@ const app = Vue.createApp({
                 params: {
                     amount: this.quizAmount,
                     category: this.quizCategory,
-                    difficulty: 'easy',
+                    difficulty: this.quizDifficulty,
                     type: 'multiple',
                 }
             }).then((response) => {
@@ -75,30 +82,20 @@ const app = Vue.createApp({
 
         gameOver(){
             this.gameStatus = 'over'
-            console.log('game over')
-            
-            if (this.totalScore > 0){
-                console.log(this.totalScore + 'is positive')
-                this.playerResult = 'winner'
-            }
-            else{
-                console.log(this.totalScore + 'is negative')
-                this.playerResult = 'loser'
-            }
         },
 
         resetQuiz(){
             this.quizList = []
             this.quizAmount = 10
             this.quizCategory = null
+            this.quizDifficulty = null
             this.currentQuestion = {}
             this.currentQuestionIndex = -1
             this.originalAnswers = []
             this.randomAnswers = []
             this.totalScore = 0
             this.resultImage = { backgroundImage: "url()"}
-            this.gameStatus = 'waiting'
-            this.playerResult = ''
+            this.gameStatus = 'chooseCat'
             location.reload()
         },
     },
