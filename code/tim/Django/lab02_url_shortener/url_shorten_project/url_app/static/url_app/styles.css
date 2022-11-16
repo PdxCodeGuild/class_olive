@@ -47,7 +47,7 @@ nav h3{
     flex-wrap: wrap;
     margin: 1rem;
     margin-top: 2rem;
-    max-width:60rem;
+    max-width:65rem;
 }
 
 #card{
@@ -55,8 +55,8 @@ nav h3{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 4rem;
-    width: 10rem;
+    height: 6rem;
+    width: 15rem;
     margin:0.5rem;
     background: #8e99f3;
     border:1px solid #26418f;

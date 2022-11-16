@@ -23,7 +23,8 @@
         {% for url_instance in url_instances %}
             <div id="card">
                 <ul>{{ url_instance.url_name }}</ul>
-                <ul><a href="{% url 'url_app:send_to_page' url_instance.short_url_code  %}">Short Code Link</a></ul>
+                <ul><a href="{% url 'url_app:send_to_page' url_instance.short_url_code  %}">http://127.0.0.1:8000/{{url_instance.short_url_code}}</a></ul>
+                {% comment %} <ul><a href="{% url 'url_app:send_to_page' url_instance.short_url_code  %}">Short Code Link</a></ul> {% endcomment %}
                 <br>
             </div>
         {% endfor %}
