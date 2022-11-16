@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <!-- <meta charset="UTF-8"> -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
@@ -12,20 +13,41 @@
 <body>
     
     <div id="app">
-        
-        <h2 @click="getQuiz()">Get Quiz</h2>
-        <div id="wrap_question">
-            <div v-for="question in questionsList">
-                <p>{{responseQ}}</p>
-                <p>{{correctAnswer}}</p>
-            </div>
-        </div><br>
+        <div id="category" v-if="gameStatus === 'waiting'">
+            <button id="cat1" @click="setCategory(9)">General Knowledge</button>
+            <button id="cat2" @click="setCategory(11)">Film</button>
+            <button id="cat3" @click="setCategory(14)">Television</button>
+            <button id="cat4" @click="setCategory(15)">Videogames</button>
+            <button id="cat6" @click="setCategory(18)">Computers</button>
+            <button id="cat5" @click="setCategory(26)">Celebrities</button>
+        </div>
 
-        <div id="wrap_answers">
-            <div><button id="answer1">A</button></div>
-            <div><button id="answer2">B</button></div>
-            <div><button id="answer3">C</button></div>
-            <div><button id="answer4">D</button></div>
+        <div id="scoreboard" v-if="gameStatus != 'waiting'">
+            <p>Question {{currentQuestionIndex + 1}} for ${{(currentQuestionIndex + 1) * 100}}</p>
+            <h4>${{totalScore}}</h4>
+        </div>
+            
+        <div id="wrap_question">
+            <div id="current_question" v-if="gameStatus != 'waiting'" :style="resultImage">
+                <span>{{this.decode(currentQuestion.question)}}</span>
+            </div>
+            
+            <div id="wrap_answers" v-if="gameStatus != 'waiting'">
+                <div @click="checkAnswer(randomAnswers[0])"><button id="answer1">{{this.decode(randomAnswers[0])}}</button></div>
+                <div @click="checkAnswer(randomAnswers[1])"><button id="answer2">{{this.decode(randomAnswers[1])}}</button></div>
+                <div @click="checkAnswer(randomAnswers[2])"><button id="answer3">{{this.decode(randomAnswers[2])}}</button></div>
+                <div @click="checkAnswer(randomAnswers[3])"><button id="answer4">{{this.decode(randomAnswers[3])}}</button></div>
+            </div>
+
+            <div id="gameOverScreens" v-if="gameStatus === 'over'">
+                <img id="gameOverImage" src="./winner.png" v-if="playerResult === 'winner'">
+                <img id="gameOverImage" src="./wasted.png" v-if="playerResult === 'loser'">
+                <br>
+                <button id="resetButton" @click="resetQuiz()">Replay?</button>
+            </div>
+
+            <br>
+            <button id="resetButton" @click="resetQuiz()" v-if="gameStatus === 'playing'">Reset</button>
         </div>
     </div>
 
