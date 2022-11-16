@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=BhuTuka+Expanded+One&display=swap');
+        </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+
+        <div id="gameoptions">
+            <label id="dlabel" for="difficulty">Difficulty</label>
+        <select id="difficulty" v-model="difficulty" name="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+
+        </select>
+        <label id="clabel" for="category">category</label>
+        <select id="category" v-model="category" name="category">
+            <option value="21">Sports</option>
+            <option value="17">Science&Nature</option>
+            <option value="26">Celebrities</option>
+            <option value="20">Mythology </option>
+            <option value="15">Entertainment-VideoGames</option>
+            <option value="9">General Knowledge</option>
+
+        </select>
+        <button id="search" @click="getData()">Search</button>
+        </div>
+
+        <div id="scoreandattempts">
+            <p>Score: {{score}}</p>
+            <p>Attempts: {{attempts}}</p>
+        
+        </div>
+        
+    <h1 id="question">{{currentQuestion}}</h1>
+
+    
+    <div id="answers">
+        <button id="button1" v-if="wrong_answers[3]" @click="GetCorrectAnswer(wrong_answers[3])" id="wrong_answers[3]">{{wrong_answers[3]}}</button>
+        <button id="button2" v-if="wrong_answers[0]" @click="GetCorrectAnswer(wrong_answers[0])" id="wrong_answers[0]">{{wrong_answers[0]}}</button>
+        <button id="button3" v-if="wrong_answers[1]" @click="GetCorrectAnswer(wrong_answers[1])" id="wrong_answers[1]">{{wrong_answers[1]}}</button>
+        <button id="button4" v-if="wrong_answers[2]" @click="GetCorrectAnswer(wrong_answers[2])" id="wrong_answers[2]">{{wrong_answers[2]}}</button>
+    </div>
+
+
+    <div id="gameresults">
+        <div v-if="inGame === false">
+            <h3 v-if="result !== 0">
+                {{finalScore}} out of {{finalAttempts}} correct!
+            </h3>
+
+            <h4 v-if="result < 75 && result !== 0">
+                {{result}}% correct, you needed a minimum of 75 to win. Try again!
+            </h4>
+            <h4 v-else-if="result >= 75">
+                {{result}}% correct. You passed!
+            </h4>
+        </div>
+
+    </div>
+        <div id="newgamecontainer" v-if="inGame === false && pregame === false">
+            <button id="newgame" @click="newGame()">New Game</button>
+        </div>
+
+
+
+
+
+    </div>
+
+    <script src="./script.js"></script>
+    <script>
+        const mountedApp = app.mount('#app')
+    </script>
+    
+</body>
+</html>
