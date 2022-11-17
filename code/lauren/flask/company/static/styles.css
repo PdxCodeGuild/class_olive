@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* line-height: 1.5; */
+    /* font-family:'Montserrat', sans-serif; */
+    color: antiquewhite;
+}
+    
+    body{
+        background-color: black;
+        padding: 0.4rem;
+    }
+    
+    .logo{
+        width: 20rem;
+        height: 15rem;
+    }
+
+    
+    .artists{
+        display: flex;
+        align-items: center;
+        background-image:linear-gradient(rgba(14, 2, 2, 0.568), rgba(255,255,255,0.2)),
+        url("https://howto.org/wp-content/uploads/2020/08/How-to-Set-Up-a-Tattoo-Gun-profile.jpg");
+        width: 20rem;
+        height: 30rem;
+        margin-left: 0.8rem;
+        background-size: 32rem 30rem;
+        margin-right: 1.5rem;
+        margin-top: 3rem;
+    }
+    
+    .topcontainer{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+
+    button{
+        background: none;
+        border: none;
+        font-family:'Bungee Spice', cursive;
+        font-size: 1.6rem;
+        font-weight: 600;
+        /* background-color: rgba(255, 255, 255, 0.226); */
+        padding: 1rem;
+    }
+
+    button:hover{
+        opacity: 0.8;
+    }
+    
+    .middle{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        justify-content: space-evenly;
+        background-image:linear-gradient(rgb(14, 2, 2), rgba(29, 6, 6, 0.432)),
+        url(https://images.creativemarket.com/0.1.0/ps/4046381/1160/772/m1/fpnw/wm1/1-.jpg?1557934403&s=e45dc6998f99e38ffeecc0c5390908c5);
+        padding-bottom: 3rem;
+    }
+    
+    .aftercare{
+        display: flex;
+        justify-content: center;
+        background-image:linear-gradient(rgba(14, 2, 2, 0.89), rgba(24, 3, 3, 0.13)), url(https://64.media.tumblr.com/ae85a162a97e0ed47a8fd0515e8dcfe1/tumblr_n9ah9y4pbd1tsor94o2_1280.jpg);
+        background-repeat: no-repeat;
+        background-size: 30rem 30rem;
+        height: 30rem;
+        width: 20rem;
+        margin-top: 3rem;
+    }
+    
+    .facebook{
+        height: 3.5rem;
+        width: 3.5rem;
+    }
+    
+    
+    .insta{
+        height: 3.5rem;
+        width: 3.5rem;
+    }
+    
+    .youtube{
+        height: 3.5rem;
+        width: 3.5rem;
+    }
+    
+    .container4{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        padding-top: 2.5rem;
+        
+    }
+    
+    
+    
