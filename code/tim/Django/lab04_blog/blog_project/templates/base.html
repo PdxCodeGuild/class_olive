@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>ChessPlug</title>
+</head>
+<body>
+<div id='page_wrapper'>
+    <nav class='navbar'>
+        <div id='nav_logo'>
+            <img src='https://i.imgur.com/cXhSBrw.png' id='img_logo'><br>
+            <img src='https://i.imgur.com/3t7Awvz.png' id='img_slogan'><br>
+        </div>
+        <div id='nav_links'>
+            <a href="{% url 'posts:home' %}" id="nav_link">home</a>
+            {% if user.is_authenticated == False %}
+                <a href="{% url 'users:register' %}" id="nav_link">register</a>
+                <a href="{% url 'login' %}" id="nav_link">login</a>
+            {% endif %}
+            {% if user.is_authenticated %}
+                <a href="{% url 'users:profile' user.username %}" id="nav_link">{{ user }}</a>
+                <a href="{% url 'logout' %}" id="nav_link">logout</a>
+            {% endif %}
+        </div>
+    </nav>
+    
+    {% if user.is_authenticated == True %}
+    <div id='new_post'>
+          {% if user.is_authenticated %}
+            <a  href="{% url 'posts:new' %}" id="nav_link">Add New Post</a>
+          {% endif %}
+    </div>
+    {% endif %}
+
+    {% block content %}
+    {% endblock content %}
+</div>
+</body>
+</html>

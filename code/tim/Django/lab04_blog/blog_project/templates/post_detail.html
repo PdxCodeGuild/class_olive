@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div id="post_entry">
+  <p>{{blog_post.title}}</p>
+  <p><a href="{% url 'users:profile' blog_post.author.username %}">{{blog_post.author.username}}</a></p>
+  {% comment %} <p>{{blog_post.author.username}}</p> {% endcomment %}
+  <p><em>Posted on {{blog_post.date_created}}</em></p>
+  <p><em>Last updated on {{blog_post.date_edited}}</em></p>
+  <p>{{blog_post.body}}</p>
+</div>
+
+{% endblock content %}

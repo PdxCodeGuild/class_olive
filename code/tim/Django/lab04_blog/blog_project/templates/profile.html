@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block content %}
+ 
+<div id='profile_container'>
+  <div id='profile_member_info'>
+    <div id='profile_avatar'>
+      <img src="{{ user_profile.first_name }}" id="avatar"></img>
+    </div>
+    <div id='profile_name_date'>
+      <h1>{{ user_profile.username }}</h1>
+      <h5><em>Member since {{ user_profile.date_joined }}</em></h5>
+    </div>
+  </div>
+    {% if user.username != user_profile.username %}
+      <div id='profile_private'>    
+        <p>This profile is private.</p>
+      </div>
+    {% endif %}
+</div>
+  
+{% if user.username == user_profile.username %}
+{% for post in user_profile.posts.all %}
+
+  <div id='posts_container'>
+  
+    {% if post.public == True %}  
+    <div id='post'>
+      <div id='post_title'>
+        <h2><a href="{% url 'posts:detail' post.pk %}">{{post.pk}} - {{post.title}}</a></h2>
+          <div id='post_dates'>
+            {% if post.date_created != post.date_edited %}
+              <h3>posted by <a href="{% url 'users:profile' post.author.username %}" id="nav_link">{{post.author.username}}</a> at {{post.date_created}}</h3>
+              <h4>this post was edited at {{post.date_edited}}</h4>
+            {% else %}
+              <h3>posted by <a href="{% url 'users:profile' post.author.username %}" id="nav_link">{{post.author.username}}</a> at {{post.date_created}}</h3>
+            {% endif %}
+          </div>
+      </div>
+      <div id='post_body'>
+        <p>{{post.body}}</p>
+      </div>
+      
+      {% if user == post.author %}
+        <div id='edit_delete'>
+            <a href="{% url 'posts:edit' post.pk %}">edit</a>
+            <a href="{% url 'posts:delete' post.pk %}">delete</a>
+        </div>
+      {% endif %}
+    </div>
+    {% endif %}
+    
+    {% if post.public == False and user.username == post.author.username %}
+    <div id='post' class='private'>
+      <div id='post_title'>
+        <h2><a href="{% url 'posts:detail' post.pk %}">{{post.pk}} - {{post.title}}</a></h2>
+            <div id='post_dates'>
+              {% if post.date_created != post.date_edited %}
+                <h3>posted by <a href="{% url 'users:profile' post.author.username %}" id="nav_link">{{post.author.username}}</a> at {{post.date_created}}</h3>
+                <h4>this post was edited at {{post.date_edited}}</h4>
+              {% else %}
+                <h3>posted by <a href="{% url 'users:profile' post.author.username %}" id="nav_link">{{post.author.username}}</a> at {{post.date_created}}</h3>
+              {% endif %}
+            </div>
+      </div>
+        <div id='post_body'>
+          <p>{{post.body}}</p>
+        </div>
+        {% if user == post.author %}
+          <div id='edit_delete'>
+              <a href="{% url 'posts:edit' post.pk %}">edit</a>
+              <a href="{% url 'posts:delete' post.pk %}">delete</a>
+          </div>
+        {% endif %}
+    </div>  
+  {% endif %}
+
+{% endfor %}
+{% endif %}
+</body>
+</html>
+{% endblock content %}
