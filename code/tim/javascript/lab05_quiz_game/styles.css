@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: white;
+    background-color: #163678;
+    overflow: hidden;
+}
+
+#category, #difficulty{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem; 
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+#category button, #difficulty button{
+    height: 6rem;
+    width: 8rem;
+    padding: 0.5rem;
+    color: white;
+    font-size: large;
+    font-variant-caps:all-petite-caps ;
+    border-radius: 10px;
+    border: 3px solid black;
+    background-color: #0e2381;
+}
+
+#scoreboard{
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+    margin-top: 3rem;
+    color: #d29d64;
+}
+
+#app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#wrap_question{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 6rem;
+}
+
+#current_question{
+    border-radius: 10px;
+    border: 3px solid black;
+    background-color: #0e2381;
+    background-size:auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#current_question span{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: inherit;
+    height: 40vh;
+    width: 60vw;
+    padding: 0.5rem;
+    font-size: xx-large;
+    font-variant-caps:all-petite-caps ;
+    text-shadow: 0.2rem 0.2rem 0.1rem black, -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#wrap_answers{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 66vw;
+    min-height: 100%;
+}
+
+#wrap_answers div{
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    flex-basis: calc(50% - 20px);
+}
+
+#wrap_answers button{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: small;
+    padding: 0.2rem;
+    margin: 0.5rem;
+    min-height: 5rem;
+    border-radius: 10px;
+    color: white;
+    border: 3px solid black;
+    background-color: #0e2381;
+}
+
+#resetButton{
+    height: 3.5rem;
+    width: 5rem;
+    padding: 0.5rem;
+    margin-right: 1rem;
+    color: white;
+    font-size: medium;
+    font-variant-caps:all-petite-caps ;
+    border-radius: 10px;
+    border: 3px solid black;
+    background-color: #0e2381;
+}
+
+#gameOverScreens {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.763);
+}
+
+#gameOverImage {
+    width: 40vw;
+}
