@@ -7,15 +7,13 @@
   <title>Blog</title>
 </head>
 <body>
-  <h1>Parenting Hacks</h1>
+  <h1>Blog</h1>
 
   {% for post in posts %}
-    <ul>
-      <li>
-        {{post.author}}
-      </li>
-    </ul>
-  {% endfor %}
+        <ul>
+            <li><span>Post: </span>{{post}}</li>
+        </ul>
+    {% endfor %}
 
 </body>
 </html>
