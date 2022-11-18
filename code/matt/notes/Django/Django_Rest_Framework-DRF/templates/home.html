@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Books!</title>
+</head>
+<body>
+    {% csrf_token %}
+    <div id="app">
+        <h1>Welcome to the Librars</h1>
+
+        <div v-for="book in books">
+            <p>[[book.id]] [[book.title]] [[book.genre]] </p>
+        </div> 
+
+        <div>
+            <input type='text' placeholder="Title" v-model="newBook.title">
+            <input type='text' placeholder="Author" v-model="newBook.author">
+            <input type='text' placeholder="Genre" v-model="newBook.genre">
+            <input type='text' placeholder="ISBN" v-model="newBook.isbn">
+
+            <button @click="createBook">New Books</button>
+        </div>
+
+
+    </div>
+
+    <!-- Import Ajax -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- Import file.js -->
+    <script src="{% static '/app.js' %}"></script> 
+
+    <!-- Mount App -->
+    <script> const mountApp = app.mount('#app') </script>
+
+
+</body>
+</html>
