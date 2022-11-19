@@ -1,5 +1,5 @@
 
-# Movie DRF Lister
+# (DRF) Django Rest Framework - Movie Lister
 
 #### Make an app using DRF that allows a collection of movies and information on them
 #### Store in the movie model more than just the title. Think of what a website would store on a movie and reflect that data in the model. Have in your model values such as Title, Genere, Release Date, Meta Score
