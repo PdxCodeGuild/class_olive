@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+body {
+    margin: 0rem;
+    padding: 0rem;
+    font-family: 'Source Code Pro', monospace;
+    background-image: url(./images/black-background.jpg);
+    color: white;
+}
+
+#heading {
+    background-image: url(./images/texture3.jpg);  
+    border-block: solid rgba(209, 207, 207, 0.568);
+    color: white;
+    padding-left: 1rem;
+    padding-bottom: 2rem;
+    margin-bottom: 5rem;
+    height: 15rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+#heading-words {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+nav {
+    margin: 1rem;
+    font-size: large;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.164);
+}
+
+nav a:hover{
+    color: silver
+}
+
+#experience-section h2 {
+    margin-left: 1rem;
+    margin-block: 2rem;
+}
+
+#experience-section h1 {
+    text-align: center;
+}
+
+.experience {
+    display: flex;
+    flex-direction: column;
+    border-block: solid rgba(209, 207, 207, 0.568);
+    background-color: white;
+    color: black;
+    margin-bottom: 10rem;
+}
+
+.experience-wording {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.experience-wording-heading {
+    display: flex;
+}
+
+#rcgLogo {
+    width: 20rem;
+    height: 5rem;
+}
+
+#word-and-ship {
+    display: flex;
+    justify-content: space-between;
+}
+
+.experience-dates {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+#ship {
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+}
+
+#ship img {
+    height: 10rem;
+    width: 50rem;
+}
+
+#water {
+    height: 15rem;
+    width: 100%;
+    border-top: solid rgba(209, 207, 207, 0.568);
+}
+
+#usaf-logo {
+    width: 5rem;
+}
+
+#plane-container {
+    background-image: url(./images/sky.jpg);
+}
+
+#plane {
+    width: 30rem;
+    margin-block: 5rem;
+}
+
+#plane2 {
+    width: 30rem;
+    margin-block: 5rem;
+}
+
+#plane3 {
+    width: 30rem;
+    margin-block: 5rem;
+}
+
+#plane4 {
+    width: 30rem;
+    margin-block: 5rem;
+}
+
+#plane5 {
+    width: 30rem;
+    margin-block: 5rem;
+}
+
