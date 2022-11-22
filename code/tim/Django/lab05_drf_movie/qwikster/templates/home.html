@@ -24,14 +24,14 @@
             {% comment %} <img src="[[movie.cover.url]]"> {% endcomment %}
         </div>
 
-        {% comment %} <div>
+        <div>
             <input type='text' placeholder="Title" v-model="newMovie.title">
             <input type='text' placeholder="Genre" v-model="newMovie.genre">
             <input type='text' placeholder="Year" v-model="newMovie.year">
             <input type='text' placeholder="Metacritic Rating" v-model="newMovie.metacritic">
             
             <button @click="createMovie">Add Movie</button>
-        </div> {% endcomment %}
+        </div>
     </div>
 
     <!-- Import Ajax -->
