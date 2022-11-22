@@ -10,15 +10,24 @@
 <body>
     {% csrf_token %}
     <div id="app">
-        <h1>Welcome to the Librars</h1>
+        <h1>Welcome [[currentUser.username]] to "Register your Book"</h1>
+        {% comment %} [[currentUser]] {% endcomment %}
+
+        {% if user.is_authenticated %}
+
+            <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            <a href="{% url 'signup' %}">Signup</a>
+            <a href="{% url 'login' %}">Login</a>
+        {% endif %}
 
         <div v-for="book in books">
-            <p>[[book.id]] [[book.title]] [[book.genre]] </p>
+            <p>[[book.id]] [[book.title]] [[book.genre]] [[book.author_detail.username]] </p>
         </div> 
 
         <div>
             <input type='text' placeholder="Title" v-model="newBook.title">
-            <input type='text' placeholder="Author" v-model="newBook.author">
+            {% comment %} <input type='text' placeholder="Author" v-model="newBook.author"> {% endcomment %}
             <input type='text' placeholder="Genre" v-model="newBook.genre">
             <input type='text' placeholder="ISBN" v-model="newBook.isbn">
 

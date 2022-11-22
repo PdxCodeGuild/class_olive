@@ -7,6 +7,6 @@ router = DefaultRouter()
 router.register('books', views.PostBookSet, basename='book')
 
 urlpatterns = router.urls + [
-    path('', views.BookAPIView.as_view()),
 ]
+    # path('', views.BookAPIView.as_view()),
 

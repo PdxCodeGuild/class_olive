@@ -5,6 +5,7 @@ const app = Vue.createApp({
         return{
             message: 'hello world',
 
+            currentUser: {},
             csrfToken: '',
             books: [],
             newBook: {
@@ -36,7 +37,7 @@ const app = Vue.createApp({
                 },
                 data: {
                     "title" : this.newBook.title,
-                    "author": this.newBook.author,
+                    "author": this.currentUser.id,
                     "genre": this.newBook.genre,
                     "isbn": this.newBook.isbn,
                 }
@@ -48,14 +49,24 @@ const app = Vue.createApp({
              
             })
 
+        },
+        loadCurrentUser(){
+            axios({
+                method: 'get',
+                url: '/users/currentuser/'
+            }).then(response => {
+                console.log('CU', response.data)
+                this.currentUser = response.data
+            })
         }
 
     },
     created: function() {
         this.loadBooks()
+        this.loadCurrentUser()
     },
     mounted(){
-       this.csrfToken = document.querySelector("input[name=csrfmiddlewaretoken]").value
+        this.csrfToken = document.querySelector("input[name=csrfmiddlewaretoken]").value
       
        
     }
