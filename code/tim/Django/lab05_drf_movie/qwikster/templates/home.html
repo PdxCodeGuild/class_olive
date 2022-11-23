@@ -10,14 +10,10 @@
     <title>Qwikster (but worse!)</title>
 </head>
 <body>
+    
     {% csrf_token %}
     <div id="app">
         <p>Welcome to Qwikster.  I'm sorry.</p><br>
-
-        {% comment %} {% for movie in object_list %}
-            <h2>{{ movie.title }}</h2>
-            <img src="{{ movie.cover.url}}" alt="{{ movie.title }}">
-        {% endfor %} {% endcomment %}
 
         <div v-for="movie in movies">
             <p>[[movie.title]] - [[movie.genre]] [[movie.year]] </p>
@@ -29,18 +25,14 @@
             <input type='text' placeholder="Genre" v-model="newMovie.genre">
             <input type='text' placeholder="Year" v-model="newMovie.year">
             <input type='text' placeholder="Metacritic Rating" v-model="newMovie.metacritic">
-            
             <button @click="createMovie">Add Movie</button>
         </div>
     </div>
 
-    <!-- Import Ajax -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <!-- Import Vue.js -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <!-- Import file.js -->
     <script src="{% static '/app.js' %}"></script> 
-    <!-- Mount App -->
     <script> const mountApp = app.mount('#app') </script>
+
 </body>
 </html>
