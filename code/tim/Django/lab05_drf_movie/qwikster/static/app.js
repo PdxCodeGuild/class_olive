@@ -2,6 +2,7 @@ const app = Vue.createApp({
     delimiters: ['[[', ']]'],
     data(){
         return{
+            currentUser: {},
             csrfToken: '',
             movies: [],
             newMovie: {
@@ -9,6 +10,7 @@ const app = Vue.createApp({
                 "genre": "",
                 "year": "",
                 'rating': "",
+                'addedBy': "",
             }
         }
     },
@@ -19,14 +21,12 @@ const app = Vue.createApp({
                 url: 'api/v1/movies'
             }).then(response => {
                 this.movies = response.data
-                console.log(response.data)
-                
+                // console.log(response.data)
                 }
             )
         },
 
         createMovie() {
-            
             axios({
                 method: 'post',
                 url: 'api/v1/movies/',
@@ -38,20 +38,32 @@ const app = Vue.createApp({
                     "genre": this.newMovie.genre,
                     "year": this.newMovie.year,
                     "metacritic": this.newMovie.metacritic,
-                    "cover": this.newMovie.cover,
+                    "addedBy": this.currentUser.id,
                 }
-            }).then( response => {
+            }).then(response => {
                 this.loadMovies()
-                console.log(response.data)
+                // console.log(response.data)
             }
             ).catch(error => {
                 console.log(error.response.data)
             })
+        },
+        
+        loadCurrentUser(){
+            axios({
+                method: 'get',
+                url: '/users/currentuser/'
+            }).then(response => {
+                // console.log('CU', response.data)
+                this.currentUser = response.data
+            })
         }
+
     },
     
     created: function() {
         this.loadMovies()
+        this.loadCurrentUser()
     
     },
     mounted(){

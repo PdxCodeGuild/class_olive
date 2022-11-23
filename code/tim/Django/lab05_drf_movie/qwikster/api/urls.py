@@ -6,5 +6,5 @@ router = DefaultRouter()
 router.register('movies', views.PostMovieSet, basename='movie')
 
 urlpatterns = router.urls + [
-    path('', views.MovieAPIView.as_view()),
 ]
+    # path('', views.MovieAPIView.as_view()),

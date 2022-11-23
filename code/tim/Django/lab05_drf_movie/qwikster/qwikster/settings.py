@@ -29,8 +29,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'movies.apps.MoviesConfig',
     'api.apps.ApiConfig',
+    'users.apps.UsersConfig',
 ]
-    # 'movies',
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -118,3 +118,10 @@ MEDIA_ROOT = BASE_DIR / "media"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'users.CustomUser'
+
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
+
+LOGIN_URL = 'login'
