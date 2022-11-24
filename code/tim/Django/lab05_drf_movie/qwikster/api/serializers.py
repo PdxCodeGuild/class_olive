@@ -5,7 +5,7 @@ from users.models import CustomUser
 class NestedMovieSerializer(serializers.ModelSerializer):
     class Meta:
         model = Movie
-        fields = ('id', 'title', 'genre', 'year', 'metacritic', 'addedBy')
+        fields = ('id', 'title', 'genre', 'year', 'metacritic', 'addedBy', 'onNetflix', 'onHulu', 'onAmazon', 'onHBO')
 
 class NestedUserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -16,7 +16,7 @@ class MovieSerializer(serializers.ModelSerializer):
     addedBy_detail = NestedUserSerializer(read_only=True, source='addedBy')
     class Meta:
         model = Movie
-        fields = ('id', 'title', 'genre', 'year', 'metacritic', 'addedBy', 'addedBy_detail')
+        fields = ('id', 'title', 'genre', 'year', 'metacritic', 'addedBy', 'addedBy_detail', 'onNetflix', 'onHulu', 'onAmazon', 'onHBO')
 
 class UserSerializer(serializers.ModelSerializer):
     movie_detail = NestedMovieSerializer(many=True, source='movies', read_only=True)

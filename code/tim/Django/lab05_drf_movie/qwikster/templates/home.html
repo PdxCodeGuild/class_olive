@@ -1,45 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-    {% load static %}
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static '/styles.css' %}">
-    <link rel="icon" type="image/x-icon" href="{% static '/favicon.ico' %}">
-    <title>FriendFlix</title>
-</head>
-<body>
-    
-    {% csrf_token %}
-    <div id="app">
-        <p>Welcome *[[currentUser.username]]* to FriendFlix.</p>
-        <p>Add movies that you own and compare with friends to find something to watch together.</p><br>
+{% extends 'base.html' %}
+{% block content %}
+
+<div id="movie_gallery">
+    <div id="movie_card" v-for="movie in movies">
+        <p>[[movie.title]] </p>
+        <p>[[movie.year]] [[movie.genre]]   [[movie.metacritic]]%</p>
         
-        {% if user.is_authenticated %}
-            <a href="{% url 'logout' %}">Logout</a>
-        {% else %}
-            <a href="{% url 'signup' %}">Signup</a>
-            <a href="{% url 'login' %}">Login</a>
-        {% endif %}
-
-        <div v-for="movie in movies">
-            <p>[[movie.title]] - [[movie.year]] [[movie.genre]] - Metacritic Rating [[movie.metacritic]]% - Added by [[movie.addedBy_detail.username]]</p>
-        </div>
-
-        <div>
-            <input type='text' placeholder="Title" v-model="newMovie.title">
-            <input type='text' placeholder="Genre" v-model="newMovie.genre">
-            <input type='text' placeholder="Year" v-model="newMovie.year">
-            <input type='text' placeholder="Metacritic Rating" v-model="newMovie.metacritic">
-            <button @click="createMovie">Add Movie</button>
-        </div>
     </div>
+</div><br>
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="{% static '/app.js' %}"></script> 
-    <script> const mountApp = app.mount('#app') </script>
+<div id="add_movie">
+    <input type='text' placeholder="Title" v-model="newMovie.title">
+    <input type='text' placeholder="Genre" v-model="newMovie.genre">
+    <input type='text' placeholder="Year" v-model="newMovie.year">
+    <input type='text' placeholder="Metacritic Rating" v-model="newMovie.metacritic"><br>
+    
+    <input type='checkbox' id="on_netflix" v-model="newMovie.onNetflix">
+    <label for="on_netflix">On Netflix</label>
+    <input type='checkbox' id="on_hulu" v-model="newMovie.onHulu">
+    <label for="on_hulu">On Hulu</label>
+    <input type='checkbox' id="on_amazon" v-model="newMovie.onAmazon">
+    <label for="on_amazon">On Amazon Prime</label>
+    <input type='checkbox' id="on_hbo" v-model="newMovie.onHBO">
+    <label for="on_hbo">On HBO</label><br>
+    
+    
+    <button @click="createMovie">Add Movie</button>
+</div>
 
-</body>
-</html>
+{% endblock content %}

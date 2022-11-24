@@ -7,4 +7,3 @@ router.register('movies', views.PostMovieSet, basename='movie')
 
 urlpatterns = router.urls + [
 ]
-    # path('', views.MovieAPIView.as_view()),
