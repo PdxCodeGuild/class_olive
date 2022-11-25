@@ -8,7 +8,8 @@ const app = Vue.createApp({
             newToDo: {
                 "item" : "",
                 "needs_doing": "",
-            }
+            },
+            enteredThing: ''
         }
     },
     methods: {
@@ -31,9 +32,8 @@ const app = Vue.createApp({
                     'X-CSRFToken': this.csrfToken
                 },
                 data: {
-                    "item" : this.newToDo.item,
+                    "item" : this.enteredThing,
                     "author": this.currentUser.id,
-                    "needs_doing": this.newToDo.needs_doing,
                 }
             }).then( response => {
                 this.loadToDo()
@@ -69,6 +69,9 @@ const app = Vue.createApp({
                 // console.log(response.data)
                 this.loadToDo()
             })
+        },
+        testFunc(){
+            console.log(this.enteredThing)
         }
 
     },

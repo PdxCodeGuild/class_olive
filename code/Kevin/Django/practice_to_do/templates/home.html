@@ -27,6 +27,7 @@
         </div>
 
         <h1 class="mt-4">TO DO</h1>
+        <input v-model="enteredThing" v-on:keyup.enter="createToDo" type="text" placeholder="Enter Thing" class="border mb-4">
         <div class="flex flex-col justify-center items-center border w-[10rem]">
             <div v-for="item in currentUser.todo_detail" >
                 <div v-if="item.needs_doing">
