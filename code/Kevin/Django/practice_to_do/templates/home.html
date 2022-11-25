@@ -28,18 +28,25 @@
 
         <h1 class="mt-4">TO DO</h1>
         <div class="flex flex-col justify-center items-center border w-[10rem]">
-            <div v-for="item in toDo" >
-    
-                <p v-if="item.author_detail.username == currentUser.username && item.needs_doing">[[item.item]]  [[item.author_detail.username]]</p>
-    
+            <div v-for="item in currentUser.todo_detail" >
+                <div v-if="item.needs_doing">
+                    <p>[[item.item]]</p>
+                    <button @click="swapparo(item.id, item.needs_doing)">change</button>
+
+                </div>
             </div>
 
         </div>
         <h1 class="mt-4">NEEDS DOING</h1>
         <div class="flex flex-col justify-center items-center border w-[10rem]">
-            <div v-for="item in toDo" >
+            <div v-for="item in currentUser.todo_detail" >
     
-                <p v-if="item.author_detail.username == currentUser.username && item.needs_doing == false">[[item.item]]  [[item.author_detail.username]]</p>
+                <div v-if="item.needs_doing == false">
+                    <p>[[item.item]]</p>
+                    <button @click="swapparo(item.id, item.needs_doing)">change</button>
+
+                </div>
+                
     
             </div>
 

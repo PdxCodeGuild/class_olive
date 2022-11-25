@@ -7,7 +7,6 @@ const app = Vue.createApp({
             toDo: [],
             newToDo: {
                 "item" : "",
-                "author": "",
                 "needs_doing": "",
             }
         }
@@ -52,6 +51,23 @@ const app = Vue.createApp({
             }).then(response => {
                 console.log('CU', response.data)
                 this.currentUser = response.data
+            }).catch(error =>{
+                console.log(error.response)
+            })
+        },
+        swapparo(id, currentBool){
+            axios({
+                method: 'patch',
+                url: '/api/v1/todo/' + id + '/',
+                headers: {
+                    'X-CSRFToken': this.csrfToken
+                },
+                data: {
+                    "needs_doing": !currentBool
+                }
+            }).then(response => {
+                // console.log(response.data)
+                this.loadToDo()
             })
         }
 
@@ -62,6 +78,7 @@ const app = Vue.createApp({
     },
     mounted(){
         this.csrfToken = document.querySelector("input[name=csrfmiddlewaretoken]").value
+        console.log('mounted')
       
        
     }
