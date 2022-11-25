@@ -1,12 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Home</title>
 </head>
 <body>
+    {% csrf_token %}
+    <div id="app" class="flex flex-col items-center">
+        <div class="flex justify-center items-center relative h-[5rem] border-b w-screen">
+            <h1>Hello [[currentUser.username]].</h1>
+
+            <div class="absolute bottom-0 right-0">
+                {% if user.is_authenticated == False %}
+                    <a href="{% url 'login' %}" class="pr-1">Login</a>
+                    <a href="{% url 'signup' %}" class="pr-1">Sign up</a>
+                {% endif %}
+                {% if user.is_authenticated %}
+                    <a href="{% url 'profile' user.username%}" class="pr-1">Profile</a>
+                    <a href="{% url 'logout' %}" class="pr-1">Logout</a>
+                {% endif %}
+            </div>
+        </div>
+
+        <h1 class="mt-4">TO DO</h1>
+        <div class="flex flex-col justify-center items-center border w-[10rem]">
+            <div v-for="item in toDo" >
+    
+                <p v-if="item.author_detail.username == currentUser.username && item.needs_doing">[[item.item]]  [[item.author_detail.username]]</p>
+    
+            </div>
+
+        </div>
+        <h1 class="mt-4">NEEDS DOING</h1>
+        <div class="flex flex-col justify-center items-center border w-[10rem]">
+            <div v-for="item in toDo" >
+    
+                <p v-if="item.author_detail.username == currentUser.username && item.needs_doing == false">[[item.item]]  [[item.author_detail.username]]</p>
+    
+            </div>
+
+        </div>
+
+
+  
+
+
+    </div>
+
+<!-- Import Ajax -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<!-- Import Vue.js -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<!-- Import file.js -->
+<script src="{% static '/app.js' %}"></script> 
+
+<!-- Mount App -->
+<script> const mountApp = app.mount('#app') </script>
+
     
 </body>
 </html>
