@@ -45,6 +45,7 @@ const app = Vue.createApp({
                     "author": this.currentUser.id,
                 }
             }).then( response => {
+                this.enteredThing = ''
                 this.loadToDo()
                 console.log(response.data)
             }).catch(error => {
