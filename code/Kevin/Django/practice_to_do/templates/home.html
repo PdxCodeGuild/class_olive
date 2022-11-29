@@ -26,31 +26,65 @@
             </div>
         </div>
 
-        <h1 class="mt-4">TO DO</h1>
-        <input v-model="enteredThing" v-on:keyup.enter="createToDo" type="text" placeholder="Enter Thing" class="border mb-4">
-        <div class="flex flex-col justify-center items-center border w-[10rem]">
-            <div v-for="item in currentUser.todo_detail" >
-                <div v-if="item.needs_doing">
-                    <p>[[item.item]]</p>
-                    <button @click="swapparo(item.id, item.needs_doing)">change</button>
+        <div id="outer-div" class="flex border w-screen justify-evenly">
 
+            <div id="left-div" class="border h-[5rem] w-[5rem]"></div>
+            <div id="to-do-div" class="flex flex-col items-center border">
+                <h1 class="mt-4">TO DO</h1>
+                <input v-model="enteredThing" v-on:keyup.enter="createToDo" type="text" placeholder="Enter Thing" class="border mb-4">
+                <div class="flex flex-col justify-center items-center border w-[10rem]">
+                    <div v-for="single_item in currentUser.todo_detail" >
+                        <div v-if="single_item.needs_doing" class="border">
+                            <p>[[single_item.item]]</p>
+                            <button @click="swapparo(single_item.id, single_item.needs_doing)">change</button>
+                            <div v-if="displayedFavorites.includes(single_item.item) == false">
+
+                                <button @click="createFavorite(single_item.item)">favorite</button>
+                            </div>
+                            <button @click="deleteToDo(single_item.id)">DELETE</button>
+                           
+                            
+        
+                        </div>
+                    </div>
+        
+                </div>
+                <h1 class="mt-4">DID</h1>
+                <div class="flex flex-col justify-center items-center border w-[10rem]">
+                    <div v-for="single_item in currentUser.todo_detail" >
+            
+                        <div v-if="single_item.needs_doing == false" class="border">
+                            <p>[[single_item.item]]</p>
+                            <button @click="swapparo(single_item.id, single_item.needs_doing)">change</button>
+                            <div v-if="displayedFavorites.includes(single_item.item) == false">
+
+                                <button @click="createFavorite(single_item.item)">favorite</button>
+                            </div>
+                            <button @click="deleteToDo(single_item.id)">DELETE</button>
+        
+                        </div>
+                        
+            
+                    </div>
+        
                 </div>
             </div>
+            <div id="favorites-div" class="flex flex-col items-center border w-[10rem]">
+                <h1>Favorites</h1>
+                <div class="border">
+                    <div v-for="single_favorite in currentUser.favorites_detail">
+                        <p>[[single_favorite.favorite]]</p>
+                        <div v-if="displayedToDo.includes(single_favorite.favorite) == false">
+                            <button @click="spawnFromFavorites(single_favorite.favorite)">add to do</button>
 
-        </div>
-        <h1 class="mt-4">NEEDS DOING</h1>
-        <div class="flex flex-col justify-center items-center border w-[10rem]">
-            <div v-for="item in currentUser.todo_detail" >
-    
-                <div v-if="item.needs_doing == false">
-                    <p>[[item.item]]</p>
-                    <button @click="swapparo(item.id, item.needs_doing)">change</button>
+                        </div>
+                        <button @click="deleteFavorite(single_favorite.id)">DELETE</button>
+                        
+                    </div>
 
                 </div>
-                
-    
-            </div>
 
+            </div>
         </div>
 
 

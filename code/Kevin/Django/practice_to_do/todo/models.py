@@ -9,3 +9,10 @@ class ToDo(models.Model):
 
     def __str__(self):
         return self.item
+
+class Favorites(models.Model):
+    favorite = models.CharField(max_length=200)
+    author = models.ForeignKey(CustomUser, related_name="favorites", on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.favorite
