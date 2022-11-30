@@ -11,7 +11,6 @@ const app = Vue.createApp({
             movie: [],
             newMovie: {
                 title: '',
-                director: '',
                 genre: ''
             }
         }
@@ -32,7 +31,7 @@ const app = Vue.createApp({
             axios({
                 method: 'post',
                 url: 'api/v1/movie/',
-                Headers: {
+                headers: {
                     'X-CSRFToken': this.csrfToken
                 },
                 data: {
@@ -42,11 +41,16 @@ const app = Vue.createApp({
                 }
             }).then(response => {
                 console.log(response.data)
+                this.newMovie = {
+                    title: '',
+                    genre: ''
+                }
+                console.log('wiped')
                 this.loadMovies()
                 
                 }
             ).catch(error => {
-                console.log(error)
+                console.log(error.data)
             })
         },
         loadCurrentUser(){
