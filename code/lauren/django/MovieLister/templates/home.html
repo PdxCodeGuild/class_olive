@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Economica:ital,wght@1,700&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    {% csrf_token %}
+
+    <div id="app">
+
+        <div id="headercontainer">
+            <h1>M o v i e L i s t e r</h1>
+            
+        </div>
+    <div id="login">
+        {% if user.is_authenticated %}
+        <h3>Welcome [[currentUser.username]]</h3>
+
+        <a id="logout" href="{% url 'logout' %}">Logout</a>
+        {% else %}
+        <a href="{% url 'signup' %}">Signup</a>
+        <a href="{% url 'login' %}">Login</a>
+
+        {% endif %}
+    </div>
+
+        <div id="movieposts"  >
+
+            <div class="movie-box" v-for="(movie, index) in movies">
+
+                <div class="hide" :id="'id' + index" @mouseleave="hideinfo(index)">
+                    <h1>[[movie.title]] </h1>
+                    <p>Genre: [[movie.genre]]</p>
+                    <p>Director: [[movie.director]]</p>
+                    <p>Release Date: [[movie.release_date]] </p>
+                    <h3>Opinion: [[movie.opinion]] </h3> 
+                    <h3>Likes: [[movie.likes]]</h3>
+                </div>
+                <img id="poster" :src="movie.poster" @mouseover="displayinfo(index)"/>
+                {% if user.is_authenticated %}
+                <button @click="createLikes(movie)">Like</button>
+                {% endif %}
+            </div>
+        </div>
+
+        <div id="movieadder">
+            <h1>Add New Movie!</h1>
+            <input type='text' placeholder="Title" v-model="newMovie.title">
+            <input type='text' placeholder="Director" v-model="newMovie.director">
+            <input type='text' placeholder="Genre" v-model="newMovie.genre">
+            <input type="date" placeholder="Release Date" v-model="newMovie.release_date">
+            <input type="text" placeholder="Opinion" v-model="newMovie.opinion">
+            <!-- <input type="file" accept="image/png, image/jpg" id="movie-input" > -->
+
+            <button @click="createMovie">New Movie</button>
+        </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="{% static '/app.js' %}"></script> 
+
+<script> const mountApp = app.mount('#app') </script>
+
+</body>
+</html>
