@@ -6,13 +6,15 @@ const app = Vue.createApp({
             
             csrfToken: '',
             currentUser: {},
-            message: `Welcome`,
+            message: ` `,
 
             movie: [],
             newMovie: {
                 title: '',
                 genre: ''
-            }
+            },
+            editTitle: '',
+            editGenre: '',
         }
     },
     methods: {
@@ -23,7 +25,7 @@ const app = Vue.createApp({
             }).then(response => {
                 this.movie = response.data
                 console.log(this.movie)
-                
+                this.loadCurrentUser()
                 }
             )
         },
@@ -53,6 +55,35 @@ const app = Vue.createApp({
                 console.log(error.data)
             })
         },
+        deleteMovie(id){
+            axios({
+                method: 'delete',
+                url: '/api/v1/movie/' + id,
+                headers: {
+                    'X-CSRFToken': this.csrfToken
+                }
+            }).then(response => {
+                console.log('workin')
+                this.loadMovies()
+            })
+        },
+        editMovie(id,){
+            axios({
+                method: 'patch',
+                url: '/api/v1/movie/' + id + '/',
+                headers: {
+                    'X-CSRFToken': this.csrfToken
+                },
+                data: {
+                    "title": this.editTitle,
+                    "genre": this.editGenre,
+                }
+            }).then(response => {
+                // console.log(response.data)
+                this.switchBackFromEdit()
+                this.loadMovies()
+            })
+        },
         loadCurrentUser(){
             axios({
                 method: 'get',
@@ -61,13 +92,33 @@ const app = Vue.createApp({
                 console.log(response.data)
                 this.currentUser = response.data
             })
+        },
+        switchToEdit(index, title, genre){
+            document.querySelectorAll('.edit-button').forEach(element => {
+                element.disabled = true
+            })
+            document.querySelector('#post-div'+ index).style.display = 'none'
+            document.querySelector('#edit-div'+ index).style.display = 'block'
+            this.editTitle = title
+            this.editGenre = genre
+            
+        },
+        switchBackFromEdit(){
+            document.querySelectorAll('.edit-button').forEach(element => {
+                element.disabled = false
+            })
+            document.querySelectorAll('.post-div').forEach(element => {
+                element.style.display = 'block'
+            })
+            document.querySelectorAll('.edit-div').forEach(element => {
+                element.style.display = 'none'
+            })
         }
 
 
     },
     created: function(){
         this.loadMovies()
-        this.loadCurrentUser()
         console.log('created')
         
 

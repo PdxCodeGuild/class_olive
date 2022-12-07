@@ -10,3 +10,6 @@ def home_view(request):
 class RestListView(ListView):
     model = Movie
     template_name: str = 'home.html'
+
+def goals_by_timeframe(request, timeframe):
+    return HttpResponse(f'The timeframe is {timeframe}')

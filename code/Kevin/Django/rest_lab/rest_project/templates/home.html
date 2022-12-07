@@ -23,19 +23,38 @@
                 <a href="{% url 'profile' user.username%}" class="p-1">Profile</a>
                 <a href="{% url 'logout' %}" class="p-1">Logout</a>
             {% endif %}
+            
         </div>
+        <a :href=" 'bob/' + [[message]] " class="p-1">bob</a>
     </div>
-    <div v-for="film in movie" class="flex items-center flex-col">
-        <p>[[film.title]] [[film.director_detail.username]] [[film.genre]]</p>
-    </div>
+
+    
     <br>
+    
     <div class="flex items-center flex-col">
         <input type="text" placeholder="Title" v-model="newMovie.title" class="border w-[10rem]">
-        {% comment %} <input type="text" placeholder="Director" v-model="newMovie.director" class="border w-[10rem]"> {% endcomment %}
         <input type="text" placeholder="Genre" v-model="newMovie.genre" class="border w-[10rem]">
         <button @click="createMovie">Submit</button>
     </div>
 
+    <br>
+    
+    <div class="border flex flex-wrap justify-evenly">
+        <div  v-for="(film, index) in movie"  class="flex items-center flex-col h-[15rem] w-[15rem] border">
+            <div :id="'post-div' + index" class="post-div">
+                <p class="border">[[film.title]] [[film.director_detail.username]] [[film.genre]]</p>
+                <button @click="deleteMovie(film.id)">DELETE</button>
+                <br>
+                <button class="edit-button" @click="switchToEdit(index, film.title, film.genre)">edit</button>
+
+            </div>
+            <div :id="'edit-div' + index" class="edit-div hidden">
+                <input :id="'title-input' + index" v-model="editTitle" type="text" placeholder="Title"  class="border w-[10rem]">
+                <input :id="'genre-input' + index" v-model="editGenre" type="text" placeholder="Genre"  class="border w-[10rem]">
+                <button @click="editMovie(film.id)">Submit</button>
+            </div>
+        </div>
+    </div>
 
 
 </div>
