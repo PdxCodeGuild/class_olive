@@ -1,45 +1,55 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <title>NateFlix</title>
-</head>
-<body>
-
-    {% csrf_token %}
-    <div id="app">
+{% extends 'base.html' %}
+{% block content%} 
+{% load static %}          
+<div id="app">          
+    <div>
         {% if user.is_authenticated %}
-            <h1>Welcome to Nateflix, [[currentUser.username]]</h1>
-        {% else %}
-            <h1>Welcome to NateFlix</h1>
-        {% endif %}
-        
-        {% if user.is_authenticated %}
-            <a href="{% url 'logout' %}">Logout</a>
-        {% else %}
-            <a href="{% url 'signup' %}">Signup</a>
-            <a href="{% url 'login' %}">Login</a>
-        {% endif %} 
-
-        <div v-for="movie in movies">
-            <p>[[movie.title]]</p>
-        </div>
-
-        <div>
-            <input id="title-textbox" type="text" placeholder="Title" v-model="newMovie.title">
-            <input id="director-textbox" type="text" placeholder="Director" v-model="newMovie.director">
-            <input id="genre-textbox" type="text" placeholder="Genre" v-model="newMovie.genre">
-            <input id="release_date-picker" type="date" v-model="newMovie.release_date">
-            <input id="rating-picker" type="number" v-model="newMovie.rating" min="1" max="5">
-
-            <button @click="createMovie">Add Movie</button>
-        </div>
-        
+            <h2>Add a Movie</h2>
+            <div id="add-movie">
+                <input id="title-textbox" type="text" placeholder="Title" v-model="newMovie.title">
+                <input id="have_watched" type="checkbox" v-model="newMovie.have_watched" value="true"> I've seen this movie</input>
+                <div v-if="newMovie.have_watched">
+                    <input id="rating-picker" type="number" placeholder="rating" v-model="newMovie.rating" min="1" max="10">
+                </div>
+                <button @click="createMovie">Add Movie</button>
+            </div>
     </div>
+    <div id="movie-area">
+            <h2>To watch list</h2>
+            <div class="api-info-plus-movie">
+                <div v-for="movie in movies">
+                    <div v-if="movie.have_watched != true && movie.movie_user == currentUser.id">                       
+                        <div class="single-movie" @mouseover="movie.hover = true" @mouseleave="movie.hover = false">
+                            <a :href="'/movies/' + movie.id"><img v-bind:src="[[movie.posterPath]]" alt="movie poster"></a>
+                            <p>[[movie.title]]</p>
+                        </div> 
+                        <div class="movie-hover" v-if="movie.hover">
+                            <p>The world's rating:<br>[[movie.apiDetails.vote_average]] out of 10</p>
+                            <p>Release Date:<br>[[movie.apiDetails.release_date]]</p> 
+                        </div>          
+                    </div>
+                </div>
+            </div>
+            <h2>Watched Movies</h2>
+            <div class="api-info-plus-movie">
+                <div v-for="movie in movies">
+                    <div v-if="movie.have_watched == true && movie.movie_user == currentUser.id">                       
+                        <div class="single-movie" @mouseover="movie.hover = true" @mouseleave="movie.hover = false">
+                            <a :href="'/movies/' + movie.id"><img v-bind:src="[[movie.posterPath]]" alt="movie poster"></a>
+                            <p>[[movie.title]]</p>
+                        </div> 
+                        <div class="movie-hover" v-if="movie.hover && movie.movie_user == currentUser.id">
+                            <p>Your rating:<br>[[movie.rating]] out of 10</p>
+                            <p>The world's rating:<br>[[movie.apiDetails.vote_average]] out of 10</p>
+                            <p>Release Date:<br>[[movie.apiDetails.release_date]]</p> 
+                        </div>          
+                    </div>   
+                </div>  
+            </div>
+        </div>             
+    {% endif %}
+</div>
+
 
  <!-- Import Ajax -->
  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -53,5 +63,6 @@
  <!-- Mount App -->
  <script> const mountApp = app.mount('#app') </script>
 
-</body>
-</html>
+ {% endblock %}
+
+
