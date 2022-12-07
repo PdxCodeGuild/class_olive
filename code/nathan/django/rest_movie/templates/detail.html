@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div id="app">
+    <h2 id="theMoviesTitle">{{ movie.title }}</h2>
+    <h2>[[status]]</h2>
+    <p id="theMoviesID">{{movie.id}}</p>
+    <div id="add-movie">
+        {% if not movie.have_watched %}
+        <input id="have_watched" type="checkbox" v-model="newMovie.have_watched" value="true"> I've seen this movie</input>  
+        <div v-if="newMovie.have_watched">
+            <input id="rating-picker" type="number" placeholder="rating" v-model="newMovie.rating" min="1" max="10">
+        </div>
+        <button @click="updateMovie">Update Movie</button>
+        {% endif %}
+        <button @click="deleteMovie">Delete Movie</button>
+    </div> 
+</div>
+
+ <!-- Import Ajax -->
+ <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+ <!-- Import Vue.js -->
+ <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+ <!-- Import file.js -->
+ <script src="{% static '/app2.js' %}"></script> 
+
+ <!-- Mount App -->
+ <script> const mountApp = app.mount('#app') </script>
+{% endblock %}

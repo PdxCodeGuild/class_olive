@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Rubik+Glitch&family=Rubik+Mono+One&display=swap');
+
+body {
+    margin: 0rem;
+    padding: 0rem;
+    background-color: darkred;
+    color: white;
+}
+
+#heading {
+    background-image: url(../images/cinema.jpg);
+    background-size: cover;
+    padding-top: 1rem;
+    width: 100%;  
+    height: 100%; 
+    font-family: 'Roboto Mono', monospace;
+    font-size: large;
+    color: white;
+    text-shadow: -1px 1px 0 rgb(139, 0, 0),
+                          1px 1px 0 rgb(139, 0, 0),
+                         1px -1px 0 rgb(139, 0, 0),
+                        -1px -1px 0 rgb(139, 0, 0);
+    text-align: center;
+    border: solid darkred;
+}
+
+#heading h1 {
+    font-size: 100px;
+    font-family: 'Rubik Mono One', sans-serif;
+    color: rgb(139, 0, 0);
+    text-shadow: -1px 1px 0 rgb(253, 253, 253),
+                          1px 1px 0 rgb(253, 253, 253),
+                         1px -1px 0 rgb(253, 253, 253),
+                        -1px -1px 0 rgb(253, 253, 253);
+}
+
+#heading h2 {
+    font-size: 40px;
+}
+
+#login-logout {
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+    margin-right: 1rem;
+}
+
+#login-logout a {
+    font-size: 50px;
+    font-family: 'Rubik Glitch', cursive;
+    text-decoration: none;
+    color: white;
+    text-shadow: -1px 1px 0 rgb(139, 0, 0),
+                          1px 1px 0 rgb(139, 0, 0),
+                         1px -1px 0 rgb(139, 0, 0),
+                        -1px -1px 0 rgb(139, 0, 0);
+}
+
+#login-logout a:hover {
+    color: rgb(139, 0, 0);
+    text-shadow: -1px 1px 0 rgb(253, 253, 253),
+                          1px 1px 0 rgb(253, 253, 253),
+                         1px -1px 0 rgb(253, 253, 253),
+                        -1px -1px 0 rgb(253, 253, 253);
+}
+
+#add-movie {
+    margin: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+#add-movie input {
+    padding-inline: 2rem;
+    padding-block: 1rem;
+    font-size: large;
+}
+
+#add-movie button {
+    padding-inline: 2rem;
+    padding-block: 1rem;
+    font-size: large;
+}
+
+#movie-area {
+    margin: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    background-color: rgba(0, 0, 0, 0.438);
+    padding: 1rem;
+    padding-top: 2rem;
+}
+
+.api-info-plus-movie {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.single-movie {
+    display: flex;
+    flex-direction: column;
+}
+
+.movie-hover {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+}
+
+.movie-link:hover {
+    background-color: rgba(139, 0, 0, 0.308);
+}
+
+img {
+    height: 25rem;
+}
+
+#theMoviesID {
+    display: none;
+}
+
+@media screen and (max-width: 1250px) {
+    #add-movie {
+        flex-direction: column;
+    }
+
+    #heading h1 {
+        font-size: large;
+    }
+
+    #heading h2 {
+        font-size: medium;
+    }
+
+    #heading a {
+        font-size: large;
+    }
+
+    #heading {
+        background-image: none;
+    }
+
+    #movie-area {
+        margin: 0rem;
+    }
+}
