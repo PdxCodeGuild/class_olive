@@ -1,0 +1,105 @@
+.parent {
+    position: fixed;
+    top: 30px;
+    left: 30px ;
+}
+
+img {
+    width:20vw
+}
+
+.main {
+    position: fixed;
+    top: 30px;
+    left: 30px ;
+    
+}
+
+.uparrow {
+    position: fixed;
+    top: 30px;
+    left: 30px ;
+    opacity: 0
+    
+}
+
+.downarrow {
+    position: fixed;
+    top: 30px;
+    left: 30px ;
+    opacity: 0
+    
+}
+
+.face1 {
+    position: fixed;
+    top: 30px;
+    left: 30px ;
+    opacity: 0
+    
+}
+
+.face2 {
+    position: fixed;
+    top: 30px;
+    left: 30px ;
+    opacity: 0
+    
+}
+
+.face3 {
+    position: fixed;
+    top: 30px;
+    left: 30px ;
+    opacity: 0
+    
+}
+
+.face4 {
+    position: fixed;
+    top: 30px;
+    left: 30px ;
+    opacity: 0
+    
+}
+
+.leftb {
+    position: fixed;
+    top: 30px;
+    left: 30px ;
+    opacity: 0
+    
+}
+
+.rightb {
+    position: fixed;
+    top: 30px;
+    left: 30px ;
+    opacity: 0
+    
+}
+
+.test {
+    background-color: #1a1a1a;
+    height:100vh;
+    border-radius: 8px;
+}
+
+.opacity-on {
+    opacity: 100;
+
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:aliceblue;
+    padding-top: 20px;
+}
+
+span {
+    color:blueviolet;
+    
+}
