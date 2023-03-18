@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block content%} 
+{% load static %}          
+<div id="app">          
+    <div>
+        {% if user.is_authenticated %}
+            <h2>Add a Movie</h2>
+            <div id="add-movie">
+                <input id="title-textbox" type="text" placeholder="Title" v-model="newMovie.title">
+                <input id="have_watched" type="checkbox" v-model="newMovie.have_watched" value="true"> I've seen this movie</input>
+                <div v-if="newMovie.have_watched">
+                    <input id="rating-picker" type="number" placeholder="rating" v-model="newMovie.rating" min="1" max="10">
+                </div>
+                <button @click="createMovie">Add Movie</button>
+            </div>
+    </div>
+    <div id="movie-area">
+            <h2>To watch list</h2>
+            <div class="api-info-plus-movie">
+                <div v-for="movie in movies">
+                    <div v-if="movie.have_watched != true && movie.movie_user == currentUser.id">                       
+                        <div class="single-movie" @mouseover="movie.hover = true" @mouseleave="movie.hover = false">
+                            <a :href="'/movies/' + movie.id"><img v-bind:src="[[movie.posterPath]]" alt="movie poster"></a>
+                            <p>[[movie.title]]</p>
+                        </div> 
+                        <div class="movie-hover" v-if="movie.hover">
+                            <p>The world's rating:<br>[[movie.apiDetails.vote_average]] out of 10</p>
+                            <p>Release Date:<br>[[movie.apiDetails.release_date]]</p> 
+                        </div>          
+                    </div>
+                </div>
+            </div>
+            <h2>Watched Movies</h2>
+            <div class="api-info-plus-movie">
+                <div v-for="movie in movies">
+                    <div v-if="movie.have_watched == true && movie.movie_user == currentUser.id">                       
+                        <div class="single-movie" @mouseover="movie.hover = true" @mouseleave="movie.hover = false">
+                            <a :href="'/movies/' + movie.id"><img v-bind:src="[[movie.posterPath]]" alt="movie poster"></a>
+                            <p>[[movie.title]]</p>
+                        </div> 
+                        <div class="movie-hover" v-if="movie.hover && movie.movie_user == currentUser.id">
+                            <p>Your rating:<br>[[movie.rating]] out of 10</p>
+                            <p>The world's rating:<br>[[movie.apiDetails.vote_average]] out of 10</p>
+                            <p>Release Date:<br>[[movie.apiDetails.release_date]]</p> 
+                        </div>          
+                    </div>   
+                </div>  
+            </div>
+        </div>             
+    {% endif %}
+</div>
+
+
+ <!-- Import Ajax -->
+ <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+ <!-- Import Vue.js -->
+ <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+ <!-- Import file.js -->
+ <script src="{% static '/app.js' %}"></script> 
+
+ <!-- Mount App -->
+ <script> const mountApp = app.mount('#app') </script>
+
+ {% endblock %}
+
+
