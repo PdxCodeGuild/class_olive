@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Home</title>
+</head>
+<body>
+    {% csrf_token %}
+    <div id="app" class="flex flex-col items-center">
+        <div class="flex justify-center items-center relative h-[5rem] border-b w-screen">
+            <h1>Hello [[currentUser.username]].</h1>
+
+            <div class="absolute bottom-0 right-0">
+                {% if user.is_authenticated == False %}
+                    <a href="{% url 'login' %}" class="pr-1">Login</a>
+                    <a href="{% url 'signup' %}" class="pr-1">Sign up</a>
+                {% endif %}
+                {% if user.is_authenticated %}
+                    <a href="{% url 'profile' user.username%}" class="pr-1">Profile</a>
+                    <a href="{% url 'logout' %}" class="pr-1">Logout</a>
+                {% endif %}
+            </div>
+        </div>
+
+        <div id="outer-div" class="flex border w-screen justify-evenly">
+
+            <div id="left-div" class="border h-[5rem] w-[5rem]"></div>
+            <div id="to-do-div" class="flex flex-col items-center border">
+                <h1 class="mt-4">TO DO</h1>
+                <input v-model="enteredThing" v-on:keyup.enter="createToDo" type="text" placeholder="Enter Thing" class="border mb-4">
+                <div class="flex flex-col justify-center items-center border w-[10rem]">
+                    <div v-for="single_item in currentUser.todo_detail" >
+                        <div v-if="single_item.needs_doing" class="border">
+                            <p>[[single_item.item]]</p>
+                            <button @click="swapparo(single_item.id, single_item.needs_doing)">change</button>
+                            <div v-if="displayedFavorites.includes(single_item.item) == false">
+
+                                <button @click="createFavorite(single_item.item)">favorite</button>
+                            </div>
+                            <button @click="deleteToDo(single_item.id)">DELETE</button>
+                           
+                            
+        
+                        </div>
+                    </div>
+        
+                </div>
+                <h1 class="mt-4">DID</h1>
+                <div class="flex flex-col justify-center items-center border w-[10rem]">
+                    <div v-for="single_item in currentUser.todo_detail" >
+            
+                        <div v-if="single_item.needs_doing == false" class="border">
+                            <p>[[single_item.item]]</p>
+                            <button @click="swapparo(single_item.id, single_item.needs_doing)">change</button>
+                            <div v-if="displayedFavorites.includes(single_item.item) == false">
+
+                                <button @click="createFavorite(single_item.item)">favorite</button>
+                            </div>
+                            <button @click="deleteToDo(single_item.id)">DELETE</button>
+        
+                        </div>
+                        
+            
+                    </div>
+        
+                </div>
+            </div>
+            <div id="favorites-div" class="flex flex-col items-center border w-[10rem]">
+                <h1>Favorites</h1>
+                <div class="border">
+                    <div v-for="single_favorite in currentUser.favorites_detail">
+                        <p>[[single_favorite.favorite]]</p>
+                        <div v-if="displayedToDo.includes(single_favorite.favorite) == false">
+                            <button @click="spawnFromFavorites(single_favorite.favorite)">add to do</button>
+
+                        </div>
+                        <button @click="deleteFavorite(single_favorite.id)">DELETE</button>
+                        
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+  
+
+
+    </div>
+
+<!-- Import Ajax -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<!-- Import Vue.js -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<!-- Import file.js -->
+<script src="{% static '/app.js' %}"></script> 
+
+<!-- Mount App -->
+<script> const mountApp = app.mount('#app') </script>
+
+    
+</body>
+</html>
