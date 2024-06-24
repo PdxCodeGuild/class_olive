@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asap+Condensed:wght@200&display=swap');
+
+body{
+    background-color: black;
+
+}
+
+#headercontainer{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-image: url(https://th.bing.com/th/id/OIP.bISEsZ5_yn_IY3sZUZYZtwHaEK?pid=ImgDet&rs=1);
+    color: goldenrod;
+    font-size: xx-large;
+    font-family: 'Special Elite', cursive;
+    height: 12.5rem;
+    text-align: center;
+}
+
+
+
+#login{
+    display: flex;
+    color: white;
+    font-family: 'Economica', sans-serif;
+    font-size: x-large;
+    justify-content:flex-start;
+}
+
+#logout{
+    color: white;
+    font-family: 'Economica', sans-serif;
+}
+
+#movieadder{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    font-family: 'Asap Condensed', sans-serif;
+    padding-right: 10rem;
+    padding-left: 10rem;
+}
+
+#movieposts{
+    display: flex;
+    justify-content: space-evenly;
+} 
+
+
+#poster{
+    height: 30rem;
+    /* width: 15rem; */
+}
+
+.movie-box{
+    display: flex;
+    flex-direction: column;
+    width: 21rem;
+    color: aliceblue;
+    
+
+}
+
+.hide{
+    display: none;
+}
+
+
+
