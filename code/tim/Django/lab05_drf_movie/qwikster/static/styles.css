@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: white;
+    background-color: rgb(53, 85, 111);
+}
+
+#nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+#welcome_text {
+    width: 40rem;
+}
+
+#movie_gallery {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    gap: 1rem;
+}
+
+#movie_card {
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+    justify-content: space-between;
+    text-align: center;
+    padding-block: 0.2rem;
+    width: 10rem;
+    height: 15rem;
+    border-radius: 5px;
+    background-color: #200000;
+}

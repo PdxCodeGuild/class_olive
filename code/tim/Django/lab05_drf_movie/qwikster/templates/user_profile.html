@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<p>Movies added by: [[currentUser.username]]<p><br>
+
+<div id="movie_gallery">
+    <div id="movie_card" v-for="movie in currentUser.movie_detail">
+        <p>[[movie.title]] </p>
+        <p>[[movie.year]] [[movie.genre]]   [[movie.metacritic]]%</p>
+    </div>
+</div><br>
+
+{% endblock content %}
+
+
